@@ -33,10 +33,17 @@ HTML_TEMPLATE = '''
         {% for key, prob in problems.items() %}
             <button type="submit" name="problem" value="{{ key }}">{{ key }}</button><br>
         {% endfor %}
+        <hr>
+        <h3>Or enter a custom problem:</h3>
+        <label>Description:</label><br>
+        <textarea name="custom_description" rows="3" cols="80"></textarea><br>
+        <label>MiniZinc model:</label><br>
+        <textarea name="custom_model" rows="10" cols="80"></textarea><br>
+        <button type="submit">Submit Custom Problem</button>
     </form>
     {% if response %}
         <hr>
-        <h3>Gemini Response for <b>{{ selected_problem }}</b></h3>
+        <h3>Gemini Response for <b>{{ selected_problem if selected_problem else 'Custom Problem' }}</b></h3>
         <div>{{ response | markdown | safe }}</div>
         <hr>
         <h4>Prompt sent to Gemini:</h4>
@@ -55,18 +62,25 @@ def index():
     if request.method == 'POST':
         selected_problem = request.form.get('problem')
         prompt_type = request.form.get('prompt_type', 'full')
-        prob = problems[selected_problem]
-        description = prob.get('description', '')
-        script = prob.get('script', '')
-        # If script is a path, read the file content
-        if script.startswith('./'):
-            script_path = script[2:] if script.startswith('./') else script
-            try:
-                with open(script_path, 'r') as sf:
-                    script_content = sf.read()
-                script = script_content
-            except Exception as e:
-                script = f"[Error reading {script_path}: {e}]"
+        # Check if custom problem is submitted
+        custom_description = request.form.get('custom_description', '').strip()
+        custom_model = request.form.get('custom_model', '').strip()
+        if custom_description and custom_model:
+            description = custom_description
+            script = custom_model
+        else:
+            prob = problems.get(selected_problem, {})
+            description = prob.get('description', '')
+            script = prob.get('script', '')
+            # If script is a path, read the file content
+            if script.startswith('./'):
+                script_path = script[2:] if script.startswith('./') else script
+                try:
+                    with open(script_path, 'r') as sf:
+                        script_content = sf.read()
+                    script = script_content
+                except Exception as e:
+                    script = f"[Error reading {script_path}: {e}]"
         if prompt_type == 'name':
             solver_prompt = "The goal is to determine which constraint programming solver would be best suited for this problem, considering the following options:\n\n- Gecode\n- Chuffed\n- Google OR-Tools CP-SAT\n- HiGHS\n- COIN-OR CBC\n\nAnswer only with the name of the 3 best solvers, separated by comma and nothing else."
         else:
