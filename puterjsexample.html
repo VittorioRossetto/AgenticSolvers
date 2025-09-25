@@ -1,0 +1,58 @@
+<html>
+<body>
+    <script src="https://js.puter.com/v2/"></script>
+    <script>
+        // Using claude-sonnet-4 model
+        puter.ai.chat(
+            "Write a short poem about coding",
+            { model: "claude-sonnet-4" }
+        ).then(response => {
+            puter.print("<h2>Using claude-sonnet-4 model</h2>");
+            try {
+                puter.print(response.message.content[0].text);
+            } catch (e) {
+                puter.print("Error extracting text: " + e);
+            }
+        });
+
+        // Using claude-opus-4 model
+        puter.ai.chat(
+            "Write a short poem about coding",
+            { model: "claude-opus-4" }
+        ).then(response => {
+            puter.print("<h2>Using claude-opus-4 model</h2>");
+            try {
+                puter.print(response.message.content[0].text);
+            } catch (e) {
+                puter.print("Error extracting text: " + e);
+            }
+        });
+
+        // Using gpt-5 model
+        puter.ai.chat(
+            "Write a short poem about coding",
+            { model: "gpt-5" }
+        ).then(response => {
+            puter.print("<h2>Using gpt-5 model</h2>");
+            try {
+                puter.print(response);
+            } catch (e) {
+                puter.print("Error extracting text: " + e);
+            }
+        });
+
+        // Using gpt-5-nano model
+        puter.ai.chat(
+            "Write a short poem about coding",
+            { model: "gpt-5-nano" }
+        ).then(response => {
+            puter.print("<h2>Using gpt-5-nano model</h2>");
+            try {
+                puter.print(response);
+            } catch (e) {
+                puter.print("Error extracting text: " + e);
+            }
+        });
+    </script>
+</body>
+</html>
