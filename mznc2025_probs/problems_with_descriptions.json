@@ -22,7 +22,7 @@
   "EchoSched": {
     "description": "A job-shop scheduling problem with precedence and energy constraints. The objective balances makespan and energy consumption across machines.",
     "script": "./mznc2025_probs/EchoSched/JSP0.mzn",
-    "top3_solvers": ["OR-Tools CP-SAT","Chuffed-fd", "HiGHS"]
+    "top3_solvers": ["OR-Tools CP-SAT","Chuffed", "HiGHS"]
   },
   "fbd1": {
     "description": "Designs foldover balanced designs (FBD1) used in experimental design. Finds minimal design sizes with strictly increasing factor allocations.",
@@ -61,7 +61,7 @@
   },
   "mondoku": {
     "description": "Solver for Mondoku, a generative art/puzzle variant of Sudoku. Ensures each row/column uses all colors but only within specific groups, balancing frequency of colors.",
-    "script": "./mznc2025_probs/mondoku/ihtc-2024-kletzander.mzn",
+    "script": "./mznc2025_probs/mondoku/mondoku-gcc-model-balance.mzn",
     "top3_solvers": ["Gecode", "Chuffed", "OR-Tools CP-SAT"]
   },
   "products-and-shelves": {
