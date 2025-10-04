@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gemini Solver Recommendation</title>
+  <title>LLM Solver Recommendation</title>
 
   <!-- Bootswatch Flatly Theme (Bootstrap 5) -->
   <link
@@ -82,18 +82,18 @@
                   placeholder="MiniZinc model...">{{ request.form.custom_model or '' }}</textarea>
       </div>
 
-      <button class="btn btn-primary mt-2">Submit to Gemini</button>
+      <button class="btn btn-primary mt-2">Submit to LLM</button>
     </form>
 
     {% if response %}
     <div class="card shadow-sm">
       <div class="card-body">
         <h5 class="card-title text-success">
-          Gemini Response for <b>{{ selected_problem if selected_problem else 'Custom Problem' }}</b>
+          LLM Response for <b>{{ selected_problem if selected_problem else 'Custom Problem' }}</b>
         </h5>
         <div class="card-text mt-3">{{ response | markdown | safe }}</div>
         <hr>
-        <h6 class="text-muted">Prompt Sent to Gemini:</h6>
+        <h6 class="text-muted">Prompt Sent to LLM:</h6>
         <pre>{{ prompt_text }}</pre>
       </div>
     </div>
@@ -103,13 +103,13 @@
   <!-- Spinner Overlay (hidden by default) -->
   <div id="loading-overlay" class="spinner-overlay" style="display:none;">
     <div class="spinner-border text-primary mb-3" style="width: 3rem; height: 3rem;"></div>
-    <p class="text-secondary">Contacting Gemini... please wait</p>
+    <p class="text-secondary">Contacting LLM... please wait</p>
   </div>
 
-  <!-- Bootstrap JS (optional, for buttons/animations) -->
+  <!-- Bootstrap JS (for buttons/animations) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Simple loading spinner logic -->
+  <!-- Loading spinner logic -->
   <script>
     const form = document.getElementById('solver-form');
     const overlay = document.getElementById('loading-overlay');
