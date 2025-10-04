@@ -1,3 +1,4 @@
+.mode list
 -- Step 1: best objectives per instance
 CREATE TEMP VIEW best_objectives AS
 SELECT
@@ -10,12 +11,11 @@ WHERE challenge = 2025
   AND quality IS NOT NULL
 GROUP BY problem, instance;
 
--- Step 2 + 3: compute per-solver problem score and rank
+-- Step 2–3: compute per-solver total scores and rank
 WITH scored AS (
     SELECT
       r.problem,
       r.solver,
-      r.instance,
       CASE
         WHEN p.kind = 'SAT' THEN
           CASE WHEN r.solved = 1 THEN 1.0 ELSE 0.0 END
@@ -37,24 +37,33 @@ totals AS (
     SELECT
       problem,
       solver,
-      SUM(score) AS total_score,
-      RANK() OVER (PARTITION BY problem ORDER BY SUM(score) DESC) AS rnk
+      SUM(score) AS total_score
     FROM scored
     GROUP BY problem, solver
+),
+ranked AS (
+    SELECT
+      problem,
+      solver,
+      total_score,
+      RANK() OVER (PARTITION BY problem ORDER BY total_score DESC) AS rnk
+    FROM totals
+),
+per_problem AS (
+    SELECT DISTINCT problem
+    FROM ranked
 )
--- Step 4: build JSON per problem
+-- Step 4: build one JSON entry per problem
 SELECT json_group_object(
     problem,
-    (
-      SELECT json_group_array(
-               json_object(
-                 'solver', solver,
-                 'score', ROUND(total_score, 3)
-               )
-             )
-      FROM totals t2
-      WHERE t2.problem = t1.problem AND t2.rnk <= 3
-      ORDER BY total_score DESC
+    json_object(
+        'top3',
+        (
+            SELECT json_group_array(solver)
+            FROM ranked r2
+            WHERE r2.problem = p.problem AND r2.rnk <= 3
+            ORDER BY total_score DESC
+        )
     )
 )
-FROM totals t1;
+FROM per_problem p;
