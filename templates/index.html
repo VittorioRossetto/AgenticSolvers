@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Gemini Multi-Problem Solver Recommendation</title></head>
+<body>
+    <h2>Choose a Problem for Gemini Solver Recommendation</h2>
+
+    <form method="post">
+        <label>Prompt Type:</label>
+        <input type="radio" name="prompt_type" value="full" {% if prompt_type != 'name' %}checked{% endif %}> Full analysis
+        <input type="radio" name="prompt_type" value="name" {% if prompt_type == 'name' %}checked{% endif %}> Solver name only
+        <br><br>
+
+        {% for key, prob in problems.items() %}
+            <button type="submit" name="problem" value="{{ key }}">{{ key }}</button><br>
+        {% endfor %}
+
+        <hr>
+        <h3>Or enter a custom problem:</h3>
+        <textarea name="custom_description" rows="3" cols="80" placeholder="Problem description..."></textarea><br>
+        <textarea name="custom_model" rows="10" cols="80" placeholder="MiniZinc model..."></textarea><br>
+        <button type="submit">Submit Custom Problem</button>
+    </form>
+
+    {% if response %}
+        <hr>
+        <h3>Gemini Response for <b>{{ selected_problem if selected_problem else 'Custom Problem' }}</b></h3>
+        <div>{{ response | markdown | safe }}</div>
+        <hr>
+        <h4>Prompt sent to Gemini:</h4>
+        <pre style="background:#f8f8f8; border:1px solid #ccc; padding:10px;">{{ prompt_text }}</pre>
+    {% endif %}
+</body>
+</html>

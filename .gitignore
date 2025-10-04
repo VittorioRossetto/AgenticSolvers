@@ -1,2 +1,4 @@
 .env
 resultsElaboration/
+old/
+__pycache__/
