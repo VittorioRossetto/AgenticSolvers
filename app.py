@@ -37,11 +37,8 @@ def index():
 
         # Optional: compare Gemini’s prediction with MiniZinc top 3
         if prompt_type == 'name' and selected_problem and selected_problem in problems:
-            top3 = problems[selected_problem].get('top3_solvers', [])
-            gemini_top3 = [s.strip() for s in response_text.split(',') if s.strip()]
-            match_info = evaluate_response(gemini_top3, top3)
-            response_text = match_info + response_text
-
+            response_text = evaluate_response(selected_problem, response_text, problems)
+            
     return render_template('index.html',
                            problems=problems,
                            response=response_text,

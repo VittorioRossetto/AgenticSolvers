@@ -1,33 +1,122 @@
 <!DOCTYPE html>
-<html>
-<head><title>Gemini Multi-Problem Solver Recommendation</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gemini Solver Recommendation</title>
+
+  <!-- Bootswatch Flatly Theme (Bootstrap 5) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/flatly/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    pre {
+      white-space: pre-wrap;
+      background: #f8f9fa;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid #dee2e6;
+    }
+    code {
+      background: #eef;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .spinner-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      flex-direction: column;
+    }
+  </style>
+</head>
 <body>
-    <h2>Choose a Problem for Gemini Solver Recommendation</h2>
+  <div class="container mt-4 mb-5">
+    <h2 class="mb-4 text-primary">Solver Recommendation</h2>
 
-    <form method="post">
-        <label>Prompt Type:</label>
-        <input type="radio" name="prompt_type" value="full" {% if prompt_type != 'name' %}checked{% endif %}> Full analysis
-        <input type="radio" name="prompt_type" value="name" {% if prompt_type == 'name' %}checked{% endif %}> Solver name only
-        <br><br>
+    <form method="post" class="mb-4" id="solver-form">
+      <!-- Prompt Type -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Prompt Type:</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="prompt_type" value="full"
+                 {% if prompt_type != 'name' %}checked{% endif %}>
+          <label class="form-check-label">Full Analysis & Reasoning</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="prompt_type" value="name"
+                 {% if prompt_type == 'name' %}checked{% endif %}>
+          <label class="form-check-label">Solver Name Only</label>
+        </div>
+      </div>
 
+      <!-- Predefined Problems -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Select a Predefined Problem:</label><br>
         {% for key, prob in problems.items() %}
-            <button type="submit" name="problem" value="{{ key }}">{{ key }}</button><br>
+          <button type="submit" name="problem" value="{{ key }}"
+                  class="btn btn-outline-secondary btn-sm mb-1">{{ key }}</button>
         {% endfor %}
+      </div>
 
-        <hr>
-        <h3>Or enter a custom problem:</h3>
-        <textarea name="custom_description" rows="3" cols="80" placeholder="Problem description..."></textarea><br>
-        <textarea name="custom_model" rows="10" cols="80" placeholder="MiniZinc model..."></textarea><br>
-        <button type="submit">Submit Custom Problem</button>
+      <hr>
+
+      <!-- Custom Problem -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Or Enter a Custom Problem</label>
+        <textarea name="custom_description" rows="3" class="form-control"
+                  placeholder="Problem description...">{{ request.form.custom_description or '' }}</textarea>
+      </div>
+      <div class="mb-3">
+        <textarea name="custom_model" rows="10" class="form-control"
+                  placeholder="MiniZinc model...">{{ request.form.custom_model or '' }}</textarea>
+      </div>
+
+      <button class="btn btn-primary mt-2">Submit to Gemini</button>
     </form>
 
     {% if response %}
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title text-success">
+          Gemini Response for <b>{{ selected_problem if selected_problem else 'Custom Problem' }}</b>
+        </h5>
+        <div class="card-text mt-3">{{ response | markdown | safe }}</div>
         <hr>
-        <h3>Gemini Response for <b>{{ selected_problem if selected_problem else 'Custom Problem' }}</b></h3>
-        <div>{{ response | markdown | safe }}</div>
-        <hr>
-        <h4>Prompt sent to Gemini:</h4>
-        <pre style="background:#f8f8f8; border:1px solid #ccc; padding:10px;">{{ prompt_text }}</pre>
+        <h6 class="text-muted">Prompt Sent to Gemini:</h6>
+        <pre>{{ prompt_text }}</pre>
+      </div>
+    </div>
     {% endif %}
+  </div>
+
+  <!-- Spinner Overlay (hidden by default) -->
+  <div id="loading-overlay" class="spinner-overlay" style="display:none;">
+    <div class="spinner-border text-primary mb-3" style="width: 3rem; height: 3rem;"></div>
+    <p class="text-secondary">Contacting Gemini... please wait</p>
+  </div>
+
+  <!-- Bootstrap JS (optional, for buttons/animations) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Simple loading spinner logic -->
+  <script>
+    const form = document.getElementById('solver-form');
+    const overlay = document.getElementById('loading-overlay');
+
+    form.addEventListener('submit', () => {
+      overlay.style.display = 'flex';
+    });
+  </script>
 </body>
 </html>
