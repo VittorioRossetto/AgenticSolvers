@@ -621,4 +621,92 @@ v_sum_domdeg_vars    368586                 Sum of the ratio variables domain/de
     \label{tab:solverOptCount}
 \end{table}
 
+
+
+
+
+
+
+
+
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{llll}
+        \hline
+            Suggested Solver & Original Solver & Top1 Count & Total Count \\ \hline
+            or-tools\_cp-sat-free & atlantis-free & 72 & 99 \\ 
+            atlantis-free & cplex-free & 21 & 48 \\ 
+            chuffed-free & highs-free & 7 & 51 \\ 
+            highs-free & or-tools\_cp-sat\_ls-free & 0 & 78 \\ 
+            yuck-free & choco-solver\_\_cp\_-par & 0 & 24 \\ \hline
+        \end{tabular}
+    }
+    \caption{Analysis over the solver suggestions from \texttt{gpt-oss-120b}, using the configuration~2. Columns are organized as in \Cref{tab:swappedCount1}}
+    \label{tab:swappedCount2}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{llll}
+        \hline
+            Suggested Solver & Original Solver & Top1 Count & Total Count \\ \hline
+            or-tools\_cp-sat-free & atlantis-free & 76 & 95 \\ 
+            chuffed-free & highs-free & 24 & 100 \\ 
+            cp\_optimizer-free & or-tools\_cp-sat-free & 0 & 74 \\ 
+            picatsat-free & cp\_optimizer-free & 0 & 21 \\ 
+            choco-solver\_\_cp\_-free & jacop-free & 0 & 6 \\ 
+            scip-free & choco-solver\_\_cp-sat\_-free & 0 & 3 \\ 
+            or-tools\_cp-sat\_ls-free & yuck-free & 0 & 1 \\ \hline
+        \end{tabular}
+    }
+    \caption{Analysis over the solver suggestions from \texttt{gpt-oss-120b}, using the configuration~3. Columns are organized as in \Cref{tab:swappedCount1}}
+    \label{tab:swappedCount3}
+\end{table}
+
+
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{llll}
+        \hline
+            Suggested Solver & Original Solver & Top1 Count & Total Count \\ \hline
+            or-tools\_cp-sat-free & atlantis-free & 78 & 100 \\ 
+            chuffed-free & highs-free & 20 & 100 \\ 
+            cp\_optimizer-free & or-tools\_cp-sat-free & 2 & 45 \\ 
+            picatsat-free & cp\_optimizer-free & 0 & 52 \\ 
+            choco-solver\_\_cp\_-free & jacop-free & 0 & 3 \\ \hline
+        \end{tabular}
+    }
+    \caption{Analysis over the solver suggestions from \texttt{gpt-oss-120b}, using the configuration~4. Columns are organized as in \Cref{tab:swappedCount1}}
+    \label{tab:swappedCount4}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{llll}
+        \hline
+            Suggested Solver & Original Solver & Top1 Count & Total Count \\ \hline
+            or-tools\_cp-sat-free & atlantis-free & 56 & 95 \\ 
+            chuffed-free & highs-free & 40 & 100 \\ 
+            atlantis-free & cplex-free & 4 & 22 \\ 
+            scip-free & choco-solver\_\_cp-sat\_-free & 0 & 36 \\ 
+            yuck-free & choco-solver\_\_cp\_-par & 0 & 35 \\ 
+            picatsat-free & cp\_optimizer-free & 0 & 6 \\ 
+            cp\_optimizer-free & or-tools\_cp-sat-free & 0 & 3 \\ 
+            choco-solver\_\_cp\_-free & jacop-free & 0 & 2 \\ 
+            choco-solver\_\_cp-sat\_-free & sicstus\_prolog-free & 0 & 1 \\ \hline
+        \end{tabular}
+    }
+    \caption{Analysis over the solver suggestions from \texttt{gpt-oss-120b}, using the configuration~5. Columns are organized as in \Cref{tab:swappedCount1}}
+    \label{tab:swappedCount5}
+\end{table}
+
+
+
 \end{document}

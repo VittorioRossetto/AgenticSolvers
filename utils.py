@@ -80,7 +80,7 @@ def get_solver_prompt(solver_list=None, name_only=False, with_reasoning: bool = 
             Note: This asks for a concise explanation (not step-by-step hidden reasoning).
     """
     if solver_list is None:
-        # default to the set of free/public solvers for lightweight benchmarking
+        # default to the set of free solvers for lightweight benchmarking
         solver_list = FREE_SOLVERS
     solver_lines = '\n'.join(f"- {s}" for s in solver_list)
     if name_only:
@@ -101,6 +101,25 @@ def get_solver_prompt(solver_list=None, name_only=False, with_reasoning: bool = 
             f"{solver_lines}\n\n"
             "Please analyze the model and recommend the best solver for this problem, explaining your reasoning."
         )
+
+
+def load_nameless_solvers(json_path: str = None):
+    """Load the nameless solvers JSON and return the list of solver keys (order preserved).
+
+    Expects a JSON with a top-level `solvers` object mapping anonymized keys to descriptions.
+    Returns a list of solver names (the keys), or an empty list on error.
+    """
+    if not json_path:
+        json_path = os.path.join(os.path.dirname(__file__), 'test', 'data', 'namelessSolvers.json')
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        sols = data.get('solvers', {})
+        if isinstance(sols, dict):
+            return list(sols.keys())
+        return []
+    except Exception:
+        return []
 
 # ---------- Utility Functions ----------
 def load_problems(json_path: str):

@@ -1,0 +1,30 @@
+{
+  "mapping": {
+    "cbc-free": "A  Java-based constraint programming toolkit supporting finite domain constraints and offering customizable search strategies for discrete optimization.",
+    "choco-solver__cp_-free": "A Solver mode that integrates CP with SAT-style reasoning to handle complex and hybrid combinatorial models more efficiently in a free configuration.",
+    "choco-solver__cp-sat_-free": "A powerful constraint programming solver tailored for scheduling, planning, and sequencing, providing strong propagation and heuristic search.",
+    "cp_optimizer-free": "A solver supporting LP, MILP, and QP, known for fast branch-and-bound, presolve, and cutting-plane methods; commonly used in academia.",
+    "cplex-free": "A leading commercial solver for LP, MILP, QP, and more, recognized for state-of-the-art performance, parallelization, and tuning tools.",
+    "gurobi-free": "An open-source suite for LP, MILP, and QP that includes simplex and interior-point methods; designed to be lightweight, modern, and easy to integrate into scientific workflows.",
+    "highs-free": "A free solver from the MiniZinc ecosystem that blends constraint and logic programming; supports expressive modeling and integrates cleanly with MiniZinc workflows.",
+    "izplus-free": "This is an open-source Java CP solver providing advanced propagators and search heuristics, especially popular in education and prototyping of discrete decision models.",
+    "jacop-free": "A free SAT and Max-SAT solver aimed at optimization-centric Boolean reasoning, providing clause learning and heuristics suitable for decision and cost-based models.",
+    "pumpkin-free": "A free solver that unifies mixed-integer programming and constraint programming with nonlinear extensions; known for strong presolve, cutting planes, and flexibility.",
+    "scip-free": "A free solver that blends Prolog with constraint logic programming capabilities, enabling expressive models for combinatorial reasoning and inference.",
+    "sicstus_prolog-free": "An open-source MILP solver specializing in integer and linear optimization, widely used as a robust and lightweight alternative to commercial engines."
+  },
+  "swaps": [
+    { "original": "cbc-free", "description_from": "choco-solver__cp_-free" },
+    { "original": "choco-solver__cp_-free", "description_from": "choco-solver__cp-sat_-free" },
+    { "original": "choco-solver__cp-sat_-free", "description_from": "cp_optimizer-free" },
+    { "original": "cp_optimizer-free", "description_from": "cplex-free" },
+    { "original": "cplex-free", "description_from": "gurobi-free" },
+    { "original": "gurobi-free", "description_from": "highs-free" },
+    { "original": "highs-free", "description_from": "izplus-free" },
+    { "original": "izplus-free", "description_from": "jacop-free" },
+    { "original": "jacop-free", "description_from": "pumpkin-free" },
+    { "original": "pumpkin-free", "description_from": "scip-free" },
+    { "original": "scip-free", "description_from": "sicstus_prolog-free" },
+    { "original": "sicstus_prolog-free", "description_from": "cbc-free" }
+  ]
+}

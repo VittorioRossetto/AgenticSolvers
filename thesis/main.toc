@@ -62,5 +62,8 @@
 \contentsline {paragraph}{Variable statistics}{46}{section*.34}%
 \contentsline {section}{\numberline {4.4}Testing and Results}{46}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Performance with GPT-5.2}{47}{subsection.4.4.1}%
-\contentsline {chapter}{Appendix}{49}{chapter*.37}%
-\contentsline {chapter}{Bibliography}{67}{chapter*.66}%
+\contentsline {chapter}{\numberline {5}LLM Reasoning Analysis}{49}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Solvers Understanding}{49}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Swapped Solvers Requests}{49}{subsection.5.1.1}%
+\contentsline {chapter}{Appendix}{53}{chapter*.39}%
+\contentsline {chapter}{Bibliography}{71}{chapter*.72}%

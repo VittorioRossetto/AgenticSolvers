@@ -19,7 +19,7 @@
     "pumpkin-free": "This is a free solver from the MiniZinc ecosystem that blends constraint and logic programming, supports expressive modeling, and integrates cleanly with MiniZinc workflows.",
     "scip-free": "This is a free configuration of a Java-based constraint programming toolkit that exploits multi-threaded search, improving runtimes on hard combinatorial problems while retaining a flexible modeling interface.",
     "sicstus_prolog-free": "This is a mode that integrates constraint programming with SAT-style reasoning to handle complex and hybrid combinatorial models more efficiently in a free configuration.",
-    "yuck-free": "This is a free solver implementing CP-SAT, combining SAT learning with MILP-style reasoning to efficiently solve large-scale scheduling and routing models."
+    "yuck-free": "This is a free solver implementing CP-SAT, with local-search and metaheuristic enhancements, combining SAT learning with MILP-style reasoning to efficiently solve large-scale scheduling and routing models."
   },
   "swaps": [
     { "original": "atlantis-free", "description_from": "or-tools_cp-sat-free" },
@@ -41,6 +41,6 @@
     { "original": "pumpkin-free", "description_from": "izplus-free" },
     { "original": "scip-free", "description_from": "choco-solver__cp_-par" },
     { "original": "sicstus_prolog-free", "description_from": "choco-solver__cp-sat_-free" },
-    { "original": "yuck-free", "description_from": "or-tools_cp-sat-free" }
+    { "original": "yuck-free", "description_from": "or-tools_cp-sat_ls-free" }
   ]
 }

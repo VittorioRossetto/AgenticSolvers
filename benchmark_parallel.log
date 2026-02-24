@@ -8397,3 +8397,803 @@ Traceback (most recent call last):
   File "/home/vro5/Coding/AgenticSolvers/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1044, in request
     raise self._make_status_error_from_response(err.response) from None
 groq.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01k6tdj201exjra3mspenq6dxe` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 198062, Requested 2129. Please try again in 1m22.512s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+2026-02-24 13:14:00,985 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=atsp instance=instance14_0p25 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,987 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=atsp instance=instance11_0p25 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,987 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=atsp instance=instance1_0p05 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,988 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=atsp instance=instance4_0p15 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,988 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=atsp instance=instance20_0p35 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,988 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=black-hole instance=layout_14 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,989 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=black-hole instance=layout_27 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,989 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=black-hole instance=layout_17 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,989 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=black-hole instance=layout_25 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,990 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=black-hole instance=layout_3 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,990 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=carpet-cutting instance=cc_rnd_8_1 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,990 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=carpet-cutting instance=cc_rnd_12_3 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,991 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=carpet-cutting instance=cc_rnd_16_1 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,991 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=carpet-cutting instance=cc_rnd_4_4 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,991 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=carpet-cutting instance=cc_rnd_8_2 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,991 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=cgt instance=cgt_5_h27_r0.05_s0.8_0 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,992 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=cgt instance=cgt_3_h39_r0.05_s1_3 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,992 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=cgt instance=cgt_12_h27_r0.05_s0.5_3 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,992 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=cgt instance=cgt_8_h16_r0.05_s0.5_3 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,993 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=cgt instance=cgt_3_h39_r0.05_s0.5_0 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,993 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=EchoSched instance=15-15-0-1_3 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,993 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=EchoSched instance=12-12-0-1_7 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,994 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=EchoSched instance=13-14-0-2_6 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,994 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=EchoSched instance=14-10-0-2_1 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,994 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=EchoSched instance=14-10-0-2_3 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,995 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=fbd1 instance=FBDk04 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,995 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=fbd1 instance=FBDk06 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,995 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=fbd1 instance=FBDk08 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,995 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=fbd1 instance=FBDk07 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,996 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=fbd1 instance=FBDk09 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,996 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=groupsplitter instance=u12g2pref0 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,997 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=groupsplitter instance=u12g2pref2 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,997 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=groupsplitter instance=u15g5pref1 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,998 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=groupsplitter instance=u15g1pref2 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,998 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=groupsplitter instance=u15g3pref0 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,998 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=gt-sort instance=n9_ub10_50.0_BEST error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,999 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=gt-sort instance=n13_ub20_50.0_BEST error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:00,999 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=gt-sort instance=n7_ub20_75.0_BEST error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,000 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=gt-sort instance=n9_ub10_75.0_BEST error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,000 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=gt-sort instance=n9_ub30_35.0_BEST error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,000 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=hitori instance=h11-1 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,001 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=hitori instance=h5-1 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,001 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=hitori instance=h15-1 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,001 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=hitori instance=h20-2 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,002 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=hitori instance=h14-1 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,002 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=ihtc-2024-kletzander instance=test05 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,002 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=ihtc-2024-kletzander instance=test03 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,003 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=ihtc-2024-kletzander instance=i09 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,003 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=ihtc-2024-kletzander instance=i02 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,003 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=ihtc-2024-kletzander instance=i07 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,004 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=ihtc-2024-marte instance=i14 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,004 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=ihtc-2024-marte instance=i06 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,005 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=ihtc-2024-marte instance=i01 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,005 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=ihtc-2024-marte instance=i11 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,006 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=ihtc-2024-marte instance=i03 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,006 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=is instance=BnMUR3YMRk error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,007 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=is instance=avdoaYnfXq error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,007 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=is instance=1vERFuvviS error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,008 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=is instance=9aGFgDaHX7 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,008 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=is instance=vWQp9idqMs error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,009 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=mondoku instance=12-12-8 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,009 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=mondoku instance=20-18-9 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,010 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=mondoku instance=14-14-8 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,010 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=mondoku instance=8-8-4 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,011 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=mondoku instance=10-10-6 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,011 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=products-and-shelves instance=ps-25-03 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,011 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=products-and-shelves instance=ps-25-01 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,012 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=products-and-shelves instance=ps-50-06 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,012 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=products-and-shelves instance=ps-50-09 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,013 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=products-and-shelves instance=toy error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,013 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=proteindesign12 instance=1HZ5.12p.19aa.usingEref_self error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,014 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=proteindesign12 instance=2TRX.11p.8aa.usingEref_self_x error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,014 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=proteindesign12 instance=1UBI.13p.9aa.usingEref_self_x error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,015 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=proteindesign12 instance=1UBI.13p.19aa.usingEref_self error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,015 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=proteindesign12 instance=1HZ5.12p.9aa.usingEref_self error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,015 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=skill-allocation instance=skill_allocation_mzn_3m_3 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,016 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=skill-allocation instance=skill_allocation_mzn_2w_2 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,016 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=skill-allocation instance=skill_allocation_mzn_5d_1 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,017 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=skill-allocation instance=skill_allocation_mzn_2m_2 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,017 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=skill-allocation instance=skill_allocation_mzn_1m_2 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,018 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=stripboard instance=stripboard_w20_h15_l12_c6_n12 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,018 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=stripboard instance=stripboard_w15_h10_l12_c6_n12 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,019 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=stripboard instance=stripboard_w20_h15_l7_c6_n24 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,019 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=stripboard instance=stripboard_w10_h10_l12_c4_n24 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,020 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=stripboard instance=stripboard_w20_h15_l4_c4_n24 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,020 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=tower instance=tower_070_070_30_100-02 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,021 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=tower instance=tower_070_070_15_070-08 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,021 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=tower instance=tower_070_070_15_070-02 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,022 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=tower instance=tower_500_500_50_300-05 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,022 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=tower instance=tower_050_050_10_050-03 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,023 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=tsptw instance=n20w140.005 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,023 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=tsptw instance=n20w180.004 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,024 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=tsptw instance=n100w120.003 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,024 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=tsptw instance=n80w180.003 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,025 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=tsptw instance=n20w160.001 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,025 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=work-task-variation instance=generated-seed-10-length-12-open-10-workers-12-block-5 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,026 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=work-task-variation instance=generated-seed-1-length-16-open-14-workers-12-block-15 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,026 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=work-task-variation instance=generated-seed-4-length-14-open-12-workers-12-block-15 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,027 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=work-task-variation instance=generated-seed-8-length-12-open-10-workers-10-block-15 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq
+2026-02-24 13:14:01,028 ERROR Error during query: provider=groq model=openai/gpt-oss-120b problem=work-task-variation instance=generated-seed-3-length-10-open-8-workers-12-block-15 error=Groq client library not installed. Install it with: pip install groq
+Traceback (most recent call last):
+  File "/home/vro5/Coding/AgenticSolvers/test/benchmark_parallel.py", line 559, in run_single_query
+    response = query_func(prompt, model_name=model_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vro5/Coding/AgenticSolvers/utils.py", line 165, in query_groq
+    raise RuntimeError("Groq client library not installed. Install it with: pip install groq")
+RuntimeError: Groq client library not installed. Install it with: pip install groq

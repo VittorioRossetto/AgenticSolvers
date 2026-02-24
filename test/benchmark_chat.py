@@ -433,7 +433,15 @@ def process_model_chat(provider, model_id, model_label, query_func, args):
         logger.exception(f"Failed to load grok_models.json for model {model_id}: {e}")
 
     # always build the solver NAMES list to include in system messages
-    solver_list = get_solver_list(args.solver_set if hasattr(args, 'solver_set') else 'free')
+    # If nameless requested, load the anonymized solver keys from the provided JSON
+    if getattr(args, 'nameless', False):
+        nameless = load_nameless_solvers(getattr(args, 'nameless_file', None))
+        if nameless:
+            solver_list = nameless
+        else:
+            solver_list = get_solver_list(args.solver_set if hasattr(args, 'solver_set') else 'free')
+    else:
+        solver_list = get_solver_list(args.solver_set if hasattr(args, 'solver_set') else 'free')
     solver_list_text = get_solver_prompt(solver_list, name_only=True, with_reasoning=getattr(args, 'with_reasoning', False))
 
     # build solver description text only if requested (this is the verbose descriptions map)
@@ -702,6 +710,10 @@ def main(argv=None):
                         help='Path to JSON file with solver descriptions (default: test/data/freeSolversDescription.json)')
     parser.add_argument('--include-solver-desc', action='store_true',
                         help='Include the solver descriptions system message at the start of each chat (default: False)')
+    parser.add_argument('--nameless', action='store_true', default=False,
+                        help='Use the solver list from test/data/namelessSolvers.json (anonymized keys).')
+    parser.add_argument('--nameless-file', default=os.path.join(repo_root, 'test', 'data', 'namelessSolvers.json'),
+                        help='Path to namelessSolvers.json (used with --nameless).')
     parser.add_argument('--include-features', action='store_true',
                         help='Include instance features with each instance (default: False)')
     parser.add_argument('--mzn2feat-file', default='test/data/mzn2feat_all_features.json',
@@ -723,6 +735,10 @@ def main(argv=None):
     # Backwards compatibility: allow --significative-only as an alias for --solver-set significative.
     if getattr(args, 'significative_only', False):
         args.solver_set = 'significative'
+
+    # If nameless requested, reflect it in solver_set so output filenames include it
+    if getattr(args, 'nameless', False):
+        args.solver_set = 'nameless'
 
     # guardrail: fzn mode is mutually exclusive with feature/model packing modes
     if getattr(args, 'use_fzn_parser_outputs', False) and (

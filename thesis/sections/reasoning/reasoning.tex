@@ -1,0 +1,69 @@
+\documentclass[../../main]{subfiles}
+\begin{document}
+Through all the experiments conducted until now, we had proven clear limitations on the use of all purpose LLMs for the sake of solver selection, even though some positive results were reached, the improvement remains negligible, especially given the non-deterministic nature behind LLM answers. Especially when the LLMs are challenged with a restricted solver-set (\Cref{sec:selectedSolvers}).
+Given all that, the objective of this chapter is to give a clearer image of how much the LLM is actually understanding the problems described in the prompt and how much it understands of the solvers given as options.
+
+\section{Solvers Understanding}
+The idea behind the following experiments, was to properly understand if the LLM actually considers the solver description, or if it blindly follows its previous knowledge based solely on the name.  
+
+The utility of this experiments is to prove wether the LLM could work wit new solvers, without automatically privilege the old ones, or if it would privilege largely documented solvers, mainly industrial solvers over small open-source ones.
+
+\subsection{Swapped Solvers Requests}
+
+The first experiment in this sense was to give the LLM the solver list with descriptions swapped, to see wether the LLM answers would be any different, or if the descriptions are ignored in favor of its prior knowledge.
+
+To do this experiment, clearly we are using variants with solver description integrated, in particular we decided for five out of the best performing variants, namely:
+\begin{enumerate}
+    \item \texttt{fzn2nl} output combined with swapped solver descriptions, sampling temperature 0.7.
+    \item \texttt{fzn2nl} output combined with swapped solver descriptions, sampling temperature 0.2.
+    \item \texttt{mzn2feat} output combined with swapped solver descriptions, sampling temperature 0.7.
+    \item \texttt{mzn2feat} output combined with swapped solver descriptions, sampling temperature 0.3.
+    \item Original sanitized scripts combined with problem description and swapped solver descriptions, default sampling temperature.
+\end{enumerate}
+
+For a proper understanding, this was first tested swapping between all of the solvers from free category. 
+All the results are displayed in \Cref{tab:CombinedSwapped}, to calculate the score, we first reconducted the each of the suggested solvers to the one from which the description is taken.
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{lllll}
+        \hline
+            Variant & Temperature & Single Score & Parallel Score & Closed Gap \\ \hline
+            fzn2nl + Solver Description & 0.7 & 60.509869 & 81.068252 & -1.367150 \\ 
+            fzn2nl + Solver Description & 0.2 & 58.827415 & 80.534470 & -1.506940 \\ 
+            Features + Solvers Description & 0.7 & 50.797299 & 77.640982 & -2.174135 \\ 
+            Features + Solvers Description & 0.3 & 47.712594 & 73.080124 & -2.430433 \\ 
+            Scripts + Problem Description + Solvers Description & default & 46.154496 & 70.744078 & -2.559890 \\ \hline
+        \end{tabular}
+    }
+    \caption{Analysis over configurations involving swapped solvers descriptions, evaluated with \texttt{gpt-oss-120b}. Columns are computed as in \Cref{tab:combinedAllLLM}, after reconducting each suggested solver, to the one from which the description was from.}
+    \label{tab:CombinedSwapped}
+\end{table}
+
+As displayed in \Cref{tab:CombinedSwapped}, the performance is especially low when using an input of structured features and even worse when using raw scripts, and within those variants, consistently better results with higher temperatures. Displaying what could be interpreted as a lack of proper reasoning over description when the LLM is presented with problem representations more distant from natural language. 
+
+Still, within those results, even for the best performing variants, the scoring, and especially a deeper analysis on solver suggestions display a clear lack of understanding from the solver descriptions, showing consistent choices for \texttt{or-tools\_cp-sat-free} as the top model, in all of the variants, even though its description was taken from \texttt{atlantis-free}, a way worse performing solver. The suggestions counts are shown in \Cref{tab:swappedCount1}, \Cref{tab:swappedCount2}, \Cref{tab:swappedCount3}, \Cref{tab:swappedCount4} and \Cref{tab:swappedCount5}, each for one of the configurations.
+
+\begin{table}[ht]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{llll}
+        \hline
+            Suggested Solver & Original Solver & Top1 Count & Total Count \\ \hline
+            or-tools\_cp-sat-free & atlantis-free & 62 & 98 \\ 
+            atlantis-free & cplex-free & 32 & 53 \\ 
+            chuffed-free & highs-free & 6 & 49 \\ 
+            highs-free & or-tools\_cp-sat\_ls-free & 0 & 68 \\ 
+            yuck-free & choco-solver\_\_cp\_-par & 0 & 31 \\ 
+            choco-solver\_\_cp\_-par & scip-free & 0 & 1 \\ \hline
+        \end{tabular}
+    }
+    \caption{Analysis over the solver suggestions from \texttt{gpt-oss-120b}, using the configuration~1. ``Suggested Solver'' shows the solver suggested in LLM output, ``Original Solver'' shows the solver from which the description was taken, ``Top1 Count'' shows the number of times the given solver was suggested as the best one in each of the problems and ``Total Count'' shows the number of appearances of the given solver as one of best 3 suggested ones.}
+    \label{tab:swappedCount1}
+\end{table}
+
+Analyzing the suggestions, especially for second and third best, it's displayed some understanding of the solvers, once the LLM goes over ``defaulting'' to \texttt{or-tools\_cp-sat-free} for the best suggestion, showing the possibility of a better understanding, once the eliminate the source of the blind defaulting problem, leading to tests with the same restricted solver set used in \Cref{sec:selectedSolvers}. 
+
+
+\end{document}

@@ -71,6 +71,10 @@ parser.add_argument('--include-solver-desc', action='store_true', default=False,
                     help='If set, include solver descriptions (from a JSON map) in the prompt in addition to solver names.')
 parser.add_argument('--solver-desc-file', type=str, default=None,
                     help='Optional path to JSON file with solver descriptions. Defaults to test/data/freeSolversDescription.json')
+parser.add_argument('--nameless', action='store_true', default=False,
+                    help='Use the solver list from test/data/namelessSolvers.json (anonymized keys).')
+parser.add_argument('--nameless-file', type=str, default=os.path.join(repo_root, 'test', 'data', 'namelessSolvers.json'),
+                    help='Path to namelessSolvers.json (used with --nameless).')
 parser.add_argument('--with-reasoning', action='store_true', default=False,
                     help='If set, ask the model for a bracketed top-3 list followed by a short explanation, and store it in the output JSON.')
 parser.add_argument('--dump-prompts', type=str, default=None,
@@ -83,6 +87,10 @@ args = parser.parse_args()
 # Backwards compatibility: allow --significative-only as an alias for --solver-set significative.
 if getattr(args, 'significative_only', False):
     args.solver_set = 'significative'
+
+# If nameless requested, mark solver_set to reflect it so output filenames include it
+if getattr(args, 'nameless', False):
+    args.solver_set = 'nameless'
 
 # --- Solver set selection ---
 if args.solver_set == 'significative':
@@ -102,6 +110,15 @@ elif args.solver_set == 'swapped':
 else:
     solver_list = MINIZINC_SOLVERS
     print("Using MINIZINC_SOLVERS set.")
+
+# If the nameless option was selected, override solver_list with the keys from the nameless file
+if getattr(args, 'nameless', False):
+    nameless = load_nameless_solvers(getattr(args, 'nameless_file', None))
+    if nameless:
+        solver_list = nameless
+        print(f"Using nameless solver list ({len(nameless)} entries) from {args.nameless_file}.")
+    else:
+        print(f"Warning: --nameless requested but {args.nameless_file} could not be loaded; falling back to {args.solver_set} set.")
 
 print(f"Script version: {args.script_version}")
 print(f"Parallel model workers: {args.max_workers_models}")
@@ -153,7 +170,7 @@ def build_solver_description_text(solver_list, solver_desc_map=None) -> str:
 
 if args.include_solver_desc:
     if getattr(args, 'solver_set', '') == 'swapped':
-        sw_path = os.path.join(repo_root, 'test', 'data', 'swappedFreeSolversDesc.json')
+        sw_path = os.path.join(repo_root, 'test', 'data', 'swappedSigSolvers.json')
         try:
             with open(sw_path, 'r') as sf:
                 sw = json.load(sf)

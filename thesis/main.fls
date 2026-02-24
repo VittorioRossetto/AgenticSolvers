@@ -426,6 +426,10 @@ INPUT ./images/fznExample.png
 INPUT images/fznExample.png
 INPUT ./images/fznExample.png
 INPUT ./images/fznExample.png
+INPUT ./sections/reasoning/reasoning.tex
+INPUT sections/reasoning/reasoning.tex
+INPUT ./sections/reasoning/reasoning.tex
+INPUT sections/reasoning/reasoning.tex
 INPUT ./sections/appendix/appendix.tex
 INPUT sections/appendix/appendix.tex
 INPUT ./sections/appendix/appendix.tex
