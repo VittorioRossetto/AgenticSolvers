@@ -112,13 +112,26 @@ def load_solver_descriptions(path=None):
     if path and os.path.exists(path):
         try:
             with open(path, 'r') as f:
-                return json.load(f)
+                data = json.load(f)
+            # If the file uses the nameless format, extract the nested 'solvers' map.
+            if isinstance(data, dict):
+                if 'solvers' in data and isinstance(data['solvers'], dict):
+                    return data['solvers']
+                if 'mapping' in data and isinstance(data['mapping'], dict):
+                    return data['mapping']
+                return data
         except Exception:
             pass
     if os.path.exists(alt):
         try:
             with open(alt, 'r') as f:
-                return json.load(f)
+                data = json.load(f)
+            if isinstance(data, dict):
+                if 'solvers' in data and isinstance(data['solvers'], dict):
+                    return data['solvers']
+                if 'mapping' in data and isinstance(data['mapping'], dict):
+                    return data['mapping']
+                return data
         except Exception:
             pass
     return None
@@ -444,12 +457,14 @@ def process_model_chat(provider, model_id, model_label, query_func, args):
         solver_list = get_solver_list(args.solver_set if hasattr(args, 'solver_set') else 'free')
     solver_list_text = get_solver_prompt(solver_list, name_only=True, with_reasoning=getattr(args, 'with_reasoning', False))
 
-    # build solver description text only if requested (this is the verbose descriptions map)
-    if getattr(args, 'features_only', False):
-        # when sending only features, do not include the verbose solver description
+    # build solver description text: include when requested or when using nameless
+    include_desc_flag = getattr(args, 'include_solver_desc', False) or getattr(args, 'nameless', False)
+    # when sending only features, keep descriptions out unless the user explicitly
+    # requested nameless descriptions (we allow descriptions for nameless mode)
+    if getattr(args, 'features_only', False) and not getattr(args, 'nameless', False):
         solver_desc_text = ''
     else:
-            if getattr(args, 'include_solver_desc', False):
+            if include_desc_flag:
                 # If the special 'swapped' solver set is selected, load the mapping
                 # from test/data/swappedFreeSolversDesc.json (it contains a top-level
                 # "mapping" dict). Otherwise fall back to the usual loader.
@@ -463,7 +478,18 @@ def process_model_chat(provider, model_id, model_label, query_func, args):
                         logger.exception(f"Failed to load swapped solver descriptions from {sw_path}")
                         solver_desc_map = {}
                 else:
-                    solver_desc_map = load_solver_descriptions(args.solver_desc_file if hasattr(args, 'solver_desc_file') else None)
+                    # Prefer an explicit solver descriptions file. When running in
+                    # nameless mode, allow the provided nameless JSON to be used
+                    # as the descriptions source so anonymized descriptions are
+                    # loaded instead of the default path.
+                    desc_path = None
+                    # If nameless mode is active and a nameless_file was provided,
+                    # try it first as it contains the `solvers` mapping we want.
+                    if getattr(args, 'nameless', False) and getattr(args, 'nameless_file', None):
+                        desc_path = getattr(args, 'nameless_file')
+                    else:
+                        desc_path = args.solver_desc_file if hasattr(args, 'solver_desc_file') else None
+                    solver_desc_map = load_solver_descriptions(desc_path)
                 solver_desc_text = build_solver_description_text(solver_list, solver_desc_map)
             else:
                 solver_desc_text = ''

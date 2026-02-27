@@ -150,7 +150,15 @@ def load_solver_descriptions(path=None):
             try:
                 with open(candidate, 'r') as f:
                     data = json.load(f)
-                return data if isinstance(data, dict) else None
+                # Support both flat mapping files and the nameless format which
+                # nests descriptions under a top-level "solvers" key.
+                if isinstance(data, dict):
+                    if 'solvers' in data and isinstance(data['solvers'], dict):
+                        return data['solvers']
+                    if 'mapping' in data and isinstance(data['mapping'], dict):
+                        return data['mapping']
+                    return data
+                return None
             except Exception:
                 logger.exception(f"Failed to load solver descriptions from {candidate}")
                 return None
@@ -168,7 +176,7 @@ def build_solver_description_text(solver_list, solver_desc_map=None) -> str:
     return "Solvers and descriptions:\n" + "\n".join(lines) + "\n"
 
 
-if args.include_solver_desc:
+if getattr(args, 'include_solver_desc', False) or getattr(args, 'nameless', False):
     if getattr(args, 'solver_set', '') == 'swapped':
         sw_path = os.path.join(repo_root, 'test', 'data', 'swappedSigSolvers.json')
         try:
@@ -180,6 +188,8 @@ if args.include_solver_desc:
             SOLVER_DESC_MAP = None
     else:
         SOLVER_DESC_MAP = load_solver_descriptions(args.solver_desc_file)
+else:
+    SOLVER_DESC_MAP = None
 else:
     SOLVER_DESC_MAP = None
 

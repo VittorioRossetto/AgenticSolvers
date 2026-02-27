@@ -35,6 +35,8 @@
 
 \usepackage{csquotes}
 \usepackage{tcolorbox}
+% enable additional tcolorbox libraries (required for `enhanced`/skins and breakable boxes)
+\tcbuselibrary{skins,breakable}
 \usepackage{booktabs} 
 \usepackage{booktabs}
 \usepackage{array} % for p{} column type
@@ -99,6 +101,26 @@
     title={#1},
     coltitle=white,
     colbacktitle=gray
+}
+
+% A variant of `definition` used for LLM reasoning boxes: different color
+% and allow page breaks so the box can be split across pages when needed.
+\newtcolorbox{floatingdefinition}[1]{
+    enhanced,
+    breakable,
+    colback=blue!5,
+    colframe=blue!30!black,
+    boxrule=0.8pt,
+    arc=2mm,
+    left=6pt,
+    right=6pt,
+    top=6pt,
+    bottom=6pt,
+    before skip=6pt,
+    after skip=6pt,
+    title={#1},
+    coltitle=white,
+    colbacktitle=blue!30!black
 }
 
 
@@ -270,6 +292,8 @@ or nothing at all \ldots
 \bibitem{GDPval} T. Patwardhan et al., ``GDPval: Evaluating AI Model Performance on Real-World Economically Valuable Tasks'', arXiv (Cornell University), Oct. 2025, doi: https://doi.org/10.48550/arxiv.2510.04374.
 \bibitem{chatGPT} OpenAI, ``ChatGPT'', ChatGPT, 2025. https://chatgpt.com/
 \bibitem{gpt52Limits} ``GPT-5.2 in ChatGPT  OpenAI Help Center,'' OpenAI Help Center, 2026. https://help.openai.com/en/articles/11909943-gpt-52-in-chatgpt\#h\_1fadb43e65 (accessed Feb. 11, 2026).
+\bibitem{LLMapprehension} P. Sychev, A. Goncharov, D. Vyazhev, E. Khalafyan, and A. Zaytsev, ``When an LLM is apprehensive about its answers -- and when its uncertainty is justified'', arXiv (Cornell University), Mar. 2025, doi: https://doi.org/10.48550/arxiv.2503.01688.
+\bibitem{IBM} ibm, ``IBM - United Kingdom'', Ibm.com, Apr. 26, 2019. https://www.ibm.com/
 \end{thebibliography}
 
 \clearpage{\pagestyle{empty}\cleardoublepage}

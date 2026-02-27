@@ -1,0 +1,846 @@
+{
+  "groq": {
+    "openai/gpt-oss-120b": {
+      "atsp": {
+        "instance14_0p25": {
+          "top3": [
+            "c",
+            "d",
+            "g"
+          ],
+          "time_seconds": 1.335
+        },
+        "instance11_0p25": {
+          "top3": [
+            "Chuffed",
+            "OR-Tools",
+            "Gecode"
+          ],
+          "time_seconds": 1.114
+        },
+        "instance1_0p05": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 0.818
+        },
+        "instance4_0p15": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 1.229
+        },
+        "instance20_0p35": {
+          "top3": [
+            "a",
+            "b",
+            "h"
+          ],
+          "time_seconds": 7.483
+        }
+      },
+      "black-hole": {
+        "layout_14": {
+          "top3": [
+            "Chuffed",
+            "OR-Tools",
+            "Gecode"
+          ],
+          "time_seconds": 0.913
+        },
+        "layout_27": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR-Tools"
+          ],
+          "time_seconds": 2.969
+        },
+        "layout_17": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR\u2011Tools"
+          ],
+          "time_seconds": 5.834
+        },
+        "layout_25": {
+          "top3": [
+            "c",
+            "g",
+            "o"
+          ],
+          "time_seconds": 5.947
+        },
+        "layout_3": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR\u2011Tools"
+          ],
+          "time_seconds": 4.911
+        }
+      },
+      "carpet-cutting": {
+        "cc_rnd_8_1": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 25.09
+        },
+        "cc_rnd_12_3": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 24.8
+        },
+        "cc_rnd_16_1": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 9.377
+        },
+        "cc_rnd_4_4": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR-Tools"
+          ],
+          "time_seconds": 24.096
+        },
+        "cc_rnd_8_2": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 9.419
+        }
+      },
+      "cgt": {
+        "cgt_5_h27_r0.05_s0.8_0": {
+          "top3": [
+            "b",
+            "a",
+            "e"
+          ],
+          "time_seconds": 0.925
+        },
+        "cgt_3_h39_r0.05_s1_3": {
+          "top3": [
+            "a",
+            "b",
+            "g"
+          ],
+          "time_seconds": 5.016
+        },
+        "cgt_12_h27_r0.05_s0.5_3": {
+          "top3": [
+            "Chuffed",
+            "OR-Tools",
+            "Gecode"
+          ],
+          "time_seconds": 4.813
+        },
+        "cgt_8_h16_r0.05_s0.5_3": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR-Tools"
+          ],
+          "time_seconds": 6.966
+        },
+        "cgt_3_h39_r0.05_s0.5_0": {
+          "top3": [
+            "chuffed",
+            "ortools",
+            "gecode"
+          ],
+          "time_seconds": 3.786
+        }
+      },
+      "EchoSched": {
+        "15-15-0-1_3": {
+          "top3": [
+            "Chuffed",
+            "OR-Tools CP\u2011SAT",
+            "Gecode"
+          ],
+          "time_seconds": 5.034
+        },
+        "12-12-0-1_7": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 9.614
+        },
+        "13-14-0-2_6": {
+          "top3": [
+            "Chuffed",
+            "OR\u2011Tools",
+            "Gecode"
+          ],
+          "time_seconds": 9.115
+        },
+        "14-10-0-2_1": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 9.217
+        },
+        "14-10-0-2_3": {
+          "top3": [
+            "chuffed",
+            "ortools",
+            "gecode"
+          ],
+          "time_seconds": 8.808
+        }
+      },
+      "fbd1": {
+        "FBDk04": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 4.298
+        },
+        "FBDk06": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 6.863
+        },
+        "FBDk08": {
+          "top3": [
+            "b",
+            "a",
+            "c"
+          ],
+          "time_seconds": 6.961
+        },
+        "FBDk07": {
+          "top3": [
+            "c",
+            "e",
+            "k"
+          ],
+          "time_seconds": 6.247
+        },
+        "FBDk09": {
+          "top3": [
+            "Chuffed",
+            "OR-Tools CP\u2011SAT",
+            "Gecode"
+          ],
+          "time_seconds": 7.268
+        }
+      },
+      "groupsplitter": {
+        "u12g2pref0": {
+          "top3": [
+            "Chuffed",
+            "OR-Tools",
+            "Gecode"
+          ],
+          "time_seconds": 24.476
+        },
+        "u12g2pref2": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR\u2011Tools\u202fCP\u2011SAT"
+          ],
+          "time_seconds": 22.961
+        },
+        "u15g5pref1": {
+          "top3": [
+            "Chuffed",
+            "OR\u2011Tools\u202fCP\u2011SAT",
+            "Gecode"
+          ],
+          "time_seconds": 10.924
+        },
+        "u15g1pref2": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 23.142
+        },
+        "u15g3pref0": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 12.185
+        }
+      },
+      "gt-sort": {
+        "n9_ub10_50.0_BEST": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 1.64
+        },
+        "n13_ub20_50.0_BEST": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OptiMathSAT"
+          ],
+          "time_seconds": 8.602
+        },
+        "n7_ub20_75.0_BEST": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 7.78
+        },
+        "n9_ub10_75.0_BEST": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR-Tools"
+          ],
+          "time_seconds": 6.047
+        },
+        "n9_ub30_35.0_BEST": {
+          "top3": [
+            "a",
+            "b",
+            "d"
+          ],
+          "time_seconds": 6.472
+        }
+      },
+      "hitori": {
+        "h11-1": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 13.485
+        },
+        "h5-1": {
+          "top3": [
+            "Chuffed",
+            "OR-Tools",
+            "Gecode"
+          ],
+          "time_seconds": 14.059
+        },
+        "h15-1": {
+          "top3": [
+            "b",
+            "a",
+            "c"
+          ],
+          "time_seconds": 6.161
+        },
+        "h20-2": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 6.009
+        },
+        "h14-1": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 6.443
+        }
+      },
+      "ihtc-2024-kletzander": {
+        "test05": {
+          "top3": [
+            "a",
+            "b",
+            "d"
+          ],
+          "time_seconds": 11.266
+        },
+        "test03": {
+          "top3": [
+            "a",
+            "b",
+            "d"
+          ],
+          "time_seconds": 17.819
+        },
+        "i09": {
+          "top3": [
+            "b",
+            "c",
+            "a"
+          ],
+          "time_seconds": 11.779
+        },
+        "i02": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 18.118
+        },
+        "i07": {
+          "top3": [
+            "b",
+            "c",
+            "g"
+          ],
+          "time_seconds": 13.127
+        }
+      },
+      "ihtc-2024-marte": {
+        "i14": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 40.464
+        },
+        "i06": {
+          "top3": [
+            "Chuffed",
+            "OR-Tools CP\u2011SAT",
+            "Gecode"
+          ],
+          "time_seconds": 47.192
+        },
+        "i01": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 45.868
+        },
+        "i11": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 8.232
+        },
+        "i03": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 9.178
+        }
+      },
+      "is": {
+        "BnMUR3YMRk": {
+          "top3": [
+            "chuffed",
+            "gecode",
+            "ortools"
+          ],
+          "time_seconds": 0.928
+        },
+        "avdoaYnfXq": {
+          "top3": [
+            "chuffed",
+            "ortools",
+            "gecode"
+          ],
+          "time_seconds": 34.092
+        },
+        "1vERFuvviS": {
+          "top3": [
+            "a",
+            "c",
+            "b"
+          ],
+          "time_seconds": 13.599
+        },
+        "9aGFgDaHX7": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 13.401
+        },
+        "vWQp9idqMs": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 16.02
+        }
+      },
+      "mondoku": {
+        "12-12-8": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 7.189
+        },
+        "20-18-9": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR-Tools"
+          ],
+          "time_seconds": 7.192
+        },
+        "14-14-8": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR-Tools"
+          ],
+          "time_seconds": 6.75
+        },
+        "8-8-4": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR-Tools"
+          ],
+          "time_seconds": 5.112
+        },
+        "10-10-6": {
+          "top3": [
+            "Chuffed",
+            "OR-Tools",
+            "Gecode"
+          ],
+          "time_seconds": 5.495
+        }
+      },
+      "products-and-shelves": {
+        "ps-25-03": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 9.985
+        },
+        "ps-25-01": {
+          "top3": [
+            "Chuffed",
+            "OR-Tools CP\u2011SAT",
+            "Gecode"
+          ],
+          "time_seconds": 11.278
+        },
+        "ps-50-06": {
+          "top3": [
+            "chuffed",
+            "ortools",
+            "gecode"
+          ],
+          "time_seconds": 5.979
+        },
+        "ps-50-09": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 11.105
+        },
+        "toy": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR\u2011Tools"
+          ],
+          "time_seconds": 5.609
+        }
+      },
+      "proteindesign12": {
+        "1HZ5.12p.19aa.usingEref_self": {
+          "top3": [
+            "t",
+            "b",
+            "a"
+          ],
+          "time_seconds": 9.072
+        },
+        "2TRX.11p.8aa.usingEref_self_x": {
+          "top3": [
+            "b",
+            "c",
+            "d"
+          ],
+          "time_seconds": 14.588
+        },
+        "1UBI.13p.9aa.usingEref_self_x": {
+          "top3": [
+            "t",
+            "s",
+            "r"
+          ],
+          "time_seconds": 14.459
+        },
+        "1UBI.13p.19aa.usingEref_self": {
+          "top3": [
+            "Gecode",
+            "Choco",
+            "OR-Tools"
+          ],
+          "time_seconds": 10.799
+        },
+        "1HZ5.12p.9aa.usingEref_self": {
+          "top3": [
+            "a",
+            "b",
+            "e"
+          ],
+          "time_seconds": 10.205
+        }
+      },
+      "skill-allocation": {
+        "skill_allocation_mzn_3m_3": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 8.046
+        },
+        "skill_allocation_mzn_2w_2": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR-Tools"
+          ],
+          "time_seconds": 11.757
+        },
+        "skill_allocation_mzn_5d_1": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 12.04
+        },
+        "skill_allocation_mzn_2m_2": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 7.301
+        },
+        "skill_allocation_mzn_1m_2": {
+          "top3": [
+            "b",
+            "a",
+            "c"
+          ],
+          "time_seconds": 8.655
+        }
+      },
+      "stripboard": {
+        "stripboard_w20_h15_l12_c6_n12": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 15.277
+        },
+        "stripboard_w15_h10_l12_c6_n12": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 20.311
+        },
+        "stripboard_w20_h15_l7_c6_n24": {
+          "top3": [
+            "b",
+            "c",
+            "a"
+          ],
+          "time_seconds": 10.277
+        },
+        "stripboard_w10_h10_l12_c4_n24": {
+          "top3": [
+            "b",
+            "a",
+            "c"
+          ],
+          "time_seconds": 18.125
+        },
+        "stripboard_w20_h15_l4_c4_n24": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 9.331
+        }
+      },
+      "tower": {
+        "tower_070_070_30_100-02": {
+          "top3": [
+            "Chuffed",
+            "OR\u2011Tools\u202fCP\u2011SAT",
+            "Gecode"
+          ],
+          "time_seconds": 4.96
+        },
+        "tower_070_070_15_070-08": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 12.923
+        },
+        "tower_070_070_15_070-02": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 12.678
+        },
+        "tower_500_500_50_300-05": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 11.981
+        },
+        "tower_050_050_10_050-03": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 7.082
+        }
+      },
+      "tsptw": {
+        "n20w140.005": {
+          "top3": [
+            "Chuffed",
+            "OR\u2011Tools",
+            "CP Optimizer"
+          ],
+          "time_seconds": 3.608
+        },
+        "n20w180.004": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 8.224
+        },
+        "n100w120.003": {
+          "top3": [
+            "a",
+            "b",
+            "i"
+          ],
+          "time_seconds": 8.222
+        },
+        "n80w180.003": {
+          "top3": [
+            "Chuffed",
+            "Gecode",
+            "OR\u2011Tools"
+          ],
+          "time_seconds": 7.765
+        },
+        "n20w160.001": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 5.852
+        }
+      },
+      "work-task-variation": {
+        "generated-seed-10-length-12-open-10-workers-12-block-5": {
+          "top3": [
+            "Chuffed",
+            "OR-Tools",
+            "Gecode"
+          ],
+          "time_seconds": 10.855
+        },
+        "generated-seed-1-length-16-open-14-workers-12-block-15": {
+          "top3": [
+            "Chuffed",
+            "OR\u2011Tools CP\u2011SAT",
+            "CP Optimizer"
+          ],
+          "time_seconds": 12.496
+        },
+        "generated-seed-4-length-14-open-12-workers-12-block-15": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 12.319
+        },
+        "generated-seed-8-length-12-open-10-workers-10-block-15": {
+          "top3": [
+            "c",
+            "g",
+            "o"
+          ],
+          "time_seconds": 7.646
+        },
+        "generated-seed-3-length-10-open-8-workers-12-block-15": {
+          "top3": [
+            "a",
+            "b",
+            "c"
+          ],
+          "time_seconds": 6.965
+        }
+      }
+    }
+  }
+}

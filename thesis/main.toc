@@ -64,6 +64,8 @@
 \contentsline {subsection}{\numberline {4.4.1}Performance with GPT-5.2}{47}{subsection.4.4.1}%
 \contentsline {chapter}{\numberline {5}LLM Reasoning Analysis}{49}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Solvers Understanding}{49}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Swapped Solvers Requests}{49}{subsection.5.1.1}%
-\contentsline {chapter}{Appendix}{53}{chapter*.39}%
-\contentsline {chapter}{Bibliography}{71}{chapter*.72}%
+\contentsline {subsection}{\numberline {5.1.1}Swapped Free Solvers Requests}{50}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Anonymous solvers requests}{51}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Reasoning with GPT-5.2}{52}{section.5.2}%
+\contentsline {chapter}{Appendix}{57}{chapter*.39}%
+\contentsline {chapter}{Bibliography}{75}{chapter*.72}%
