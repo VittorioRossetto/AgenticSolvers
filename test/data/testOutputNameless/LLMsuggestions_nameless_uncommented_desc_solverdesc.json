@@ -4,841 +4,841 @@
       "atsp": {
         "instance14_0p25": {
           "top3": [
-            "c",
-            "d",
+            "n",
+            "f",
             "g"
           ],
-          "time_seconds": 1.335
+          "time_seconds": 2.1
         },
         "instance11_0p25": {
           "top3": [
-            "Chuffed",
-            "OR-Tools",
-            "Gecode"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 1.114
+          "time_seconds": 2.753
         },
         "instance1_0p05": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 0.818
+          "time_seconds": 0.824
         },
         "instance4_0p15": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 1.229
+          "time_seconds": 3.497
         },
         "instance20_0p35": {
           "top3": [
-            "a",
-            "b",
-            "h"
+            "g",
+            "n",
+            "l"
           ],
-          "time_seconds": 7.483
+          "time_seconds": 22.427
         }
       },
       "black-hole": {
         "layout_14": {
           "top3": [
-            "Chuffed",
-            "OR-Tools",
-            "Gecode"
+            "f",
+            "n",
+            "k"
           ],
-          "time_seconds": 0.913
+          "time_seconds": 0.485
         },
         "layout_27": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR-Tools"
+            "f",
+            "n",
+            "k"
           ],
-          "time_seconds": 2.969
+          "time_seconds": 9.94
         },
         "layout_17": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR\u2011Tools"
+            "n",
+            "f",
+            "e"
           ],
-          "time_seconds": 5.834
+          "time_seconds": 11.477
         },
         "layout_25": {
           "top3": [
-            "c",
-            "g",
-            "o"
+            "f",
+            "n",
+            "k"
           ],
-          "time_seconds": 5.947
+          "time_seconds": 10.558
         },
         "layout_3": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR\u2011Tools"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 4.911
+          "time_seconds": 11.24
         }
       },
       "carpet-cutting": {
         "cc_rnd_8_1": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 25.09
+          "time_seconds": 27.546
         },
         "cc_rnd_12_3": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 24.8
+          "time_seconds": 29.496
         },
         "cc_rnd_16_1": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 9.377
+          "time_seconds": 14.747
         },
         "cc_rnd_4_4": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR-Tools"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 24.096
+          "time_seconds": 10.852
         },
         "cc_rnd_8_2": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 9.419
+          "time_seconds": 29.181
         }
       },
       "cgt": {
         "cgt_5_h27_r0.05_s0.8_0": {
           "top3": [
-            "b",
-            "a",
-            "e"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 0.925
+          "time_seconds": 0.614
         },
         "cgt_3_h39_r0.05_s1_3": {
           "top3": [
-            "a",
-            "b",
+            "n",
+            "f",
             "g"
           ],
-          "time_seconds": 5.016
+          "time_seconds": 10.752
         },
         "cgt_12_h27_r0.05_s0.5_3": {
           "top3": [
-            "Chuffed",
-            "OR-Tools",
-            "Gecode"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 4.813
+          "time_seconds": 14.359
         },
         "cgt_8_h16_r0.05_s0.5_3": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR-Tools"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 6.966
+          "time_seconds": 14.113
         },
         "cgt_3_h39_r0.05_s0.5_0": {
           "top3": [
-            "chuffed",
-            "ortools",
-            "gecode"
+            "f",
+            "n",
+            "k"
           ],
-          "time_seconds": 3.786
+          "time_seconds": 12.795
         }
       },
       "EchoSched": {
         "15-15-0-1_3": {
           "top3": [
-            "Chuffed",
-            "OR-Tools CP\u2011SAT",
-            "Gecode"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 5.034
+          "time_seconds": 8.704
         },
         "12-12-0-1_7": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "g",
+            "n"
           ],
-          "time_seconds": 9.614
+          "time_seconds": 12.911
         },
         "13-14-0-2_6": {
           "top3": [
-            "Chuffed",
-            "OR\u2011Tools",
-            "Gecode"
+            "f",
+            "g",
+            "n"
           ],
-          "time_seconds": 9.115
+          "time_seconds": 10.95
         },
         "14-10-0-2_1": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "g",
+            "n"
           ],
-          "time_seconds": 9.217
+          "time_seconds": 14.129
         },
         "14-10-0-2_3": {
           "top3": [
-            "chuffed",
-            "ortools",
-            "gecode"
+            "f",
+            "g",
+            "n"
           ],
-          "time_seconds": 8.808
+          "time_seconds": 14.029
         }
       },
       "fbd1": {
         "FBDk04": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "k"
           ],
-          "time_seconds": 4.298
+          "time_seconds": 6.912
         },
         "FBDk06": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "f",
+            "e"
           ],
-          "time_seconds": 6.863
+          "time_seconds": 11.727
         },
         "FBDk08": {
           "top3": [
-            "b",
-            "a",
-            "c"
+            "n",
+            "f",
+            "l"
           ],
-          "time_seconds": 6.961
+          "time_seconds": 9.948
         },
         "FBDk07": {
           "top3": [
-            "c",
-            "e",
-            "k"
+            "n",
+            "f",
+            "e"
           ],
-          "time_seconds": 6.247
+          "time_seconds": 11.141
         },
         "FBDk09": {
           "top3": [
-            "Chuffed",
-            "OR-Tools CP\u2011SAT",
-            "Gecode"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 7.268
+          "time_seconds": 9.019
         }
       },
       "groupsplitter": {
         "u12g2pref0": {
           "top3": [
-            "Chuffed",
-            "OR-Tools",
-            "Gecode"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 24.476
+          "time_seconds": 27.248
         },
         "u12g2pref2": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR\u2011Tools\u202fCP\u2011SAT"
+            "f",
+            "n",
+            "l"
           ],
-          "time_seconds": 22.961
+          "time_seconds": 27.943
         },
         "u15g5pref1": {
           "top3": [
-            "Chuffed",
-            "OR\u2011Tools\u202fCP\u2011SAT",
-            "Gecode"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 10.924
+          "time_seconds": 28.47
         },
         "u15g1pref2": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 23.142
+          "time_seconds": 16.586
         },
         "u15g3pref0": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 12.185
+          "time_seconds": 15.775
         }
       },
       "gt-sort": {
         "n9_ub10_50.0_BEST": {
           "top3": [
-            "a",
-            "b",
+            "k",
+            "f",
             "c"
           ],
-          "time_seconds": 1.64
+          "time_seconds": 1.843
         },
         "n13_ub20_50.0_BEST": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OptiMathSAT"
+            "f",
+            "k",
+            "l"
           ],
-          "time_seconds": 8.602
+          "time_seconds": 13.522
         },
         "n7_ub20_75.0_BEST": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "c",
+            "f",
+            "d"
           ],
-          "time_seconds": 7.78
+          "time_seconds": 13.421
         },
         "n9_ub10_75.0_BEST": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR-Tools"
+            "f",
+            "g",
+            "n"
           ],
-          "time_seconds": 6.047
+          "time_seconds": 14.146
         },
         "n9_ub30_35.0_BEST": {
           "top3": [
-            "a",
-            "b",
-            "d"
+            "c",
+            "d",
+            "l"
           ],
-          "time_seconds": 6.472
+          "time_seconds": 12.359
         }
       },
       "hitori": {
         "h11-1": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "l"
           ],
-          "time_seconds": 13.485
+          "time_seconds": 18.326
         },
         "h5-1": {
           "top3": [
-            "Chuffed",
-            "OR-Tools",
-            "Gecode"
+            "f",
+            "n",
+            "l"
           ],
-          "time_seconds": 14.059
+          "time_seconds": 17.823
         },
         "h15-1": {
           "top3": [
-            "b",
-            "a",
-            "c"
+            "f",
+            "n",
+            "e"
           ],
-          "time_seconds": 6.161
+          "time_seconds": 9.145
         },
         "h20-2": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "l"
           ],
-          "time_seconds": 6.009
+          "time_seconds": 18.194
         },
         "h14-1": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "k"
           ],
-          "time_seconds": 6.443
+          "time_seconds": 11.263
         }
       },
       "ihtc-2024-kletzander": {
         "test05": {
           "top3": [
-            "a",
-            "b",
-            "d"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 11.266
+          "time_seconds": 14.233
         },
         "test03": {
           "top3": [
-            "a",
-            "b",
-            "d"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 17.819
+          "time_seconds": 22.12
         },
         "i09": {
           "top3": [
-            "b",
-            "c",
-            "a"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 11.779
+          "time_seconds": 22.831
         },
         "i02": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "l"
           ],
-          "time_seconds": 18.118
+          "time_seconds": 22.225
         },
         "i07": {
           "top3": [
-            "b",
-            "c",
+            "n",
+            "f",
             "g"
           ],
-          "time_seconds": 13.127
+          "time_seconds": 18.024
         }
       },
       "ihtc-2024-marte": {
         "i14": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 40.464
+          "time_seconds": 42.391
         },
         "i06": {
           "top3": [
-            "Chuffed",
-            "OR-Tools CP\u2011SAT",
-            "Gecode"
+            "n",
+            "f",
+            "e"
           ],
-          "time_seconds": 47.192
+          "time_seconds": 50.995
         },
         "i01": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 45.868
+          "time_seconds": 15.36
         },
         "i11": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "g",
+            "n"
           ],
-          "time_seconds": 8.232
+          "time_seconds": 10.958
         },
         "i03": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "e"
           ],
-          "time_seconds": 9.178
+          "time_seconds": 50.177
         }
       },
       "is": {
         "BnMUR3YMRk": {
           "top3": [
-            "chuffed",
-            "gecode",
-            "ortools"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 0.928
+          "time_seconds": 2.866
         },
         "avdoaYnfXq": {
           "top3": [
-            "chuffed",
-            "ortools",
-            "gecode"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 34.092
+          "time_seconds": 40.038
         },
         "1vERFuvviS": {
           "top3": [
-            "a",
-            "c",
-            "b"
+            "n",
+            "f",
+            "e"
           ],
-          "time_seconds": 13.599
+          "time_seconds": 39.316
         },
         "9aGFgDaHX7": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 13.401
+          "time_seconds": 38.442
         },
         "vWQp9idqMs": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 16.02
+          "time_seconds": 19.524
         }
       },
       "mondoku": {
         "12-12-8": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "l",
+            "f"
           ],
-          "time_seconds": 7.189
+          "time_seconds": 1.124
         },
         "20-18-9": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR-Tools"
+            "f",
+            "n",
+            "o"
           ],
-          "time_seconds": 7.192
+          "time_seconds": 1.025
         },
         "14-14-8": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR-Tools"
+            "f",
+            "n",
+            "k"
           ],
-          "time_seconds": 6.75
+          "time_seconds": 12.425
         },
         "8-8-4": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR-Tools"
+            "n",
+            "f",
+            "c"
           ],
-          "time_seconds": 5.112
+          "time_seconds": 12.188
         },
         "10-10-6": {
           "top3": [
-            "Chuffed",
-            "OR-Tools",
-            "Gecode"
+            "n",
+            "f",
+            "l"
           ],
-          "time_seconds": 5.495
+          "time_seconds": 7.772
         }
       },
       "products-and-shelves": {
         "ps-25-03": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "k"
           ],
-          "time_seconds": 9.985
+          "time_seconds": 12.298
         },
         "ps-25-01": {
           "top3": [
-            "Chuffed",
-            "OR-Tools CP\u2011SAT",
-            "Gecode"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 11.278
+          "time_seconds": 15.118
         },
         "ps-50-06": {
           "top3": [
-            "chuffed",
-            "ortools",
-            "gecode"
+            "n",
+            "f",
+            "k"
           ],
-          "time_seconds": 5.979
+          "time_seconds": 16.794
         },
         "ps-50-09": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 11.105
+          "time_seconds": 9.954
         },
         "toy": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR\u2011Tools"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 5.609
+          "time_seconds": 9.914
         }
       },
       "proteindesign12": {
         "1HZ5.12p.19aa.usingEref_self": {
           "top3": [
-            "t",
-            "b",
-            "a"
+            "f",
+            "n",
+            "l"
           ],
-          "time_seconds": 9.072
+          "time_seconds": 13.035
         },
         "2TRX.11p.8aa.usingEref_self_x": {
           "top3": [
-            "b",
-            "c",
-            "d"
+            "f",
+            "n",
+            "o"
           ],
-          "time_seconds": 14.588
+          "time_seconds": 17.905
         },
         "1UBI.13p.9aa.usingEref_self_x": {
           "top3": [
-            "t",
-            "s",
-            "r"
+            "n",
+            "f",
+            "l"
           ],
-          "time_seconds": 14.459
+          "time_seconds": 14.626
         },
         "1UBI.13p.19aa.usingEref_self": {
           "top3": [
-            "Gecode",
-            "Choco",
-            "OR-Tools"
+            "f",
+            "n",
+            "e"
           ],
-          "time_seconds": 10.799
+          "time_seconds": 18.333
         },
         "1HZ5.12p.9aa.usingEref_self": {
           "top3": [
-            "a",
-            "b",
-            "e"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 10.205
+          "time_seconds": 17.919
         }
       },
       "skill-allocation": {
         "skill_allocation_mzn_3m_3": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 8.046
+          "time_seconds": 11.571
         },
         "skill_allocation_mzn_2w_2": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR-Tools"
+            "n",
+            "f",
+            "l"
           ],
-          "time_seconds": 11.757
+          "time_seconds": 16.192
         },
         "skill_allocation_mzn_5d_1": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 12.04
+          "time_seconds": 16.268
         },
         "skill_allocation_mzn_2m_2": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 7.301
+          "time_seconds": 15.989
         },
         "skill_allocation_mzn_1m_2": {
           "top3": [
-            "b",
-            "a",
-            "c"
+            "n",
+            "f",
+            "l"
           ],
-          "time_seconds": 8.655
+          "time_seconds": 12.584
         }
       },
       "stripboard": {
         "stripboard_w20_h15_l12_c6_n12": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 15.277
+          "time_seconds": 18.326
         },
         "stripboard_w15_h10_l12_c6_n12": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "l"
           ],
-          "time_seconds": 20.311
+          "time_seconds": 24.58
         },
         "stripboard_w20_h15_l7_c6_n24": {
           "top3": [
-            "b",
-            "c",
-            "a"
+            "f",
+            "n",
+            "l"
           ],
-          "time_seconds": 10.277
+          "time_seconds": 24.37
         },
         "stripboard_w10_h10_l12_c4_n24": {
           "top3": [
-            "b",
-            "a",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 18.125
+          "time_seconds": 13.225
         },
         "stripboard_w20_h15_l4_c4_n24": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 9.331
+          "time_seconds": 13.105
         }
       },
       "tower": {
         "tower_070_070_30_100-02": {
           "top3": [
-            "Chuffed",
-            "OR\u2011Tools\u202fCP\u2011SAT",
-            "Gecode"
+            "f",
+            "n",
+            "l"
           ],
-          "time_seconds": 4.96
+          "time_seconds": 17.701
         },
         "tower_070_070_15_070-08": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "f",
+            "l"
           ],
-          "time_seconds": 12.923
+          "time_seconds": 16.692
         },
         "tower_070_070_15_070-02": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "f",
+            "l"
           ],
-          "time_seconds": 12.678
+          "time_seconds": 16.794
         },
         "tower_500_500_50_300-05": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "f",
+            "l"
           ],
-          "time_seconds": 11.981
+          "time_seconds": 57.488
         },
         "tower_050_050_10_050-03": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 7.082
+          "time_seconds": 8.321
         }
       },
       "tsptw": {
         "n20w140.005": {
           "top3": [
-            "Chuffed",
-            "OR\u2011Tools",
-            "CP Optimizer"
+            "f",
+            "n",
+            "k"
           ],
-          "time_seconds": 3.608
+          "time_seconds": 43.082
         },
         "n20w180.004": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 8.224
+          "time_seconds": 5.048
         },
         "n100w120.003": {
           "top3": [
-            "a",
-            "b",
-            "i"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 8.222
+          "time_seconds": 6.614
         },
         "n80w180.003": {
           "top3": [
-            "Chuffed",
-            "Gecode",
-            "OR\u2011Tools"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 7.765
+          "time_seconds": 39.834
         },
         "n20w160.001": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "n",
+            "f",
+            "e"
           ],
-          "time_seconds": 5.852
+          "time_seconds": 5.807
         }
       },
       "work-task-variation": {
         "generated-seed-10-length-12-open-10-workers-12-block-5": {
           "top3": [
-            "Chuffed",
-            "OR-Tools",
-            "Gecode"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 10.855
+          "time_seconds": 50.457
         },
         "generated-seed-1-length-16-open-14-workers-12-block-15": {
           "top3": [
-            "Chuffed",
-            "OR\u2011Tools CP\u2011SAT",
-            "CP Optimizer"
+            "n",
+            "f",
+            "g"
           ],
-          "time_seconds": 12.496
+          "time_seconds": 17.111
         },
         "generated-seed-4-length-14-open-12-workers-12-block-15": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "g"
           ],
-          "time_seconds": 12.319
+          "time_seconds": 39.448
         },
         "generated-seed-8-length-12-open-10-workers-10-block-15": {
           "top3": [
-            "c",
-            "g",
-            "o"
+            "f",
+            "n",
+            "l"
           ],
-          "time_seconds": 7.646
+          "time_seconds": 17.093
         },
         "generated-seed-3-length-10-open-8-workers-12-block-15": {
           "top3": [
-            "a",
-            "b",
-            "c"
+            "f",
+            "n",
+            "l"
           ],
-          "time_seconds": 6.965
+          "time_seconds": 1.835
         }
       }
     }

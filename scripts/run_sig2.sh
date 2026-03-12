@@ -30,7 +30,7 @@ declare -a CONFIGS=(
   # "fznSig_Sdesc|--solver-set swapped --use-fzn-parser-outputs --include-solver-desc|0.2"
 
   "base_Pdesc_Sdesc_nameless|--include-problem-desc --include-solver-desc --nameless --nameless-file $REPO_ROOT/test/data/namelessSolvers.json --include-solver-desc|default"
-  "featOnly_Sdesc_nameless|--features-only --include-features --include-solver-desc --nameless --nameless-file $REPO_ROOT/test/data/namelessSolvers.json --include-solver-desc|0.3"
+  # "featOnly_Sdesc_nameless|--features-only --include-features --include-solver-desc --nameless --nameless-file $REPO_ROOT/test/data/namelessSolvers.json --include-solver-desc|0.3"
   # # "featOnly_Sdesc_nameless|--features-only --include-features --include-solver-desc --nameless --nameless-file $REPO_ROOT/test/data/namelessSolvers.json --include-solver-desc|0.7"
   # # "fznSig_Sdesc_nameless|--nameless --nameless-file $REPO_ROOT/test/data/namelessSolvers.json --use-fzn-parser-outputs --include-solver-desc|0.7"
   # # "fznSig_Sdesc_nameless|--nameless --nameless-file $REPO_ROOT/test/data/namelessSolvers.json --use-fzn-parser-outputs --include-solver-desc|0.2"

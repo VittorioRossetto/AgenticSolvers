@@ -442,6 +442,10 @@ INPUT ./sections/reasoning/reasoning.tex
 INPUT sections/reasoning/reasoning.tex
 INPUT ./sections/reasoning/reasoning.tex
 INPUT sections/reasoning/reasoning.tex
+INPUT ./sections/conclusions/conclusions2.tex
+INPUT sections/conclusions/conclusions2.tex
+INPUT ./sections/conclusions/conclusions2.tex
+INPUT sections/conclusions/conclusions2.tex
 INPUT ./sections/appendix/appendix.tex
 INPUT sections/appendix/appendix.tex
 INPUT ./sections/appendix/appendix.tex

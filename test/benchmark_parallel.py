@@ -170,8 +170,15 @@ def build_solver_description_text(solver_list, solver_desc_map=None) -> str:
 
     Returns an empty string if solver_desc_map is missing.
     """
+    # If no map provided but nameless mode is active, try loading the nameless file
     if not solver_desc_map:
-        return ""
+        try:
+            if 'args' in globals() and getattr(args, 'nameless', False):
+                solver_desc_map = load_solver_descriptions(getattr(args, 'nameless_file', None))
+        except Exception:
+            pass
+        if not solver_desc_map:
+            return ""
     lines = [f"- {s}: {solver_desc_map.get(s, '')}" for s in solver_list]
     return "Solvers and descriptions:\n" + "\n".join(lines) + "\n"
 
@@ -187,12 +194,44 @@ if getattr(args, 'include_solver_desc', False) or getattr(args, 'nameless', Fals
             logger.exception(f"Failed to load swapped solver descriptions from {sw_path}")
             SOLVER_DESC_MAP = None
     else:
-        SOLVER_DESC_MAP = load_solver_descriptions(args.solver_desc_file)
-else:
-    SOLVER_DESC_MAP = None
+        # If nameless was requested prefer the nameless file so the
+        # anonymized keys (e.g. 'a','b',...) match the description map.
+        SOLVER_DESC_MAP = None
+        if getattr(args, 'nameless', False):
+            SOLVER_DESC_MAP = load_solver_descriptions(getattr(args, 'nameless_file', None))
+        # If still not found, or not using nameless, try an explicit solver-desc file
+        if not SOLVER_DESC_MAP:
+            SOLVER_DESC_MAP = load_solver_descriptions(args.solver_desc_file)
+        # As a final fallback, if nameless was requested but the loaded
+        # description map uses full solver names while our solver_list
+        # contains anonymized keys, try to load the nameless file and
+        # remap descriptions via the 'correspondences' map if present.
+        if getattr(args, 'nameless', False) and SOLVER_DESC_MAP:
+            # quick heuristic: if solver_list items are short single-letter keys
+            # and SOLVER_DESC_MAP has different keys, attempt remapping
+            if solver_list and all(len(s) <= 2 for s in solver_list) and not any(k in SOLVER_DESC_MAP for k in solver_list):
+                try:
+                    with open(getattr(args, 'nameless_file', ''), 'r', encoding='utf-8') as nf:
+                        nd = json.load(nf)
+                    cor = nd.get('correspondences', {}) if isinstance(nd, dict) else {}
+                    sols = nd.get('solvers', {}) if isinstance(nd, dict) else {}
+                    # Build a new map anonymized_key -> description by mapping through correspondences
+                    remap = {}
+                    for a_key, real_name in cor.items():
+                        # prefer description from the main SOLVER_DESC_MAP, else from the nameless solvers
+                        desc = SOLVER_DESC_MAP.get(real_name) if isinstance(SOLVER_DESC_MAP, dict) else None
+                        if not desc:
+                            desc = sols.get(a_key)
+                        if desc:
+                            remap[a_key] = desc
+                    if remap:
+                        SOLVER_DESC_MAP = remap
+                except Exception:
+                    pass
 else:
     SOLVER_DESC_MAP = None
 
+# Inform user when they explicitly requested solver descriptions but none were loaded.
 if args.include_solver_desc and not SOLVER_DESC_MAP:
     print("Warning: --include-solver-desc was set but no solver description map was loaded; continuing without descriptions.")
 

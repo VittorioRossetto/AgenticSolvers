@@ -14,8 +14,8 @@
 \citation{CPholygrail}
 \citation{evaluationMetaSolvers}
 \citation{fromPFStoAS}
-\citation{PhilMznChallenge,MznResults25}
 \@writefile{toc}{\contentsline {chapter}{Introduction}{i}{chapter*.1}\protected@file@percent }
+\citation{PhilMznChallenge,MznResults25}
 \citation{mzn2feat}
 \citation{fzn2nl}
 \citation{CPholygrail}
@@ -145,8 +145,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Preliminary tests}{21}{section.3.1}\protected@file@percent }
 \newlabel{sec:initTests}{{3.1}{21}{Preliminary tests}{section.3.1}{}}
 \newlabel{sec:initTests@cref}{{[section][1][3]3.1}{[1][21][]21}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Initial tests giving plain scripts to all the LLMs. In this table: column ``Model'' contains the names of each tested LLM, ``Single Score'' was calculated by summing the performance of what was suggested to be the best solver (as explained in \Cref  {sec:scoreMetric}) on each of the instances by the given LLMs, ``Parallel Score'' represents the sum of the score reached in every instance in parallel-solver setup, so taking the 3 best solvers given by the LLM, calculate the score of all the 3, and take the maximum out of the three, and finally ``Closed Gap'' displays the closed gap score calculated over ``Single Score'' by using the formula explained in \Cref  {sec:closedGap}.}}{22}{table.caption.14}\protected@file@percent }
-\newlabel{tab:combinedAllLLM}{{3.1}{22}{Initial tests giving plain scripts to all the LLMs. In this table: column ``Model'' contains the names of each tested LLM, ``Single Score'' was calculated by summing the performance of what was suggested to be the best solver (as explained in \Cref {sec:scoreMetric}) on each of the instances by the given LLMs, ``Parallel Score'' represents the sum of the score reached in every instance in parallel-solver setup, so taking the 3 best solvers given by the LLM, calculate the score of all the 3, and take the maximum out of the three, and finally ``Closed Gap'' displays the closed gap score calculated over ``Single Score'' by using the formula explained in \Cref {sec:closedGap}}{table.caption.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Initial tests using raw scripts as input to all tested LLMs. In this table: column ``Model'' contains the names of each tested LLM, ``Single Score'' was calculated by summing the performance of what was suggested to be the best solver (as explained in \Cref  {sec:scoreMetric}) on each of the instances by the given LLMs, ``Parallel Score'' represents the sum of the score reached in every instance in parallel-solver setup, so taking the 3 best solvers given by the LLM, computing the score of each and selecting the maximum, and finally ``Closed Gap'' displays the closed gap score calculated over ``Single Score'' by using the formula explained in \Cref  {sec:closedGap}.}}{22}{table.caption.14}\protected@file@percent }
+\newlabel{tab:combinedAllLLM}{{3.1}{22}{Initial tests using raw scripts as input to all tested LLMs. In this table: column ``Model'' contains the names of each tested LLM, ``Single Score'' was calculated by summing the performance of what was suggested to be the best solver (as explained in \Cref {sec:scoreMetric}) on each of the instances by the given LLMs, ``Parallel Score'' represents the sum of the score reached in every instance in parallel-solver setup, so taking the 3 best solvers given by the LLM, computing the score of each and selecting the maximum, and finally ``Closed Gap'' displays the closed gap score calculated over ``Single Score'' by using the formula explained in \Cref {sec:closedGap}}{table.caption.14}{}}
 \newlabel{tab:combinedAllLLM@cref}{{[table][1][3]3.1}{[1][21][]22}{}{}{}}
 \citation{ContextRot,LLMdistract}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Single Request Experiments}{23}{section.3.2}\protected@file@percent }
@@ -193,8 +193,8 @@
 \citation{mzn2feat}
 \citation{ContextRot}
 \citation{TempDef}
-\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces Test with all the possible combinations involving features extracted using \texttt  {mzn2feat}~\cite  {mzn2feat}, all the tests have been made using \texttt  {gpt-oss-120b} as it's the only model that produced a positive closed gap until this point. Columns are calculated as in \Cref  {tab:combinedAllLLM}.}}{30}{table.caption.20}\protected@file@percent }
-\newlabel{tab:combinedFeatVars}{{3.6}{30}{Test with all the possible combinations involving features extracted using \texttt {mzn2feat}~\cite {mzn2feat}, all the tests have been made using \texttt {gpt-oss-120b} as it's the only model that produced a positive closed gap until this point. Columns are calculated as in \Cref {tab:combinedAllLLM}}{table.caption.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces Test with all the possible combinations involving features extracted using \texttt  {mzn2feat}~\cite  {mzn2feat}, all experiments were conducted using \texttt  {gpt-oss-120b} as it's the only model that produced a positive closed gap until this point. Columns are calculated as in \Cref  {tab:combinedAllLLM}.}}{30}{table.caption.20}\protected@file@percent }
+\newlabel{tab:combinedFeatVars}{{3.6}{30}{Test with all the possible combinations involving features extracted using \texttt {mzn2feat}~\cite {mzn2feat}, all experiments were conducted using \texttt {gpt-oss-120b} as it's the only model that produced a positive closed gap until this point. Columns are calculated as in \Cref {tab:combinedAllLLM}}{table.caption.20}{}}
 \newlabel{tab:combinedFeatVars@cref}{{[table][6][3]3.6}{[1][30][]30}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}Sampling Temperature Tuning}{30}{section.3.5}\protected@file@percent }
 \newlabel{sec:sampTemp}{{3.5}{30}{Sampling Temperature Tuning}{section.3.5}{}}
@@ -291,24 +291,51 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{chap:reasoning}{{5}{49}{LLM Reasoning Analysis}{chapter.5}{}}
 \newlabel{chap:reasoning@cref}{{[chapter][5][]5}{[1][49][]49}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Solvers Understanding}{49}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Swapped Free Solvers Requests}{50}{subsection.5.1.1}\protected@file@percent }
-\newlabel{sec:swappedFree}{{5.1.1}{50}{Swapped Free Solvers Requests}{subsection.5.1.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Analysis of Solver Understanding}{49}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Experiments with Swapped Solver Descriptions}{50}{subsection.5.1.1}\protected@file@percent }
+\newlabel{sec:swappedFree}{{5.1.1}{50}{Experiments with Swapped Solver Descriptions}{subsection.5.1.1}{}}
 \newlabel{sec:swappedFree@cref}{{[subsection][1][5,1]5.1.1}{[1][50][]50}{}{}{}}
 \citation{MemorizationVSReasoning}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Analysis over configurations involving swapped solvers descriptions, evaluated with \texttt  {gpt-oss-120b}. Columns are computed as in \Cref  {tab:combinedAllLLM}, after reconducting each suggested solver, to the one from which the description was from.}}{51}{table.caption.37}\protected@file@percent }
-\newlabel{tab:CombinedSwapped}{{5.1}{51}{Analysis over configurations involving swapped solvers descriptions, evaluated with \texttt {gpt-oss-120b}. Columns are computed as in \Cref {tab:combinedAllLLM}, after reconducting each suggested solver, to the one from which the description was from}{table.caption.37}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Analysis over configurations involving swapped solver descriptions, evaluated with \texttt  {gpt-oss-120b}. Columns are computed as in \Cref  {tab:combinedAllLLM}, after mapping each suggested solver to the solver from which the description was taken.}}{51}{table.caption.37}\protected@file@percent }
+\newlabel{tab:CombinedSwapped}{{5.1}{51}{Analysis over configurations involving swapped solver descriptions, evaluated with \texttt {gpt-oss-120b}. Columns are computed as in \Cref {tab:combinedAllLLM}, after mapping each suggested solver to the solver from which the description was taken}{table.caption.37}{}}
 \newlabel{tab:CombinedSwapped@cref}{{[table][1][5]5.1}{[1][50][]51}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~1. ``Suggested Solver'' shows the solver suggested in LLM output, ``Original Solver'' shows the solver from which the description was taken, ``Top1 Count'' shows the number of times the given solver was suggested as the best one in each of the problems and ``Total Count'' shows the number of appearances of the given solver as one of best 3 suggested ones.}}{51}{table.caption.38}\protected@file@percent }
-\newlabel{tab:swappedCount1}{{5.2}{51}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~1. ``Suggested Solver'' shows the solver suggested in LLM output, ``Original Solver'' shows the solver from which the description was taken, ``Top1 Count'' shows the number of times the given solver was suggested as the best one in each of the problems and ``Total Count'' shows the number of appearances of the given solver as one of best 3 suggested ones}{table.caption.38}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~1. ``Suggested Solver'' shows the solver suggested in LLM output, ``Description'' shows the solver from which the description was taken, ``Top1 Count'' shows the number of times the given solver was suggested as the best one in each of the problems and ``Total Count'' shows the number of appearances of the given solver as one of the best three suggested ones.}}{51}{table.caption.38}\protected@file@percent }
+\newlabel{tab:swappedCount1}{{5.2}{51}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~1. ``Suggested Solver'' shows the solver suggested in LLM output, ``Description'' shows the solver from which the description was taken, ``Top1 Count'' shows the number of times the given solver was suggested as the best one in each of the problems and ``Total Count'' shows the number of appearances of the given solver as one of the best three suggested ones}{table.caption.38}{}}
 \newlabel{tab:swappedCount1@cref}{{[table][2][5]5.2}{[1][51][]51}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Anonymous solvers requests}{51}{subsection.5.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Experiments with Anonymous Solvers}{51}{subsection.5.1.2}\protected@file@percent }
 \citation{gpt52}
 \citation{MznResults25}
 \citation{MznProblems}
-\citation{LLMapprehension}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Analysis over configurations involving anonymous solvers, evaluated with \texttt  {gpt-oss-120b}. Columns are computed as in \Cref  {tab:combinedAllLLM}, after reconducting each suggestion to the solver from which the description was taken.}}{52}{table.caption.39}\protected@file@percent }
+\newlabel{tab:CombinedAnonymous}{{5.3}{52}{Analysis over configurations involving anonymous solvers, evaluated with \texttt {gpt-oss-120b}. Columns are computed as in \Cref {tab:combinedAllLLM}, after reconducting each suggestion to the solver from which the description was taken}{table.caption.39}{}}
+\newlabel{tab:CombinedAnonymous@cref}{{[table][3][5]5.3}{[1][52][]52}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}Reasoning with GPT-5.2}{52}{section.5.2}\protected@file@percent }
+\citation{LLMapprehension}
+\citation{MznResults25}
+\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~1. Columns content is calculated as in \Cref  {tab:swappedCount1}.}}{53}{table.caption.40}\protected@file@percent }
+\newlabel{tab:anonymousCount1}{{5.4}{53}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~1. Columns content is calculated as in \Cref {tab:swappedCount1}}{table.caption.40}{}}
+\newlabel{tab:anonymousCount1@cref}{{[table][4][5]5.4}{[1][52][]53}{}{}{}}
+\@writefile{toc}{\contentsline {paragraph}{mondoku/10-10-6}{53}{section*.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{tower/tower\_070\_070\_15\_070-08}{54}{section*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{is/BnMUR3YMRk}{54}{section*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{fbd1/FBDk09}{55}{section*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{proteindesign12/1UBI.13p.9aa.usingEref\_self\_x}{56}{section*.45}\protected@file@percent }
 \citation{gpt52}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Overall Analysis}{57}{subsection.5.2.1}\protected@file@percent }
+\citation{MiniZinc}
+\citation{MznProblems}
+\citation{mzn2feat}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusions}{59}{chapter.6}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{chap:conclusions}{{6}{59}{Conclusions}{chapter.6}{}}
+\newlabel{chap:conclusions@cref}{{[chapter][6][]6}{[1][59][]59}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Empirical findings}{59}{section.6.1}\protected@file@percent }
+\citation{fzn2nl}
+\citation{evaluationMetaSolvers}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Technical contributions}{60}{section.6.2}\protected@file@percent }
+\citation{fzn2nl}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Limitations and future work}{61}{section.6.3}\protected@file@percent }
 \citation{cbc}
 \citation{chuffed}
 \citation{cbc}
@@ -319,104 +346,116 @@
 \citation{MznResults25}
 \citation{mzn2feat}
 \citation{mzn2feat}
-\@writefile{toc}{\contentsline {chapter}{Appendix}{57}{chapter*.39}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Initial tests giving plain scripts to all the LLMs, In this table: column "Model" contains the names of each tested LLM, ``Total Score'' is the equivalent of ``Parallel Score'' as explained in \Cref  {tab:combinedAllLLM}, ``Instances Covered'' contains the amount of instances that gave a viable result so the ones that did not exceed the token limitations portrayed in \Cref  {tab:rate_limits_groq} and \Cref  {tab:rate_limits_gemini}, ``Average Score'' represents $\frac  {Total Score}{Instances Covered}$ to show the solver performance in the evaluated instances. }}{57}{table.caption.40}\protected@file@percent }
-\newlabel{tab:allLLM3}{{5.3}{57}{Initial tests giving plain scripts to all the LLMs, In this table: column "Model" contains the names of each tested LLM, ``Total Score'' is the equivalent of ``Parallel Score'' as explained in \Cref {tab:combinedAllLLM}, ``Instances Covered'' contains the amount of instances that gave a viable result so the ones that did not exceed the token limitations portrayed in \Cref {tab:rate_limits_groq} and \Cref {tab:rate_limits_gemini}, ``Average Score'' represents $\frac {Total Score}{Instances Covered}$ to show the solver performance in the evaluated instances}{table.caption.40}{}}
-\newlabel{tab:allLLM3@cref}{{[table][3][5]5.3}{[1][57][]57}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Initial tests giving plain scripts to all the LLMs, in this table ``Total Score'' is the equivalent of ``Single Score'' as explained in \Cref  {tab:combinedAllLLM}. ``Instances Covered'' and ``Average Score'' are calculated the same way as in \Cref  {tab:allLLM3}}}{58}{table.caption.41}\protected@file@percent }
-\newlabel{tab:allLLM1}{{5.4}{58}{Initial tests giving plain scripts to all the LLMs, in this table ``Total Score'' is the equivalent of ``Single Score'' as explained in \Cref {tab:combinedAllLLM}. ``Instances Covered'' and ``Average Score'' are calculated the same way as in \Cref {tab:allLLM3}}{table.caption.41}{}}
-\newlabel{tab:allLLM1@cref}{{[table][4][5]5.4}{[1][57][]58}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Initial tests giving plain scripts to all the LLMs, in this table: ``Instances Covered'' is the same as in \Cref  {tab:allLLM3}, ``AS'' is the same as the ``Single Score'' explained in \Cref  {tab:combinedAllLLM}, ``SBS'' displays the sum of all the scores obtained by the single best solver (namely, \texttt  {or-tools\_cp-sat-free}) in every instance, and ``VBS'' displays the score obtained with the use of an ipothetical virtual best solver, giving the maximum obtainable score on every instance. Finally, ``Closed Gap'' is calculated as in \Cref  {tab:combinedAllLLM}}}{58}{table.caption.42}\protected@file@percent }
-\newlabel{tab:allLLMcg}{{5.5}{58}{Initial tests giving plain scripts to all the LLMs, in this table: ``Instances Covered'' is the same as in \Cref {tab:allLLM3}, ``AS'' is the same as the ``Single Score'' explained in \Cref {tab:combinedAllLLM}, ``SBS'' displays the sum of all the scores obtained by the single best solver (namely, \texttt {or-tools\_cp-sat-free}) in every instance, and ``VBS'' displays the score obtained with the use of an ipothetical virtual best solver, giving the maximum obtainable score on every instance. Finally, ``Closed Gap'' is calculated as in \Cref {tab:combinedAllLLM}}{table.caption.42}{}}
-\newlabel{tab:allLLMcg@cref}{{[table][5][5]5.5}{[1][57][]58}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Scores obtained by all of the considered LLM from parallel-solver evaluation, ``Total Score'' is the equivalent of ``Single Score'' as explained in \Cref  {tab:combinedAllLLM}.}}{59}{figure.caption.43}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Scores obtained by all of the considered LLM from single-solver evaluation, ``Total Score'' is the equivalent of ``Parallel Score'' as explained in \Cref  {tab:combinedAllLLM}}}{59}{figure.caption.44}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Tests on sanitized scripts given to the 5 best performing LLMs, parallel-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM3}}}{60}{table.caption.45}\protected@file@percent }
-\newlabel{tab:base3}{{5.6}{60}{Tests on sanitized scripts given to the 5 best performing LLMs, parallel-solver evaluation. Columns are calculated as in \Cref {tab:allLLM3}}{table.caption.45}{}}
-\newlabel{tab:base3@cref}{{[table][6][5]5.6}{[1][57][]60}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Tests on sanitized scripts given to the 5 best performing LLMs, single-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM1}}}{60}{table.caption.46}\protected@file@percent }
-\newlabel{tab:base1}{{5.7}{60}{Tests on sanitized scripts given to the 5 best performing LLMs, single-solver evaluation. Columns are calculated as in \Cref {tab:allLLM1}}{table.caption.46}{}}
-\newlabel{tab:base1@cref}{{[table][7][5]5.7}{[1][57][]60}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.8}{\ignorespaces Tests on sanitized scripts given to the 5 best performing LLMs, closed gap. Columns are calculated as in \Cref  {tab:allLLMcg}}}{60}{table.caption.47}\protected@file@percent }
-\newlabel{tab:basecg}{{5.8}{60}{Tests on sanitized scripts given to the 5 best performing LLMs, closed gap. Columns are calculated as in \Cref {tab:allLLMcg}}{table.caption.47}{}}
-\newlabel{tab:basecg@cref}{{[table][8][5]5.8}{[1][57][]60}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.9}{\ignorespaces Test on sanitized scripts combined with textual problem description, parallel-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM3}}}{60}{table.caption.48}\protected@file@percent }
-\newlabel{tab:pDesc3}{{5.9}{60}{Test on sanitized scripts combined with textual problem description, parallel-solver evaluation. Columns are calculated as in \Cref {tab:allLLM3}}{table.caption.48}{}}
-\newlabel{tab:pDesc3@cref}{{[table][9][5]5.9}{[1][57][]60}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.10}{\ignorespaces Test on sanitized scripts combined with textual problem description, single-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM1}}}{61}{table.caption.49}\protected@file@percent }
-\newlabel{tab:pDesc1}{{5.10}{61}{Test on sanitized scripts combined with textual problem description, single-solver evaluation. Columns are calculated as in \Cref {tab:allLLM1}}{table.caption.49}{}}
-\newlabel{tab:pDesc1@cref}{{[table][10][5]5.10}{[1][57][]61}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.11}{\ignorespaces Test on sanitized scripts combined with textual problem description, closed gap. Columns are calculated as in \Cref  {tab:allLLMcg}}}{61}{table.caption.50}\protected@file@percent }
-\newlabel{tab:pDesccg}{{5.11}{61}{Test on sanitized scripts combined with textual problem description, closed gap. Columns are calculated as in \Cref {tab:allLLMcg}}{table.caption.50}{}}
-\newlabel{tab:pDesccg@cref}{{[table][11][5]5.11}{[1][57][]61}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.12}{\ignorespaces Examples of solver description for two solvers, namely COIN-OR Branch-and-Cut (CBC)~\cite  {cbc}, and Chuffed~\cite  {chuffed}.}}{61}{table.caption.51}\protected@file@percent }
-\newlabel{tab:sDescEx}{{5.12}{61}{Examples of solver description for two solvers, namely COIN-OR Branch-and-Cut (CBC)~\cite {cbc}, and Chuffed~\cite {chuffed}}{table.caption.51}{}}
-\newlabel{tab:sDescEx@cref}{{[table][12][5]5.12}{[1][57][]61}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.13}{\ignorespaces Test with sanitized scripts combined with solvers description in a multi turn setup, parallel-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM3}}}{61}{table.caption.52}\protected@file@percent }
-\newlabel{tab:sDesc3}{{5.13}{61}{Test with sanitized scripts combined with solvers description in a multi turn setup, parallel-solver evaluation. Columns are calculated as in \Cref {tab:allLLM3}}{table.caption.52}{}}
-\newlabel{tab:sDesc3@cref}{{[table][13][5]5.13}{[1][57][]61}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.14}{\ignorespaces Test with sanitized scripts combined with solvers description in a multi turn setup, single-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM1}}}{62}{table.caption.53}\protected@file@percent }
-\newlabel{tab:sDesc1}{{5.14}{62}{Test with sanitized scripts combined with solvers description in a multi turn setup, single-solver evaluation. Columns are calculated as in \Cref {tab:allLLM1}}{table.caption.53}{}}
-\newlabel{tab:sDesc1@cref}{{[table][14][5]5.14}{[1][57][]62}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.15}{\ignorespaces Test with sanitized scripts combined with solvers description in a multi turn setup, closed gap. Columns are calculated as in \Cref  {tab:allLLMcg}}}{62}{table.caption.54}\protected@file@percent }
-\newlabel{tab:sDesccg}{{5.15}{62}{Test with sanitized scripts combined with solvers description in a multi turn setup, closed gap. Columns are calculated as in \Cref {tab:allLLMcg}}{table.caption.54}{}}
-\newlabel{tab:sDesccg@cref}{{[table][15][5]5.15}{[1][57][]62}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.16}{\ignorespaces Test with sanitized scripts combined with both solvers description, and problem description in a multi turn setup, parallel-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM3}}}{62}{table.caption.55}\protected@file@percent }
-\newlabel{tab:sDescpDesc3}{{5.16}{62}{Test with sanitized scripts combined with both solvers description, and problem description in a multi turn setup, parallel-solver evaluation. Columns are calculated as in \Cref {tab:allLLM3}}{table.caption.55}{}}
-\newlabel{tab:sDescpDesc3@cref}{{[table][16][5]5.16}{[1][57][]62}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.17}{\ignorespaces Test with sanitized scripts combined with both solvers description, and problem description in a multi turn setup, single-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM1}}}{62}{table.caption.56}\protected@file@percent }
-\newlabel{tab:sDescpDesc1}{{5.17}{62}{Test with sanitized scripts combined with both solvers description, and problem description in a multi turn setup, single-solver evaluation. Columns are calculated as in \Cref {tab:allLLM1}}{table.caption.56}{}}
-\newlabel{tab:sDescpDesc1@cref}{{[table][17][5]5.17}{[1][57][]62}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.18}{\ignorespaces Test with sanitized scripts combined with both solvers description, and problem description in a multi turn setup, closed gap. Columns are calculated as in \Cref  {tab:allLLMcg}}}{63}{table.caption.57}\protected@file@percent }
-\newlabel{tab:sDescpDesccg}{{5.18}{63}{Test with sanitized scripts combined with both solvers description, and problem description in a multi turn setup, closed gap. Columns are calculated as in \Cref {tab:allLLMcg}}{table.caption.57}{}}
-\newlabel{tab:sDescpDesccg@cref}{{[table][18][5]5.18}{[1][57][]63}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Histogram displaying the performances of all the solver variants in ``Parallel Score'' evaluation, as calculated in \Cref  {tab:combinedAllLLM}.}}{63}{figure.caption.60}\protected@file@percent }
-\newlabel{fig:histoVarPar}{{5.3}{63}{Histogram displaying the performances of all the solver variants in ``Parallel Score'' evaluation, as calculated in \Cref {tab:combinedAllLLM}}{figure.caption.60}{}}
-\newlabel{fig:histoVarPar@cref}{{[figure][3][5]5.3}{[1][57][]63}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.19}{\ignorespaces Table displaying all the different LLM variants results from parallel-solver evaluation, ``Total Score'' is calculated as ``Parallel Score'' in \Cref  {tab:combinedAllLLM}, and compared to all of the single solvers in open category of the MiniZinc Challenge~\cite  {MznResults25}}}{64}{table.caption.58}\protected@file@percent }
-\newlabel{tab:comparisanVarPar}{{5.19}{64}{Table displaying all the different LLM variants results from parallel-solver evaluation, ``Total Score'' is calculated as ``Parallel Score'' in \Cref {tab:combinedAllLLM}, and compared to all of the single solvers in open category of the MiniZinc Challenge~\cite {MznResults25}}{table.caption.58}{}}
-\newlabel{tab:comparisanVarPar@cref}{{[table][19][5]5.19}{[1][57][]64}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.20}{\ignorespaces Table displaying all the first LLM variants results given single-solver evaluation, ``Total Score'' is calculated as ``Single Score'' in \Cref  {tab:combinedAllLLM}, and compared to all of the single solvers in free category of the MiniZinc Challenge~\cite  {MznResults25}}}{65}{table.caption.59}\protected@file@percent }
-\newlabel{tab:comparisanVarSin}{{5.20}{65}{Table displaying all the first LLM variants results given single-solver evaluation, ``Total Score'' is calculated as ``Single Score'' in \Cref {tab:combinedAllLLM}, and compared to all of the single solvers in free category of the MiniZinc Challenge~\cite {MznResults25}}{table.caption.59}{}}
-\newlabel{tab:comparisanVarSin@cref}{{[table][20][5]5.20}{[1][57][]65}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Histogram displaying the performances of all the solver variants in ``Single Score'' evaluation, ``Parallel Score'' evaluation and ``Closed Gap'' evaluation, as calculated in \Cref  {tab:combinedAllLLM}.}}{66}{figure.caption.61}\protected@file@percent }
-\newlabel{fig:histoVarSin}{{5.4}{66}{Histogram displaying the performances of all the solver variants in ``Single Score'' evaluation, ``Parallel Score'' evaluation and ``Closed Gap'' evaluation, as calculated in \Cref {tab:combinedAllLLM}}{figure.caption.61}{}}
-\newlabel{fig:histoVarSin@cref}{{[figure][4][5]5.4}{[1][57][]66}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Histograms to visualize the difference between first LLM variants and single solvers free category performance, ``Total Score'' is the equivalent of ``Single Score'' as explained in \Cref  {tab:combinedAllLLM}.}}{67}{figure.caption.62}\protected@file@percent }
-\newlabel{fig:comparisanVarSin}{{5.5}{67}{Histograms to visualize the difference between first LLM variants and single solvers free category performance, ``Total Score'' is the equivalent of ``Single Score'' as explained in \Cref {tab:combinedAllLLM}}{figure.caption.62}{}}
-\newlabel{fig:comparisanVarSin@cref}{{[figure][5][5]5.5}{[1][57][]67}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Histograms to visualize the difference between first LLM variants and single solvers from open category performance, ``Total Score'' is the equivalent of ``Parallel Score'' as explained in \Cref  {tab:combinedAllLLM}.}}{68}{figure.caption.63}\protected@file@percent }
-\newlabel{fig:comparisanVarPar}{{5.6}{68}{Histograms to visualize the difference between first LLM variants and single solvers from open category performance, ``Total Score'' is the equivalent of ``Parallel Score'' as explained in \Cref {tab:combinedAllLLM}}{figure.caption.63}{}}
-\newlabel{fig:comparisanVarPar@cref}{{[figure][6][5]5.6}{[1][57][]68}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.21}{\ignorespaces The table shows a quick explanation of the features that can be extracted using the tool \texttt  {mzn2feat}~\cite  {mzn2feat}, divided per category, and counted.}}{69}{table.caption.64}\protected@file@percent }
-\newlabel{tab:FeatDescriptions}{{5.21}{69}{The table shows a quick explanation of the features that can be extracted using the tool \texttt {mzn2feat}~\cite {mzn2feat}, divided per category, and counted}{table.caption.64}{}}
-\newlabel{tab:FeatDescriptions@cref}{{[table][21][5]5.21}{[1][57][]69}{}{}{}}
-\newlabel{lst:mzn2feat-features}{{5.1}{70}{Example output using \texttt {mzn2feat}~\cite {mzn2feat} pretty print option on \texttt {EchoSched.mzn}, instance \texttt {14-10-0-2\_1}}{lstlisting.5.1}{}}
-\newlabel{lst:mzn2feat-features@cref}{{[lstlisting][1][5]5.1}{[1][70][]70}{}{}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {5.1}{\ignorespaces Example output using \texttt  {mzn2feat}~\cite  {mzn2feat} pretty print option on \texttt  {EchoSched.mzn}, instance \texttt  {14-10-0-2\_1}.}}{70}{lstlisting.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Appendix}{63}{chapter*.46}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Initial tests giving plain scripts to all the LLMs, In this table: column ``Model'' contains the names of each tested LLM, ``Total Score'' is the equivalent of ``Parallel Score'' as explained in \Cref  {tab:combinedAllLLM}, ``Instances Covered'' contains the amount of instances that gave a viable result so the ones that did not exceed the token limitations portrayed in \Cref  {tab:rate_limits_groq} and \Cref  {tab:rate_limits_gemini}, ``Average Score'' represents $\frac  {Total Score}{Instances Covered}$ to show the solver performance in the evaluated instances. }}{63}{table.caption.47}\protected@file@percent }
+\newlabel{tab:allLLM3}{{6.1}{63}{Initial tests giving plain scripts to all the LLMs, In this table: column ``Model'' contains the names of each tested LLM, ``Total Score'' is the equivalent of ``Parallel Score'' as explained in \Cref {tab:combinedAllLLM}, ``Instances Covered'' contains the amount of instances that gave a viable result so the ones that did not exceed the token limitations portrayed in \Cref {tab:rate_limits_groq} and \Cref {tab:rate_limits_gemini}, ``Average Score'' represents $\frac {Total Score}{Instances Covered}$ to show the solver performance in the evaluated instances}{table.caption.47}{}}
+\newlabel{tab:allLLM3@cref}{{[table][1][6]6.1}{[1][63][]63}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Initial tests giving plain scripts to all the LLMs, in this table ``Total Score'' is the equivalent of ``Single Score'' as explained in \Cref  {tab:combinedAllLLM}. ``Instances Covered'' and ``Average Score'' are calculated the same way as in \Cref  {tab:allLLM3}}}{64}{table.caption.48}\protected@file@percent }
+\newlabel{tab:allLLM1}{{6.2}{64}{Initial tests giving plain scripts to all the LLMs, in this table ``Total Score'' is the equivalent of ``Single Score'' as explained in \Cref {tab:combinedAllLLM}. ``Instances Covered'' and ``Average Score'' are calculated the same way as in \Cref {tab:allLLM3}}{table.caption.48}{}}
+\newlabel{tab:allLLM1@cref}{{[table][2][6]6.2}{[1][63][]64}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Initial tests giving plain scripts to all the LLMs, in this table: ``Instances Covered'' is the same as in \Cref  {tab:allLLM3}, ``AS'' is the same as the ``Single Score'' explained in \Cref  {tab:combinedAllLLM}, ``SBS'' displays the sum of all the scores obtained by the single best solver (namely, \texttt  {or-tools\_cp-sat-free}) in every instance, and ``VBS'' displays the score obtained with the use of an ipothetical virtual best solver, giving the maximum obtainable score on every instance. Finally, ``Closed Gap'' is calculated as in \Cref  {tab:combinedAllLLM}}}{64}{table.caption.49}\protected@file@percent }
+\newlabel{tab:allLLMcg}{{6.3}{64}{Initial tests giving plain scripts to all the LLMs, in this table: ``Instances Covered'' is the same as in \Cref {tab:allLLM3}, ``AS'' is the same as the ``Single Score'' explained in \Cref {tab:combinedAllLLM}, ``SBS'' displays the sum of all the scores obtained by the single best solver (namely, \texttt {or-tools\_cp-sat-free}) in every instance, and ``VBS'' displays the score obtained with the use of an ipothetical virtual best solver, giving the maximum obtainable score on every instance. Finally, ``Closed Gap'' is calculated as in \Cref {tab:combinedAllLLM}}{table.caption.49}{}}
+\newlabel{tab:allLLMcg@cref}{{[table][3][6]6.3}{[1][63][]64}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Scores obtained by all of the considered LLM from parallel-solver evaluation, ``Total Score'' is the equivalent of ``Single Score'' as explained in \Cref  {tab:combinedAllLLM}.}}{65}{figure.caption.50}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Scores obtained by all of the considered LLM from single-solver evaluation, ``Total Score'' is the equivalent of ``Parallel Score'' as explained in \Cref  {tab:combinedAllLLM}}}{65}{figure.caption.51}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces Tests on sanitized scripts given to the 5 best performing LLMs, parallel-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM3}}}{66}{table.caption.52}\protected@file@percent }
+\newlabel{tab:base3}{{6.4}{66}{Tests on sanitized scripts given to the 5 best performing LLMs, parallel-solver evaluation. Columns are calculated as in \Cref {tab:allLLM3}}{table.caption.52}{}}
+\newlabel{tab:base3@cref}{{[table][4][6]6.4}{[1][63][]66}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.5}{\ignorespaces Tests on sanitized scripts given to the 5 best performing LLMs, single-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM1}}}{66}{table.caption.53}\protected@file@percent }
+\newlabel{tab:base1}{{6.5}{66}{Tests on sanitized scripts given to the 5 best performing LLMs, single-solver evaluation. Columns are calculated as in \Cref {tab:allLLM1}}{table.caption.53}{}}
+\newlabel{tab:base1@cref}{{[table][5][6]6.5}{[1][63][]66}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.6}{\ignorespaces Tests on sanitized scripts given to the 5 best performing LLMs, closed gap. Columns are calculated as in \Cref  {tab:allLLMcg}}}{66}{table.caption.54}\protected@file@percent }
+\newlabel{tab:basecg}{{6.6}{66}{Tests on sanitized scripts given to the 5 best performing LLMs, closed gap. Columns are calculated as in \Cref {tab:allLLMcg}}{table.caption.54}{}}
+\newlabel{tab:basecg@cref}{{[table][6][6]6.6}{[1][63][]66}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.7}{\ignorespaces Test on sanitized scripts combined with textual problem description, parallel-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM3}}}{66}{table.caption.55}\protected@file@percent }
+\newlabel{tab:pDesc3}{{6.7}{66}{Test on sanitized scripts combined with textual problem description, parallel-solver evaluation. Columns are calculated as in \Cref {tab:allLLM3}}{table.caption.55}{}}
+\newlabel{tab:pDesc3@cref}{{[table][7][6]6.7}{[1][63][]66}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.8}{\ignorespaces Test on sanitized scripts combined with textual problem description, single-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM1}}}{67}{table.caption.56}\protected@file@percent }
+\newlabel{tab:pDesc1}{{6.8}{67}{Test on sanitized scripts combined with textual problem description, single-solver evaluation. Columns are calculated as in \Cref {tab:allLLM1}}{table.caption.56}{}}
+\newlabel{tab:pDesc1@cref}{{[table][8][6]6.8}{[1][63][]67}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.9}{\ignorespaces Test on sanitized scripts combined with textual problem description, closed gap. Columns are calculated as in \Cref  {tab:allLLMcg}}}{67}{table.caption.57}\protected@file@percent }
+\newlabel{tab:pDesccg}{{6.9}{67}{Test on sanitized scripts combined with textual problem description, closed gap. Columns are calculated as in \Cref {tab:allLLMcg}}{table.caption.57}{}}
+\newlabel{tab:pDesccg@cref}{{[table][9][6]6.9}{[1][63][]67}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.10}{\ignorespaces Examples of solver description for two solvers, namely COIN-OR Branch-and-Cut (CBC)~\cite  {cbc}, and Chuffed~\cite  {chuffed}.}}{67}{table.caption.58}\protected@file@percent }
+\newlabel{tab:sDescEx}{{6.10}{67}{Examples of solver description for two solvers, namely COIN-OR Branch-and-Cut (CBC)~\cite {cbc}, and Chuffed~\cite {chuffed}}{table.caption.58}{}}
+\newlabel{tab:sDescEx@cref}{{[table][10][6]6.10}{[1][63][]67}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.11}{\ignorespaces Test with sanitized scripts combined with solvers description in a multi turn setup, parallel-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM3}}}{67}{table.caption.59}\protected@file@percent }
+\newlabel{tab:sDesc3}{{6.11}{67}{Test with sanitized scripts combined with solvers description in a multi turn setup, parallel-solver evaluation. Columns are calculated as in \Cref {tab:allLLM3}}{table.caption.59}{}}
+\newlabel{tab:sDesc3@cref}{{[table][11][6]6.11}{[1][63][]67}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.12}{\ignorespaces Test with sanitized scripts combined with solvers description in a multi turn setup, single-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM1}}}{68}{table.caption.60}\protected@file@percent }
+\newlabel{tab:sDesc1}{{6.12}{68}{Test with sanitized scripts combined with solvers description in a multi turn setup, single-solver evaluation. Columns are calculated as in \Cref {tab:allLLM1}}{table.caption.60}{}}
+\newlabel{tab:sDesc1@cref}{{[table][12][6]6.12}{[1][63][]68}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.13}{\ignorespaces Test with sanitized scripts combined with solvers description in a multi turn setup, closed gap. Columns are calculated as in \Cref  {tab:allLLMcg}}}{68}{table.caption.61}\protected@file@percent }
+\newlabel{tab:sDesccg}{{6.13}{68}{Test with sanitized scripts combined with solvers description in a multi turn setup, closed gap. Columns are calculated as in \Cref {tab:allLLMcg}}{table.caption.61}{}}
+\newlabel{tab:sDesccg@cref}{{[table][13][6]6.13}{[1][63][]68}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.14}{\ignorespaces Test with sanitized scripts combined with both solvers description, and problem description in a multi turn setup, parallel-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM3}}}{68}{table.caption.62}\protected@file@percent }
+\newlabel{tab:sDescpDesc3}{{6.14}{68}{Test with sanitized scripts combined with both solvers description, and problem description in a multi turn setup, parallel-solver evaluation. Columns are calculated as in \Cref {tab:allLLM3}}{table.caption.62}{}}
+\newlabel{tab:sDescpDesc3@cref}{{[table][14][6]6.14}{[1][63][]68}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.15}{\ignorespaces Test with sanitized scripts combined with both solvers description, and problem description in a multi turn setup, single-solver evaluation. Columns are calculated as in \Cref  {tab:allLLM1}}}{68}{table.caption.63}\protected@file@percent }
+\newlabel{tab:sDescpDesc1}{{6.15}{68}{Test with sanitized scripts combined with both solvers description, and problem description in a multi turn setup, single-solver evaluation. Columns are calculated as in \Cref {tab:allLLM1}}{table.caption.63}{}}
+\newlabel{tab:sDescpDesc1@cref}{{[table][15][6]6.15}{[1][63][]68}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.16}{\ignorespaces Test with sanitized scripts combined with both solvers description, and problem description in a multi turn setup, closed gap. Columns are calculated as in \Cref  {tab:allLLMcg}}}{69}{table.caption.64}\protected@file@percent }
+\newlabel{tab:sDescpDesccg}{{6.16}{69}{Test with sanitized scripts combined with both solvers description, and problem description in a multi turn setup, closed gap. Columns are calculated as in \Cref {tab:allLLMcg}}{table.caption.64}{}}
+\newlabel{tab:sDescpDesccg@cref}{{[table][16][6]6.16}{[1][63][]69}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Histogram displaying the performances of all the solver variants in ``Parallel Score'' evaluation, as calculated in \Cref  {tab:combinedAllLLM}.}}{69}{figure.caption.67}\protected@file@percent }
+\newlabel{fig:histoVarPar}{{6.3}{69}{Histogram displaying the performances of all the solver variants in ``Parallel Score'' evaluation, as calculated in \Cref {tab:combinedAllLLM}}{figure.caption.67}{}}
+\newlabel{fig:histoVarPar@cref}{{[figure][3][6]6.3}{[1][63][]69}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.17}{\ignorespaces Table displaying all the different LLM variants results from parallel-solver evaluation, ``Total Score'' is calculated as ``Parallel Score'' in \Cref  {tab:combinedAllLLM}, and compared to all of the single solvers in open category of the MiniZinc Challenge~\cite  {MznResults25}}}{70}{table.caption.65}\protected@file@percent }
+\newlabel{tab:comparisanVarPar}{{6.17}{70}{Table displaying all the different LLM variants results from parallel-solver evaluation, ``Total Score'' is calculated as ``Parallel Score'' in \Cref {tab:combinedAllLLM}, and compared to all of the single solvers in open category of the MiniZinc Challenge~\cite {MznResults25}}{table.caption.65}{}}
+\newlabel{tab:comparisanVarPar@cref}{{[table][17][6]6.17}{[1][63][]70}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.18}{\ignorespaces Table displaying all the first LLM variants results given single-solver evaluation, ``Total Score'' is calculated as ``Single Score'' in \Cref  {tab:combinedAllLLM}, and compared to all of the single solvers in free category of the MiniZinc Challenge~\cite  {MznResults25}}}{71}{table.caption.66}\protected@file@percent }
+\newlabel{tab:comparisanVarSin}{{6.18}{71}{Table displaying all the first LLM variants results given single-solver evaluation, ``Total Score'' is calculated as ``Single Score'' in \Cref {tab:combinedAllLLM}, and compared to all of the single solvers in free category of the MiniZinc Challenge~\cite {MznResults25}}{table.caption.66}{}}
+\newlabel{tab:comparisanVarSin@cref}{{[table][18][6]6.18}{[1][63][]71}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Histogram displaying the performances of all the solver variants in ``Single Score'' evaluation, ``Parallel Score'' evaluation and ``Closed Gap'' evaluation, as calculated in \Cref  {tab:combinedAllLLM}.}}{72}{figure.caption.68}\protected@file@percent }
+\newlabel{fig:histoVarSin}{{6.4}{72}{Histogram displaying the performances of all the solver variants in ``Single Score'' evaluation, ``Parallel Score'' evaluation and ``Closed Gap'' evaluation, as calculated in \Cref {tab:combinedAllLLM}}{figure.caption.68}{}}
+\newlabel{fig:histoVarSin@cref}{{[figure][4][6]6.4}{[1][63][]72}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Histograms to visualize the difference between first LLM variants and single solvers free category performance, ``Total Score'' is the equivalent of ``Single Score'' as explained in \Cref  {tab:combinedAllLLM}.}}{73}{figure.caption.69}\protected@file@percent }
+\newlabel{fig:comparisanVarSin}{{6.5}{73}{Histograms to visualize the difference between first LLM variants and single solvers free category performance, ``Total Score'' is the equivalent of ``Single Score'' as explained in \Cref {tab:combinedAllLLM}}{figure.caption.69}{}}
+\newlabel{fig:comparisanVarSin@cref}{{[figure][5][6]6.5}{[1][63][]73}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Histograms to visualize the difference between first LLM variants and single solvers from open category performance, ``Total Score'' is the equivalent of ``Parallel Score'' as explained in \Cref  {tab:combinedAllLLM}.}}{74}{figure.caption.70}\protected@file@percent }
+\newlabel{fig:comparisanVarPar}{{6.6}{74}{Histograms to visualize the difference between first LLM variants and single solvers from open category performance, ``Total Score'' is the equivalent of ``Parallel Score'' as explained in \Cref {tab:combinedAllLLM}}{figure.caption.70}{}}
+\newlabel{fig:comparisanVarPar@cref}{{[figure][6][6]6.6}{[1][63][]74}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.19}{\ignorespaces The table shows a quick explanation of the features that can be extracted using the tool \texttt  {mzn2feat}~\cite  {mzn2feat}, divided per category, and counted.}}{75}{table.caption.71}\protected@file@percent }
+\newlabel{tab:FeatDescriptions}{{6.19}{75}{The table shows a quick explanation of the features that can be extracted using the tool \texttt {mzn2feat}~\cite {mzn2feat}, divided per category, and counted}{table.caption.71}{}}
+\newlabel{tab:FeatDescriptions@cref}{{[table][19][6]6.19}{[1][63][]75}{}{}{}}
+\newlabel{lst:mzn2feat-features}{{6.1}{76}{Example output using \texttt {mzn2feat}~\cite {mzn2feat} pretty print option on \texttt {EchoSched.mzn}, instance \texttt {14-10-0-2\_1}}{lstlisting.6.1}{}}
+\newlabel{lst:mzn2feat-features@cref}{{[lstlisting][1][6]6.1}{[1][76][]76}{}{}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.1}{\ignorespaces Example output using \texttt  {mzn2feat}~\cite  {mzn2feat} pretty print option on \texttt  {EchoSched.mzn}, instance \texttt  {14-10-0-2\_1}.}}{76}{lstlisting.6.1}\protected@file@percent }
 \citation{mzn2feat}
 \citation{mzn2feat}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Heatmap displaying the performace of all the combinations of temperatures with the five best performing variants in ``Parallel Score'' evaluation calculated as in \Cref  {tab:combinedAllLLM}, all tests were performed using \texttt  {gpt-oss-120b}.}}{72}{figure.caption.65}\protected@file@percent }
-\newlabel{fig:hmTempPar}{{5.7}{72}{Heatmap displaying the performace of all the combinations of temperatures with the five best performing variants in ``Parallel Score'' evaluation calculated as in \Cref {tab:combinedAllLLM}, all tests were performed using \texttt {gpt-oss-120b}}{figure.caption.65}{}}
-\newlabel{fig:hmTempPar@cref}{{[figure][7][5]5.7}{[1][71][]72}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Heatmap displaying the performace of all the combinations of temperatures with the five best performing variants in ``Single Score'' evaluation calculated as in \Cref  {tab:combinedAllLLM}, all tests were performed using \texttt  {gpt-oss-120b}.}}{72}{figure.caption.66}\protected@file@percent }
-\newlabel{fig:hmTempSin}{{5.8}{72}{Heatmap displaying the performace of all the combinations of temperatures with the five best performing variants in ``Single Score'' evaluation calculated as in \Cref {tab:combinedAllLLM}, all tests were performed using \texttt {gpt-oss-120b}}{figure.caption.66}{}}
-\newlabel{fig:hmTempSin@cref}{{[figure][8][5]5.8}{[1][71][]72}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.22}{\ignorespaces Table displaying all the solvers from free catecory ordered by the number of optimal solutions they reach, intended as the number of instances where the given solver scores 1, following the scoring in \Cref  {sec:metrics}.}}{73}{table.caption.67}\protected@file@percent }
-\newlabel{tab:solverOptCount}{{5.22}{73}{Table displaying all the solvers from free catecory ordered by the number of optimal solutions they reach, intended as the number of instances where the given solver scores 1, following the scoring in \Cref {sec:metrics}}{table.caption.67}{}}
-\newlabel{tab:solverOptCount@cref}{{[table][22][5]5.22}{[1][71][]73}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.23}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~2. Columns are organized as in \Cref  {tab:swappedCount1}}}{73}{table.caption.68}\protected@file@percent }
-\newlabel{tab:swappedCount2}{{5.23}{73}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~2. Columns are organized as in \Cref {tab:swappedCount1}}{table.caption.68}{}}
-\newlabel{tab:swappedCount2@cref}{{[table][23][5]5.23}{[1][71][]73}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.24}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~3. Columns are organized as in \Cref  {tab:swappedCount1}}}{74}{table.caption.69}\protected@file@percent }
-\newlabel{tab:swappedCount3}{{5.24}{74}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~3. Columns are organized as in \Cref {tab:swappedCount1}}{table.caption.69}{}}
-\newlabel{tab:swappedCount3@cref}{{[table][24][5]5.24}{[1][71][]74}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.25}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~4. Columns are organized as in \Cref  {tab:swappedCount1}}}{74}{table.caption.70}\protected@file@percent }
-\newlabel{tab:swappedCount4}{{5.25}{74}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~4. Columns are organized as in \Cref {tab:swappedCount1}}{table.caption.70}{}}
-\newlabel{tab:swappedCount4@cref}{{[table][25][5]5.25}{[1][71][]74}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.26}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~5. Columns are organized as in \Cref  {tab:swappedCount1}}}{74}{table.caption.71}\protected@file@percent }
-\newlabel{tab:swappedCount5}{{5.26}{74}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~5. Columns are organized as in \Cref {tab:swappedCount1}}{table.caption.71}{}}
-\newlabel{tab:swappedCount5@cref}{{[table][26][5]5.26}{[1][71][]74}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Heatmap displaying the performace of all the combinations of temperatures with the five best performing variants in ``Parallel Score'' evaluation calculated as in \Cref  {tab:combinedAllLLM}, all tests were performed using \texttt  {gpt-oss-120b}.}}{78}{figure.caption.72}\protected@file@percent }
+\newlabel{fig:hmTempPar}{{6.7}{78}{Heatmap displaying the performace of all the combinations of temperatures with the five best performing variants in ``Parallel Score'' evaluation calculated as in \Cref {tab:combinedAllLLM}, all tests were performed using \texttt {gpt-oss-120b}}{figure.caption.72}{}}
+\newlabel{fig:hmTempPar@cref}{{[figure][7][6]6.7}{[1][77][]78}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Heatmap displaying the performace of all the combinations of temperatures with the five best performing variants in ``Single Score'' evaluation calculated as in \Cref  {tab:combinedAllLLM}, all tests were performed using \texttt  {gpt-oss-120b}.}}{78}{figure.caption.73}\protected@file@percent }
+\newlabel{fig:hmTempSin}{{6.8}{78}{Heatmap displaying the performace of all the combinations of temperatures with the five best performing variants in ``Single Score'' evaluation calculated as in \Cref {tab:combinedAllLLM}, all tests were performed using \texttt {gpt-oss-120b}}{figure.caption.73}{}}
+\newlabel{fig:hmTempSin@cref}{{[figure][8][6]6.8}{[1][77][]78}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.20}{\ignorespaces Table displaying all the solvers from free catecory ordered by the number of optimal solutions they reach, intended as the number of instances where the given solver scores 1, following the scoring in \Cref  {sec:metrics}.}}{79}{table.caption.74}\protected@file@percent }
+\newlabel{tab:solverOptCount}{{6.20}{79}{Table displaying all the solvers from free catecory ordered by the number of optimal solutions they reach, intended as the number of instances where the given solver scores 1, following the scoring in \Cref {sec:metrics}}{table.caption.74}{}}
+\newlabel{tab:solverOptCount@cref}{{[table][20][6]6.20}{[1][77][]79}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.21}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~2. Columns are organized as in \Cref  {tab:swappedCount1}}}{79}{table.caption.75}\protected@file@percent }
+\newlabel{tab:swappedCount2}{{6.21}{79}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~2. Columns are organized as in \Cref {tab:swappedCount1}}{table.caption.75}{}}
+\newlabel{tab:swappedCount2@cref}{{[table][21][6]6.21}{[1][77][]79}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.22}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~3. Columns are organized as in \Cref  {tab:swappedCount1}}}{80}{table.caption.76}\protected@file@percent }
+\newlabel{tab:swappedCount3}{{6.22}{80}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~3. Columns are organized as in \Cref {tab:swappedCount1}}{table.caption.76}{}}
+\newlabel{tab:swappedCount3@cref}{{[table][22][6]6.22}{[1][77][]80}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.23}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~4. Columns are organized as in \Cref  {tab:swappedCount1}}}{80}{table.caption.77}\protected@file@percent }
+\newlabel{tab:swappedCount4}{{6.23}{80}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~4. Columns are organized as in \Cref {tab:swappedCount1}}{table.caption.77}{}}
+\newlabel{tab:swappedCount4@cref}{{[table][23][6]6.23}{[1][77][]80}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.24}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~5. Columns are organized as in \Cref  {tab:swappedCount1}}}{80}{table.caption.78}\protected@file@percent }
+\newlabel{tab:swappedCount5}{{6.24}{80}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~5. Columns are organized as in \Cref {tab:swappedCount1}}{table.caption.78}{}}
+\newlabel{tab:swappedCount5@cref}{{[table][24][6]6.24}{[1][77][]80}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.25}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~2. Columns are organized as in \Cref  {tab:swappedCount1}}}{81}{table.caption.79}\protected@file@percent }
+\newlabel{tab:anonymousCount2}{{6.25}{81}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~2. Columns are organized as in \Cref {tab:swappedCount1}}{table.caption.79}{}}
+\newlabel{tab:anonymousCount2@cref}{{[table][25][6]6.25}{[1][77][]81}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.26}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~3. Columns are organized as in \Cref  {tab:swappedCount1}}}{81}{table.caption.80}\protected@file@percent }
+\newlabel{tab:anonymousCount3}{{6.26}{81}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~3. Columns are organized as in \Cref {tab:swappedCount1}}{table.caption.80}{}}
+\newlabel{tab:anonymousCount3@cref}{{[table][26][6]6.26}{[1][77][]81}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.27}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~4. Columns are organized as in \Cref  {tab:swappedCount1}}}{82}{table.caption.81}\protected@file@percent }
+\newlabel{tab:anonymousCount4}{{6.27}{82}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~4. Columns are organized as in \Cref {tab:swappedCount1}}{table.caption.81}{}}
+\newlabel{tab:anonymousCount4@cref}{{[table][27][6]6.27}{[1][77][]82}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.28}{\ignorespaces Analysis over the solver suggestions from \texttt  {gpt-oss-120b}, using the configuration~5. Columns are organized as in \Cref  {tab:swappedCount1}}}{82}{table.caption.82}\protected@file@percent }
+\newlabel{tab:anonymousCount5}{{6.28}{82}{Analysis over the solver suggestions from \texttt {gpt-oss-120b}, using the configuration~5. Columns are organized as in \Cref {tab:swappedCount1}}{table.caption.82}{}}
+\newlabel{tab:anonymousCount5@cref}{{[table][28][6]6.28}{[1][77][]82}{}{}{}}
 \bibcite{algSelRanking}{{1}{}{{}}{{}}}
 \bibcite{CPholygrail}{{2}{}{{}}{{}}}
 \bibcite{holygrail}{{3}{}{{}}{{}}}
@@ -429,7 +468,7 @@
 \bibcite{PortfolioSolvers}{{10}{}{{}}{{}}}
 \bibcite{AlgPortfolio}{{11}{}{{}}{{}}}
 \bibcite{AlgSelProb}{{12}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{75}{chapter*.72}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{83}{chapter*.83}\protected@file@percent }
 \bibcite{AlgSelCSP}{{13}{}{{}}{{}}}
 \bibcite{fromPFStoAS}{{14}{}{{}}{{}}}
 \bibcite{LLMsIBM}{{15}{}{{}}{{}}}
@@ -486,4 +525,4 @@
 \bibcite{LLMapprehension}{{66}{}{{}}{{}}}
 \bibcite{IBM}{{67}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\gdef \@abspage@last{87}
+\gdef \@abspage@last{95}
