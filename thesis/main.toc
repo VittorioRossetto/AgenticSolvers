@@ -4,78 +4,72 @@
 \contentsline {chapter}{Introduction}{i}{chapter*.1}%
 \contentsline {chapter}{\numberline {1}Technical Background}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Constraint Programming}{3}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Solvers}{4}{subsection.1.1.1}%
-\contentsline {subsubsection}{Constraint Programming (CP) solvers}{4}{section*.3}%
-\contentsline {subsubsection}{Linear and Mixed-Integer Linear Programming solvers}{4}{section*.4}%
-\contentsline {subsubsection}{Portfolio Solvers}{5}{section*.5}%
-\contentsline {subsection}{\numberline {1.1.2}MiniZinc}{5}{subsection.1.1.2}%
-\contentsline {subsubsection}{A MiniZinc Example}{6}{section*.6}%
-\contentsline {subsubsection}{MiniZinc Challenge}{6}{section*.9}%
-\contentsline {section}{\numberline {1.2}Large Language Models}{8}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Inference and Decoding}{8}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Prompting and Interaction}{9}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Application Programming Interfaces}{10}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Relevance to Solver Selection}{10}{subsection.1.2.4}%
-\contentsline {chapter}{\numberline {2}Methodology}{11}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Provider Choice}{11}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Large Language Models Selection}{12}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Prompt General Structure}{13}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Output Structure}{13}{subsection.2.3.1}%
-\contentsline {section}{\numberline {2.4}Problem Selection}{14}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Test Metrics}{15}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Metric for Solver Score}{16}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Closed Gap}{17}{subsection.2.5.2}%
-\contentsline {section}{\numberline {2.6}Experiment Setup}{18}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Script Sanitization}{18}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}Custom Delays}{19}{subsection.2.6.2}%
-\contentsline {chapter}{\numberline {3}Experimental Evaluation}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Preliminary tests}{21}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Single Request Experiments}{23}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Base Setup}{23}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Problem Description}{23}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Multi-turn Experiments}{25}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Setup Explanation}{25}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Solvers Description}{26}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Solver Description and Problem Description}{27}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Basic Tests Evaluation}{27}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Feature Extraction}{28}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Tool Description}{29}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Testing and Results}{29}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Sampling Temperature Tuning}{30}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Choosing Sampling Temperatures}{31}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Testing and Results}{32}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Restricted Solver Portfolio}{33}{section.3.6}%
-\contentsline {chapter}{\numberline {4}A FlatZinc Parser: fzn2nl}{37}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Motivation}{37}{section.4.1}%
-\contentsline {section}{\numberline {4.2}FlatZinc Compiler}{39}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}FlatZinc Limitation}{39}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Custom Compiler}{40}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Tool Functioning}{40}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Parser}{41}{subsection.4.3.1}%
-\contentsline {subsubsection}{Core Data Structures}{41}{section*.28}%
-\contentsline {subsubsection}{Parsing Strategy}{41}{section*.29}%
-\contentsline {subsubsection}{Example of Parser Execution on a FlatZinc Instance}{43}{section*.30}%
-\contentsline {subsection}{\numberline {4.3.2}Mapping to Natural Language}{45}{subsection.4.3.2}%
-\contentsline {paragraph}{Constraint descriptions and categorization}{45}{section*.31}%
-\contentsline {paragraph}{Search-annotation mapping}{45}{section*.32}%
-\contentsline {paragraph}{Objective-function reconstruction}{45}{section*.33}%
-\contentsline {paragraph}{Variable statistics}{46}{section*.34}%
-\contentsline {section}{\numberline {4.4}Testing and Results}{46}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Performance with GPT-5.2}{47}{subsection.4.4.1}%
-\contentsline {chapter}{\numberline {5}LLM Reasoning Analysis}{49}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Analysis of Solver Understanding}{49}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Experiments with Swapped Solver Descriptions}{50}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Experiments with Anonymous Solvers}{51}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Reasoning with GPT-5.2}{52}{section.5.2}%
-\contentsline {paragraph}{mondoku/10-10-6}{53}{section*.41}%
-\contentsline {paragraph}{tower/tower\_070\_070\_15\_070-08}{54}{section*.42}%
-\contentsline {paragraph}{is/BnMUR3YMRk}{54}{section*.43}%
-\contentsline {paragraph}{fbd1/FBDk09}{55}{section*.44}%
-\contentsline {paragraph}{proteindesign12/1UBI.13p.9aa.usingEref\_self\_x}{56}{section*.45}%
-\contentsline {subsection}{\numberline {5.2.1}Overall Analysis}{57}{subsection.5.2.1}%
-\contentsline {chapter}{\numberline {6}Conclusions}{59}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Empirical findings}{59}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Technical contributions}{60}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Limitations and future work}{61}{section.6.3}%
-\contentsline {chapter}{Appendix}{63}{chapter*.46}%
-\contentsline {chapter}{Bibliography}{83}{chapter*.83}%
+\contentsline {subsection}{\numberline {1.1.1}Solvers}{3}{subsection.1.1.1}%
+\contentsline {subsubsection}{Constraint Programming solvers}{4}{section*.3}%
+\contentsline {subsubsection}{Portfolio solvers}{4}{section*.4}%
+\contentsline {subsection}{\numberline {1.1.2}MiniZinc}{4}{subsection.1.1.2}%
+\contentsline {subsubsection}{A MiniZinc example}{5}{section*.5}%
+\contentsline {subsubsection}{MiniZinc Challenge}{5}{section*.8}%
+\contentsline {section}{\numberline {1.2}Large Language Models}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Inference and decoding}{6}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Relevance to solver selection}{7}{subsection.1.2.2}%
+\contentsline {chapter}{\numberline {2}Methodology}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Provider Choice}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Large Language Models Selection}{10}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Prompt General Structure}{11}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Output Structure}{11}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}Problem Selection}{12}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Test Metrics}{13}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Metric for Solver Score}{14}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Closed Gap}{15}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Experiment Setup}{16}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Script Sanitization}{16}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Custom Delays}{17}{subsection.2.6.2}%
+\contentsline {chapter}{\numberline {3}Experimental Evaluation}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Preliminary tests}{19}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Single Request Experiments}{21}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Base Setup}{21}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Problem Description}{21}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Multi-turn Experiments}{23}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Setup Explanation}{23}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Solvers Description}{24}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Solver Description and Problem Description}{25}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Basic Tests Evaluation}{25}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Feature Extraction}{26}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Tool Description}{27}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Testing and Results}{27}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Sampling Temperature Tuning}{28}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Choosing Sampling Temperatures}{29}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Testing and Results}{29}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Restricted Solver Portfolio}{31}{section.3.6}%
+\contentsline {chapter}{\numberline {4}A FlatZinc Parser: fzn2nl}{35}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Motivation}{35}{section.4.1}%
+\contentsline {section}{\numberline {4.2}FlatZinc Compiler}{37}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}FlatZinc Limitation}{37}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Custom Compiler}{38}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Tool Functioning}{38}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Parser}{39}{subsection.4.3.1}%
+\contentsline {subsubsection}{Core Data Structures}{39}{section*.26}%
+\contentsline {subsubsection}{Parsing Strategy}{39}{section*.27}%
+\contentsline {subsubsection}{Example of Parser Execution on a FlatZinc Instance}{41}{section*.28}%
+\contentsline {subsection}{\numberline {4.3.2}Mapping to Natural Language}{43}{subsection.4.3.2}%
+\contentsline {paragraph}{Constraint descriptions and categorization}{43}{section*.29}%
+\contentsline {paragraph}{Search-annotation mapping}{43}{section*.30}%
+\contentsline {paragraph}{Objective-function reconstruction}{43}{section*.31}%
+\contentsline {paragraph}{Variable statistics}{44}{section*.32}%
+\contentsline {section}{\numberline {4.4}Testing and Results}{45}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Performance with GPT-5.2}{45}{subsection.4.4.1}%
+\contentsline {chapter}{\numberline {5}LLM Reasoning Analysis}{47}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Analysis of Solver Understanding}{47}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Experiments with Swapped Solver Descriptions}{48}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Experiments with Anonymous Solvers}{49}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Reasoning with GPT-5.2}{50}{section.5.2}%
+\contentsline {paragraph}{mondoku/10-10-6}{51}{section*.39}%
+\contentsline {paragraph}{tower/tower\_070\_070\_15\_070-08}{52}{section*.40}%
+\contentsline {paragraph}{is/BnMUR3YMRk}{52}{section*.41}%
+\contentsline {paragraph}{fbd1/FBDk09}{53}{section*.42}%
+\contentsline {paragraph}{proteindesign12/1UBI.13p.9aa.usingEref\_self\_x}{54}{section*.43}%
+\contentsline {subsection}{\numberline {5.2.1}Overall Analysis}{55}{subsection.5.2.1}%
+\contentsline {chapter}{\numberline {6}Conclusions}{57}{chapter.6}%
+\contentsline {chapter}{Appendix}{61}{chapter*.44}%
+\contentsline {chapter}{Bibliography}{83}{table.caption.80}%

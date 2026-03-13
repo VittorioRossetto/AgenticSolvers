@@ -5,14 +5,14 @@ This chapter provides an overview of the theoretical concepts required for the r
 
 The first section presents Constraint Programming, including the role of CP solvers and the MiniZinc modeling language used in the experimental evaluation.
 
-The second section introduces Large Language Models, describing their probabilistic foundations, inference and decoding mechanisms, prompting techniques, and the use of APIs for interacting with such systems.
+The second section introduces Large Language Models, describing their probabilistic foundations, inference and decoding mechanisms, and prompting techniques.
 
 \section{Constraint Programming}
-CP is a paradigm for the declarative modeling and effective solution of large, particularly combinatorial, problems, especially in planning and scheduling.~\cite{CPholygrail}.
+CP is a paradigm for the declarative modeling and effective solution of large, particularly combinatorial, problems, especially in planning and scheduling~\cite{CPholygrail}.
 
-A constraint can be thought of intuitively as a formalization of dependencies in in real-world systems and their mathematical abstractions. A constraint is a logical relation among a set of variables, each taking a value in a given domain. The constraint thus restricts the possible values that variables can take; it represents partial information about the variables of interest. Constraints can also be heterogeneous, so they can bind variables from different domains, for example a length (number) with a word (string). The important feature of constraints is their declarative manner, i.e., they specify what relationship must hold without specifying a computational procedure to enforce that relationship~\cite{CPholygrail}.
+A constraint can be thought of intuitively as a formalization of dependencies in real-world systems and their mathematical abstractions. A constraint is a logical relation among a set of variables, each taking a value in a given domain. The constraint thus restricts the possible values that variables can take; it represents partial information about the variables of interest. Constraints can also be heterogeneous, so they can bind variables from different domains, for example a length (number) with a word (string). The important feature of constraints is their declarative manner, i.e., they specify what relationship must hold without specifying a computational procedure to enforce that relationship~\cite{CPholygrail}.
 
-Constraints arise naturally in most areas of human endeavor. They are the natural medium of expression for formalizing regularities that underlie the computational and (natural or designed) the physical world and their mathematical abstractions. 
+Constraints arise naturally in most areas of human endeavor. They are the natural medium of expression for formalizing regularities that underlie the computational and physical world (whether natural or designed) and their mathematical abstractions. 
 
 CP is the study of computational systems based on constraints. The idea of CP is to solve problems by stating constraints (requirements) about the problem area and, consequently, finding a solution satisfying all the constraints.
 
@@ -50,31 +50,19 @@ Different solver families address CSPs and COPs using distinct mathematical abst
 
 Constraint Programming solvers operate directly on variables with finite or structured domains and heterogeneous constraints. Their fundamental mechanisms are constraint propagation, which removes inconsistent values from variable domains, and systematic search, typically implemented via backtracking guided by variable- and value-ordering heuristics. CP solvers natively support high-level global constraints equipped with specialized filtering algorithms that exploit combinatorial structure~\cite{CPvsMILPsolvers}. A representative example is Gecode~\cite{Gecode}.
 
-\subsubsection{Linear and Mixed-Integer Linear Programming solvers}
-
-Linear Programming (LP) and Mixed-Integer Linear Programming (MILP) solvers address optimization problems in which the objective function and the constraints are linear. A standard LP formulation is
-\[
-\min \{ c^\top x \mid Ax \le b,\; x \in \mathbb{R}^n \},
-\]
-where \(x \in \mathbb{R}^n\) is a vector of continuous decision variables, \(c \in \mathbb{R}^n\) defines the linear objective function, and \(Ax \le b\) represents a system of linear inequalities.
-
-LP solvers assume continuous domains and rely on algorithms such as the simplex method and interior-point methods~\cite{simplexintPLP}. They do not natively support discrete decision variables or high-level combinatorial constraints; such constructs must be reformulated as linear expressions over continuous variables.
-
-Mixed-Integer Linear Programming extends this framework by restricting some or all variables to integer domains, i.e., \(x_i \in \mathbb{Z}\) for selected indices. MILP solvers typically combine LP relaxations with tree-based search procedures such as branch-and-bound and branch-and-cut~\cite{BBAlg,BCAlg}. This hybrid approach enables the treatment of discrete decisions within a linear modeling framework, although global or non-linear constraints must generally be encoded through auxiliary variables and additional linear constraints. Examples of solvers in this family include HiGHS~\cite{HiGHS} and Gurobi~\cite{Gurobi}.
-
 \subsubsection{Portfolio Solvers}
 Solving combinatorial search problems is computationally challenging, and numerous techniques and constraint solvers have been developed for this purpose. It has become clear that different solvers are better when solving different problem instances, even within the same problem class. It has also been shown that a single, arbitrarily efficient solver can be significantly outperformed by using a portfolio of possibly on-average slower solvers~\cite{PortfolioSolvers}.
 
-Algorithm portfolios~\cite{AlgPortfolio} can be seen as instances of the more general Algorithm Selection problem~\cite{AlgSelProb} where, as reported in~\cite{AlgSelCSP}, the algorithm selection is performed case-by-case for each problem to solve. Within the context of constraint solving, a portfolio approach enables to combine a number $m > 1$ of different constituent solvers $s_1, \dots, s_m$ in order to create a globally better constraint solver, dubbed a portfolio solver. When a new problem instance $p$ is encountered, the portfolio solver tries to predict the best constituent solver(s) $s_{i_1}, \dots, s_{i_k}$ (with $1 \leq i_j \leq m$ for $j = 1, \dots, k$) for solving $p$ and then runs them on $p$. Properly selecting and scheduling the solvers is a crucial step for the performance of a portfolio solver, and it is usually performed by exploiting Machine Learning techniques based on features extracted from the problem $p$ to solve.
+Algorithm portfolios~\cite{AlgPortfolio} can be seen as instances of the more general Algorithm Selection problem~\cite{AlgSelProb} where, as reported in~\cite{AlgSelCSP}, the algorithm selection is performed case-by-case for each problem to solve. Within the context of constraint solving, a portfolio approach makes it possible to combine a number $m > 1$ of different constituent solvers $s_1, \dots, s_m$ in order to create a globally better constraint solver, dubbed a portfolio solver. When a new problem instance $p$ is encountered, the portfolio solver tries to predict the best constituent solver(s) $s_{i_1}, \dots, s_{i_k}$ (with $1 \leq i_j \leq m$ for $j = 1, \dots, k$) for solving $p$ and then runs them on $p$. Properly selecting and scheduling the solvers is a crucial step for the performance of a portfolio solver, and it is usually performed by exploiting Machine Learning techniques based on features extracted from the problem $p$ to solve.
 
-In this work, starting from the idea behind portfolio solvers, we will try to evaluate the performances of a pre-trained LLM to understand if this could be a viable solution to the algorithm selection problem~\cite{AlgSelProb}, avoiding the cost of training for portfolio solvers, following the new paradigm proposed in~\cite{fromPFStoAS}.
+In this work, starting from the idea behind portfolio solvers, we will try to evaluate the performance of a pre-trained LLM to understand if this could be a viable solution to the algorithm selection problem~\cite{AlgSelProb}, avoiding the cost of training for portfolio solvers, following the new paradigm proposed in~\cite{fromPFStoAS}.
 
 \subsection{MiniZinc}
 MiniZinc is an expressive modeling language for constraint programming that supports a wide range of solvers and represents a practical compromise among several design alternatives.
 
-It was born from the necessity of a standard modelling language for constraint programming problems, it is also making solver benchmarking simpler~\cite{MiniZinc}.
+It arose from the need for a standard modelling language for constraint programming problems, and it also simplifies solver benchmarking~\cite{MiniZinc}.
 
-For these reasons all of the problems employed for testing in the course of this research paper were written using MiniZinc.
+For these reasons, all problems employed for testing in the course of this work were written using MiniZinc.
 
 \subsubsection{A MiniZinc Example}
 A MiniZinc problem specification has two parts: (a) the model, which describes
@@ -87,11 +75,11 @@ Consider the MiniZinc model and example data for a restricted job shop schedulin
 
 Line 0 is a comment, introduced by the ``\%'' character.
 
-Lines 1-5 are ``variable declaration items''. Line 1 declares \texttt{size} to be an integer parameter, i.e. a variable that is fixed in the model. Line 20 (in the data file) is an ``assignment item'' that defines the value of \texttt{size} for this instance. Variable declaration items can include assignments, as in line 3. Line 4 declares \texttt{s} to be a 2D array of ``decision variables''. Line 5 is an integer variable with a restricted range. Decision variables are distinguished by the \texttt{var} prefix.
+Lines 1--5 are ``variable declaration items''. Line 1 declares \texttt{size} to be an integer parameter, i.e., a variable that is fixed in the model. Line 20 (in the data file) is an ``assignment item'' that defines the value of \texttt{size} for this instance. Variable declaration items can include assignments, as in line 3. Line 4 declares \texttt{s} to be a 2D array of ``decision variables''. Line 5 is an integer variable with a restricted range. Decision variables are distinguished by the \texttt{var} prefix.
 
-Lines 7-8 show a user-defined ``predicate item'', \texttt{no\_overlap}, which constrains two tasks given by start time and duration so that they do not overlap in time.
+Lines 7--8 show a user-defined ``predicate item'', \texttt{no\_overlap}, which constrains two tasks given by start time and duration so that they do not overlap in time.
 
-Lines 10-17 show a ``constraint item''. It uses the built-in \texttt{forall} to loop over each job, and ensure that: (line 12) the tasks are in order; (line 13) they finish before end; and (lines 14-16) that no two tasks in the same column overlap in time. Multiple constraint items are allowed, they are implicitly conjoined.
+Lines 10--17 show a ``constraint item''. It uses the built-in \texttt{forall} to loop over each job, and ensure that: (line 12) the tasks are in order; (line 13) they finish before end; and (lines 14--16) that no two tasks in the same column overlap in time. Multiple constraint items are allowed, they are implicitly conjoined.
 
 Line 19 shows a \texttt{solve item}. Every model must include exactly one solve
 item. Here we are interested in minimizing the end time. We can also maximize
@@ -103,13 +91,13 @@ They facilitate the creation of multi-file models and the use of library files~\
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.75\linewidth]{minizincModelEx.png}
-    \caption{MiniZinc model (\texttt{jobshop.mzn}) for the job shop problem(the portrayed example was taken from ~\cite{MiniZinc}).}
+    \caption{MiniZinc model (\texttt{jobshop.mzn}) for the job shop problem (the example was taken from~\cite{MiniZinc}).}
     \label{fig:minizincModelEx}
 \end{figure}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.75\linewidth]{minizincDataEx.png}
-    \caption{MiniZinc data (\texttt{jobshop2x2.dzn}) for the job shop problem (the portrayed example was taken from ~\cite{MiniZinc}).}
+    \caption{MiniZinc data (\texttt{jobshop2x2.dzn}) for the job shop problem (the example was taken from~\cite{MiniZinc}).}
     \label{fig:minizincDataEx}
 \end{figure}
 
@@ -117,8 +105,8 @@ They facilitate the creation of multi-file models and the use of library files~\
 \subsubsection{MiniZinc Challenge}
 Comparing constraint programming systems is fraught with difficulty. The reason is that there are so many components to a modern CP system, only some of which are implemented by some systems. To claim that one CP system is ``better'' than another is a bold claim, since there is almost certainly some problem for which the ``worse'' system allows a stronger model, or a better search, and performs better.
 
-MiniZinc makes a good attempt to handle the most obvious obstacle: there are hundreds of potential global constraints, most handled by few or no systems. 
-A standard input language gives us the capability to compare different solvers.
+MiniZinc makes a good attempt to handle the most obvious obstacle: there are hundreds of potential global constraints, most of which are handled by few or no systems. 
+A standard input language enables direct comparison of different solvers.
 Hence, every year since 2008 the MiniZinc Challenge has been comparing different solvers that support MiniZinc~\cite{PhilMznChallenge}.
 
 The aim of the challenge is to compare various constraint solving technology on the same problems sets. The focus is on finite domain propagation solvers. An auxiliary aim is to build up a library of interesting problem models, which can be used to compare solvers and solving technologies.
@@ -129,9 +117,9 @@ Points are awarded for solving problems, speed of solution, and goodness of solu
 
 \section{Large Language Models}
 \label{sec:LLM}
-LLMs are statistical language models that estimate probability distributions over sequences of tokens in natural language. by learning statistical patterns over large text corpora.
+LLMs are statistical language models that estimate probability distributions over sequences of tokens in natural language by learning statistical patterns over large text corpora.
 
-LLMs are the culmination of decades of progress in natural language processing (NLP) and machine learning research, and their development is largely responsible for the explosion of artificial intelligence advancements across the late 2010s and 2020s. Popular LLMs have become household names, bringing generative AI to widespread public attention.. LLMs are also used widely in enterprises, with organizations investing heavily across numerous business functions and use cases~\cite{LLMsIBM}.
+LLMs are the culmination of decades of progress in natural language processing (NLP) and machine learning research, and their development is largely responsible for the explosion of artificial intelligence advancements across the late 2010s and 2020s. Popular LLMs have become household names, bringing generative AI to widespread public attention. LLMs are also used widely in enterprises, with organizations investing heavily across numerous business functions and use cases~\cite{LLMsIBM}.
 
 LLMs are built on a type of neural network architecture called a transformer~\cite{TransformerArchitecture}, which employs self-attention mechanisms to model dependencies among tokens in a sequence. Formally, given an input sequence \(x_1, \dots, x_n\), the model estimates the conditional distribution
 \[
@@ -141,7 +129,7 @@ and text generation proceeds autoregressively by repeatedly sampling from this d
 
 Training is typically divided into a large-scale pretraining phase followed by alignment stages. During pretraining, the model learns general linguistic and semantic representations through self-supervised objectives. Alignment techniques, such as supervised fine-tuning and reinforcement learning from feedback, adapt the model to follow instructions, respect constraints, and produce outputs that better match user expectations~\cite{LLMsIBM}.
 
-To better explain the concept, we can say LLMs are, at their core, autoregressive statistical models that generate text by iteratively predicting the most probable subsequent token in a sequence, based on patterns learned from their training data.
+LLMs are, at their core, autoregressive statistical models that generate text by iteratively predicting the most probable subsequent token in a sequence, based on patterns learned from their training data.
 
 \subsection{Inference and Decoding}
 
@@ -151,42 +139,13 @@ Modern LLMs typically generate text in a left-to-right, token-by-token fashion. 
 
 Notable deterministic decoding strategies include: ``Greedy Search'', which is limited to selecting the token with highest probability at each time step, or ``Beam Search''~\cite{BeamSearch}, which maintains a beam of the $k$ most probable sequences at each time step, where the hyperparameter $k$ is referred to as the beam width.
 
-Some notable stochastic methods are: Temperature Sampling samples tokens from the estimated next-token distributions. The skewness of distributions can be controlled using a temperature hyperparameter $\tau$, or Top-p Sampling, which only considers the minimal set of most probable tokens that cover a specified percentage p of the distribution.
+Some notable stochastic methods are: Temperature Sampling, which samples tokens from the estimated next-token distribution, with the skewness of the distribution controlled via a temperature hyperparameter $\tau$; and Top-p Sampling, which considers only the minimal set of most probable tokens covering a specified fraction $p$ of the distribution.
 
 A central practical constraint is the context window, which limits the total number of tokens that can be processed jointly as input and output. This constraint directly influences prompt design, the amount of contextual information that can be provided, and the feasibility of maintaining conversational state.
-
-\subsection{Prompting and Interaction}
-
-LLMs are typically controlled through prompting, where task instructions and contextual data are encoded in the input. 
-
-Prompt engineering has emerged as an indispensable technique for extending the capabilities of LLMs. This approach leverages task-specific instructions, known as prompts, to enhance model efficacy without modifying the core model parameters. Rather than updating the model parameters, prompts allow seamless integration of pre-trained models into downstream tasks by eliciting desired model behaviors solely based on the given prompt. 
-
-Prompts can be natural language instructions that provide context to guide the model or learned vector representations that activate relevant knowledge.
-Prompt engineering has enabled successful applications across a wide range of tasks, from question-answering to common sense reasoning~\cite{prompting}. 
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.75\linewidth]{promptEngineering.png}
-    \caption{Visual breakdown of prompt engineering components: LLMs trained on extensive data, instruction and context as pivotal elements shaping the prompt, and a user input interface (image was taken from ~\cite{prompting}).}
-    \label{fig:promptEng}
-\end{figure}
-
-Some notable prompt engineering techniques are: ``Zero-Shot Prompting'' which offers a paradigm shift in leveraging large LLMs. This technique removes the need for extensive training data, instead relying on carefully crafted prompts that guide the model toward novel tasks, or ``Few-Shot Prompting'' which provides models with a few input-output examples to induce an understanding of a given task, unlike zero-shot prompting, where no examples are supplied~\cite{ZeroFewShot}.
-
-Interaction may occur in a single-request mode, in which each task is processed independently, or in a multi-turn mode, where previous exchanges remain within the context window.
-
-Prompt structure plays a significant role in model performance, particularly in technical tasks involving structured inputs, strict output formats, or long problem descriptions. The representation of information affects both the interpretability of the prompt and the effective use of the context window.
-
-\subsection{Application Programming Interfaces}
-
-In practical settings, LLMs are accessed through Application Programming Interfaces (APIs). An application programming interface, or API, enables organizations to make the data and functionality of their applications or systems available to external third-party developers, commercial partners, and internal departments within their own organizations. The usage of a defined interface enables services and products to interact with one another and benefit from each other's information and features. This interface is manipulated and programmed by developers to interact with other software, services or systems; they are not required to understand how a specific API is developed, and neither are the software's end-users. In short, an API is a contract between pieces of applications serving the main software once integrated into the source code of the main application~\cite{APIS}.
-
-An LLM API provides a standardized mechanism for submitting input messages and receiving model outputs, together with configurable inference parameters such as temperature. API-based access introduces operational constraints, including limits on the number of requests or tokens processed within a given time interval, as well as maximum context sizes per interaction. However, it enables the use of complex LLMs without requiring significant local computational resources. 
 
 \subsection{Relevance to Solver Selection}
 In this research, the aim is to test the potential of LLMs when used for solver selection. In this context, prompts are engineered to enable the LLM to evaluate the characteristics of a problem instance, to make a decision that is as functional as possible. 
 
 When applied to solver selection, an LLM functions as a decision component that maps problem representations to solver choices. Its performance depends on both theoretical aspects, such as its ability to model complex input-output relationships, and practical factors, including prompt formulation, context management, and API-level parameters.
-
 
 \end{document}

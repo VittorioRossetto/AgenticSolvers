@@ -15,16 +15,16 @@ The final section reports the experimental evaluation of LLM performance when pr
 
 From the study presented in \Cref{chap:expEval}, several important insights emerged. First and foremost, the limitations on tokens per request and on the context window represent a significant constraint that we were only able to partially mitigate using the techniques described in \Cref{sec:expSetup}, before adding the use of a feature extractor (\Cref{sec:features}).
 
-Another limitation in LLMs, as briefly explained in \Cref{sec:LLM}, is that they work only with statistical prediction, based on their previous knowledge, this approach may lead to limitations when the model is confronted with entirely novel problems. To address this limitation, we needed a way to standardize all the problems so that the LLM can evaluate instances directly based on their structural characteristics.
+Another limitation in LLMs, as briefly explained in \Cref{sec:LLM}, is that they work only with statistical prediction, based on their previous knowledge; this approach may lead to limitations when the model is confronted with entirely novel problems. To address this limitation, we needed a way to standardize all the problems so that the LLM could evaluate instances directly based on their structural characteristics.
 
-The use of structured input, extracted from the problem scripts, proved to be a viable solution to these problems, showing the highest score yet. But while the results obtained with \texttt{mzn2feat} proved to be consistent, it was hypothesized that a more effective representation might exist to formalize MiniZinc problems for an LLM, given the limitations observed when evaluating the LLM against a selected set of solvers (\Cref{sec:selectedSolvers}).
+The use of structured input, extracted from the problem scripts, proved to be a viable solution to these problems, showing the highest score yet. While the results obtained with \texttt{mzn2feat} proved to be consistent, it was hypothesized that a more effective representation might exist to formalize MiniZinc problems for an LLM, given the limitations observed when evaluating the LLM against a selected set of solvers (\Cref{sec:selectedSolvers}).
 
 The development of \texttt{fzn2nl}~\cite{fzn2nl} originated from the idea of constructing a FlatZinc parser that, given a model as input, produces a deterministic natural language description of the problem exposing its main characteristics, in a form suitable for LLM processing.
 
 LLMs encode vast amounts of pre-trained knowledge in their parameters, but updating them as real-world information evolves remains a challenge. 
 Parametric knowledge of LLMs remains mostly static~\cite{FTLLMallucination} after the pre-training stage, whereas knowledge in the world continues to change. 
 
-Even within the pre-training data, knowledge from recent years may conflict with earlier information. Moreover, the auto-regressive training objective biases LLMs toward surfacing more frequent but not necessarily recent knowledge~\cite{knowledgeCutoffsLLM}. This problem surfaces primarily when the LLM is confronted with more indirect questions, given that updates in real world lead to nuanced and complex changes in model knowledge (\Cref{fig:indirectProbing})~\cite{MemorizationVSReasoning}.
+Even within the pre-training data, knowledge from recent years may conflict with earlier information. Moreover, the auto-regressive training objective biases LLMs toward surfacing more frequent but not necessarily recent knowledge~\cite{knowledgeCutoffsLLM}. This problem surfaces primarily when the LLM is confronted with more indirect questions, given that updates in the real world lead to nuanced and complex changes in model knowledge (\Cref{fig:indirectProbing})~\cite{MemorizationVSReasoning}.
 
 \begin{figure}[ht]
     \centering
@@ -33,20 +33,20 @@ Even within the pre-training data, knowledge from recent years may conflict with
     \label{fig:indirectProbing}
 \end{figure}
 
-In our setup, the LLM acts as the reasoning brain behind solver selection, so we need a way to give it a description of the problem that is as direct as possible, to actively avoid favoring ``old'' problems. 
+In our setup, the LLM acts as the primary reasoning component for solver selection, so we need a way to give it a description of the problem that is as direct as possible, to actively avoid favouring ``old'' problems.
 
-The most simple solution under those constraints is to create a deterministic description of each problem, providing enough knowledge for reasonable choice while hiding most recognizable traits of well-known problems (retrievable from the code).
+The simplest solution under these constraints is to create a deterministic description of each problem, providing enough knowledge for a reasonable solver selection while hiding most recognizable traits of well-known problems (retrievable from the code).
 
-Large Language Models (LLMs) have demonstrated remarkable capabilities in natural language understanding and generation. However, they often struggle with complex reasoning tasks and are prone to hallucination. And while structured data, rich in logical and relational information, has the potential to enhance the reasoning abilities of LLMs. Still, its integration poses a challenge due to the risk of overwhelming LLMs with excessive tokens and irrelevant context information~\cite{LLMwStructData}.
+Large Language Models (LLMs) have demonstrated remarkable capabilities in natural language understanding and generation. However, they often struggle with complex reasoning tasks and are prone to hallucination. While structured data, rich in logical and relational information, has the potential to enhance the reasoning abilities of LLMs, its integration poses a challenge due to the risk of overwhelming LLMs with excessive tokens and irrelevant context information~\cite{LLMwStructData}.
 
-These considerations led to the development of \texttt{fzn2nl}, a parser that takes as input a \texttt{FlatZinc} file, translates its structural elements into a structured natural language description. of the given problem.
+These considerations led to the development of \texttt{fzn2nl}, a parser that takes as input a \texttt{FlatZinc} file and translates its structural elements into a structured natural language description of the given problem.
 
 \section{FlatZinc Compiler}
 \label{sec:parserCompilation}
 In order to compile FlatZinc files, it is necessary to use the ``MiniZinc Compiler''~\cite{mznCompiler}. 
 
 Constraint problems expressed in MiniZinc are solved by translating them to a simpler, solver-specific subset of MiniZinc, called FlatZinc, using the ``MiniZinc Compiler''~\cite{mznCompiler}.
-The complexity of the translation arise from the need to simultaneously (a) unroll array comprehensions (and other loops), (b) replace predicate and function applications by their body, and (c) flatten expressions.
+The complexity of the translation arises from the need to simultaneously (a) unroll array comprehensions (and other loops), (b) replace predicate and function applications by their bodies, and (c) flatten expressions.
 
 % Once common subexpression elimination (CSE) is taken into account, it's not feasible to perform these separately. In order to have names for common subexpressions, expressions need to be flattened. And in order to take advantage of functions, for CSE we cannot replace predicate and function applications without flattening to generate these names. And without replacing predicate and function application by their body we are unable to see all the loops to unroll.
 
@@ -58,14 +58,14 @@ As previously stated, FlatZinc is solver-specific, which is a clear limitation i
 
 As a consequence, CP solvers such as Gecode~\cite{Gecode} typically retain many global constraints in their high-level form, exploiting dedicated propagation mechanisms. In contrast, solvers based on alternative paradigms, such as linear programming or mixed-integer linear programming (e.g., Gurobi~\cite{Gurobi}), require these constraints to be reformulated as sets of linear constraints, thereby losing the original global structure in favor of a representation compatible with their underlying solving technology~\cite{CPvsMILPsolvers}.
 
-Consequently, translating a FlatZinc model using a specific solver implicitly introduces solver-specific structural information, and by serving its analysis to an LLM, this indirectly biases the LLM toward the solver used during compilation, or one of the same category, therefore invalidating the reasoning process.
+Consequently, translating a FlatZinc model using a specific solver implicitly introduces solver-specific structural information, and by exposing this representation to an LLM, one indirectly biases the model toward the solver used during compilation, or one of the same category, thereby invalidating the reasoning process.
 
 \subsection{Custom Compiler}
 In order to solve the problem of solver-specific translation, we modified the MiniZinc compiler to produce a pseudo-FlatZinc representation that is not directly dependent on solvers, at the cost of not being actually solvable.
 
-As stated in \Cref{sec:fznLimits}, the difference between solvers is relative to the different propagation of global constraint. 
+As stated in \Cref{sec:fznLimits}, the difference between solvers concerns the propagation of global constraints.
 
-To eliminate this distinction, propagation was effectively disabled, changing MiniZinc compiler code to completely avoid the substitution of predicates by their body. For example:
+To eliminate this distinction, propagation was effectively disabled by modifying the MiniZinc compiler code to avoid the substitution of predicates by their bodies. For example:
 
 \begin{lstlisting}[style=minizincstyle]
 include "arg_max.mzn";
@@ -82,9 +82,9 @@ include "arg_max.mzn";
 predicate fzn_maximum_arg_bool_opt(array [int] of var opt bool: x, var int: z);  
 \end{lstlisting}
 
-Clearly, with this change, the FlatZinc is no longer directly solvable, but since our only need is for it to be non solver-specific and understandable when ``explained'' to an LLM, this is not a problem.
+Clearly, with this change, the FlatZinc is no longer directly solvable, but since our only need is for it to be non-solver-specific and understandable when ``explained'' to an LLM, this is not a problem.
 
-For the sake of explanation, we'll use the job shop problem as an example, as defined in \Cref{fig:minizincModelEx} and \Cref{fig:minizincDataEx}. Using the compiler as defined in this section, the resulting FlatZinc is the one displayed in \Cref{fig:fznExample}.
+For the sake of illustration, we will use the job shop problem as an example, as defined in \Cref{fig:minizincModelEx} and \Cref{fig:minizincDataEx}. Using the compiler as defined in this section, the resulting FlatZinc is the one displayed in \Cref{fig:fznExample}.
 
 \begin{figure}[ht]
     \centering
@@ -95,7 +95,7 @@ For the sake of explanation, we'll use the job shop problem as an example, as de
 
 \section{Tool Functioning}
 \label{sec:fzn2nlArch}
-The generation of a natural language description in \texttt{fzn2nl} follows a single-pass pipeline: the program takes a FlatZinc file as input, then this file is parsed, in order to extract variables, arrays, constraints, solve directive, and search annotations (when present) into an internal model object. The program then computes descriptive statistics on both variables and constraints, and reconstructs the objective structure. All parsed elements are then mapped into readable sentences and grouped summaries. Finally, the system produces a report as output, consisting of problem description, variables description and constraint description.
+The generation of a natural language description in \texttt{fzn2nl} follows a single-pass pipeline: the program takes a FlatZinc file as input, then this file is parsed in order to extract variables, arrays, constraints, the solve directive, and search annotations (when present) into an internal model object. The program then computes descriptive statistics on both variables and constraints and reconstructs the objective structure. All parsed elements are then mapped into readable sentences and grouped summaries. Finally, the system produces a report as output, consisting of a problem description, a variable description, and a constraint description.
 
 \subsection{Parser}
 The architecture of the implemented parser for this project follows a modular design, separating data representation from syntactic extraction and higher-level semantic enrichment. 
@@ -106,7 +106,7 @@ The central abstraction is the \texttt{FlatZincModel} class, which acts as a con
 
 Scalar variables are stored in a dictionary indexed by name. Each entry records the declared type (integer or Boolean), an optional domain, and an origin flag distinguishing user-declared variables from compiler-introduced ones. Domains are represented by an immutable \texttt{Domain} data class containing minimum and maximum bounds, together with a derived mean value. 
 
-Arrays are stored separately from scalar variables. For each array, the parser records element type, whether elements are decision variables, index range length (when statically inferable), and the list of items when explicitly provided.
+Arrays are stored separately from scalar variables. For each array, the parser records the element type, whether elements are decision variables, the index range length (when statically inferable), and the list of items when explicitly provided.
 
 Constraints are stored as structured dictionaries containing the constraint type, argument string, annotation string, reconstructed textual rendering, and any variables declared via \texttt{defines\_var} annotations, preserving sufficient information for both textual reporting and dependency reconstruction.
 
@@ -240,9 +240,9 @@ The mapping stage is implemented as a set of specialized formatters, each target
 \paragraph{Constraint descriptions and categorization}
 FlatZinc constraints are reported primarily by type. For each constraint type, the mapper aggregates the total number of occurrences in the instance, and the constraint arity. Since FlatZinc arguments can contain arrays, the arity estimate expands known arrays of decision variables into their element variables when possible, and otherwise falls back to array length when statically inferable.
 
-To attach a human-readable explanation to each constraint type, \texttt{fzn2nl} uses a layered description lookup, adding a description corpus extracted from MiniZinc/FlatZinc documentation and  an optional categorized version of the same corpus, which allows constraint types to be grouped under conceptual families such as scheduling, graph, counting, and packing constraints.
+To attach a human-readable explanation to each constraint type, \texttt{fzn2nl} uses a layered description lookup, incorporating a description corpus extracted from MiniZinc/FlatZinc documentation and an optional categorized version of the same corpus, which allows constraint types to be grouped under conceptual families such as scheduling, graph, counting, and packing constraints.
 
-The resolver is robust to common naming variations introduced by compilation and library predicates. For example, when a constraint is prefixed by \texttt{fzn\_} or carries suffixes such as \texttt{\_reif}, the resolver progressively strips prefix and trailing tokens to find a meaningful base description.
+The resolver is robust to common naming variations introduced by compilation and library predicates. For example, when a constraint is prefixed by \texttt{fzn\_} or carries suffixes such as \texttt{\_reif}, the resolver progressively strips the prefix and trailing tokens to find a meaningful base description.
 
 \paragraph{Search-annotation mapping}
 When the \texttt{solve} item includes an explicit search annotation, the parser extracts it into a structured object (e.g., \texttt{int\_search} or \texttt{seq\_search}). The natural language mapper then translates the search parameters using controlled vocabularies. For sequential searches, the report enumerates phases and describes each phase with the same template.
@@ -319,7 +319,7 @@ As shown in \Cref{tab:combinedFznTemp}, all configurations based on \texttt{fzn2
 
 To further assess the impact of model capacity on solver selection, we conducted additional experiments using \texttt{GPT-5.2}~\cite{gpt52}, a recent large-scale LLM reported to achieve state-of-the-art performance across multiple evaluation benchmarks, including GDPval~\cite{GDPval}. The model is designed to support extended context handling, agentic tool use, and improved reasoning capabilities.
 
-Testing was conducted manually, through the official ChatGPT interface~\cite{chatGPT}, which imposes daily usage limits~\cite{gpt52Limits}. Due to these constraints, a reduced evaluation protocol was adopted. Instead of prompting the model on all instances of each problem, a single representative instance per problem was selected. The solver recommendation obtained for that instance was then applied uniformly to all instances of the corresponding problem for scoring purposes.
+Testing was conducted manually, through the official ChatGPT interface~\cite{chatGPT}, which imposes daily usage limits~\cite{gpt52Limits}. Under the full protocol, this setup would have required manually submitting 100 separate queries (one per instance). Due to these constraints, a reduced evaluation protocol was adopted. Instead of prompting the model on all instances of each problem, a single representative instance per problem was selected. The solver recommendation obtained for that instance was then applied uniformly to all instances of the corresponding problem for scoring purposes.
 
 \begin{table}[ht]
     \centering
@@ -332,7 +332,7 @@ Testing was conducted manually, through the official ChatGPT interface~\cite{cha
     \label{tab:combinedgpt52}
 \end{table}
 
-As reported in \Cref{tab:combinedgpt52}, \texttt{GPT-5.2} does not improve the ``Single Score'' relative to the strongest previously tested configurations, and the resulting closed gap remains negative. The obtained value is lower than three of the \texttt{fzn2nl}-based variants reported in \Cref{tab:combinedFznTemp}, as well as below the 2 best-performing configurations evaluated on the restricted portfolio (\Cref{tab:CombinedSelSolversTop}).
+As reported in \Cref{tab:combinedgpt52}, \texttt{GPT-5.2} does not improve the ``Single Score'' relative to the strongest previously tested configurations, and the resulting closed gap remains negative. The obtained value is lower than three of the \texttt{fzn2nl}-based variants reported in \Cref{tab:combinedFznTemp}, as well as below the two best-performing configurations evaluated on the restricted portfolio (\Cref{tab:CombinedSelSolversTop}).
 
 In contrast, the ``Parallel Score'' achieved by \texttt{GPT-5.2} under this limited setup is the highest observed within the restricted solver set. Although the evaluation protocol differs from the full-instance experiments, this result indicates that increased model capacity may positively affect parallel-selection performance. A systematic evaluation under uniform experimental conditions would be required to quantify this effect more precisely.
 

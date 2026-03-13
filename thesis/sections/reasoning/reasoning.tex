@@ -6,7 +6,7 @@ In this context, the objective of the present chapter is not to further optimize
 
 To this end, the first section investigates the impact of modifying the solver representation. This includes experiments in which solver descriptions are deliberately permuted across solvers, as well as configurations employing anonymized identifiers (e.g., \texttt{a}, \texttt{b}, \texttt{c}, \dots) in place of descriptive names. The aim is to assess the sensitivity of the models to semantic content versus superficial labeling.
 
-In the second section, we prompt \texttt{GPT-5.2} to explicitly articulate its reasoning process in the context of solver selection. The generated explanations are subsequently analyzed to extract decision criteria, and broader insights into the model's interpretative behavior.
+In the second section, we prompt \texttt{GPT-5.2} to explicitly articulate its reasoning process in the context of solver selection. The generated explanations are subsequently analyzed to extract decision criteria and broader insights into the model's interpretative behavior.
 
 \section{Analysis of Solver Understanding}
 The rationale underlying the experiments presented in this section is to determine whether the LLM effectively incorporates the provided solver descriptions into its decision process, or whether it primarily relies on prior knowledge associated with solver names. In other words, the objective is to assess whether the model's selections are driven by the semantic content of the descriptions included in the prompt, or by pre-existing associations learned during pre-training.
@@ -66,7 +66,7 @@ A more detailed inspection of the solver suggestions supports this interpretatio
             \texttt{yuck-free} & \texttt{choco-solver\_\_cp\_-par} & 0 & 31 \\ 
             \texttt{choco-solver\_\_cp\_-free} & \texttt{jacop-free} & 0 & 1 \\ \hline
         \end{tabular}
-    \caption{Analysis over the solver suggestions from \texttt{gpt-oss-120b}, using the configuration~1. ``Suggested Solver'' shows the solver suggested in LLM output, ``Description'' shows the solver from which the description was taken, ``Top1 Count'' shows the number of times the given solver was suggested as the best one in each of the problems and ``Total Count'' shows the number of appearances of the given solver as one of the best three suggested ones.}
+    \caption{Solver suggestions from \texttt{gpt-oss-120b} under configuration~1. ``Suggested Solver'' is the solver named in the LLM output; ``Description'' is the solver whose description was assigned to it; ``Top1 Count'' is the number of instances for which it was recommended as the best solver; ``Total Count'' is the number of instances in which it appeared among the three best suggestions.}
     \label{tab:swappedCount1}
 \end{table}
 
@@ -90,11 +90,11 @@ Each solver name was replaced by an arbitrary identifier (e.g., \texttt{a}, \tex
             Features + solver descriptions& 0.3 & 70.409070 & 75.751372 & -0.544658 \\ \hline
         \end{tabular}
     }
-    \caption{Analysis over configurations involving anonymous solvers, evaluated with \texttt{gpt-oss-120b}. Columns are computed as in \Cref{tab:combinedAllLLM}, after reconducting each suggestion to the solver from which the description was taken.}
+    \caption{Analysis over configurations involving anonymous solvers, evaluated with \texttt{gpt-oss-120b}. Columns are computed as in \Cref{tab:combinedAllLLM}, after mapping each suggestion back to the solver from which the description was taken.}
     \label{tab:CombinedAnonymous}
 \end{table}
 
-The results indicate that anonymization does not substantially alter performance. Across configurations, both Single and Parallel Scores remain comparable to those obtained when solver names are visible. In particular, the configuration using raw scripts and problem description, even achieves a positive Closed Gap value of 0.038.
+The results indicate that anonymization does not substantially alter performance. Across configurations, both Single and Parallel Scores remain comparable to those obtained when solver names are visible. In particular, the configuration using raw scripts and problem description even achieves a positive Closed Gap value of 0.038.
 
 A more detailed inspection reveals a highly concentrated selection pattern. The model predominantly assigns top-1 recommendations to two solvers, corresponding, after mapping back, to \texttt{or-tools\_cp-sat-free} and \texttt{chuffed-free}. As shown in \Cref{tab:anonymousCount1}, these two solvers account for 100\% of the top-1 selections in Configuration~1.
 
@@ -114,7 +114,7 @@ These findings support two observations. First, the LLM demonstrates the capacit
             \texttt{c} & \texttt{choco-solver\_\_cp\_-free} & 0 & 1 \\ 
             \texttt{d} & \texttt{choco-solver\_\_cp\_-par} & 0 & 1 \\ \hline
         \end{tabular}
-    \caption{Analysis over the solver suggestions from \texttt{gpt-oss-120b}, using the configuration~1. Columns content is calculated as in \Cref{tab:swappedCount1}.}
+    \caption{Solver suggestions from \texttt{gpt-oss-120b} under configuration~1. Columns are computed as in \Cref{tab:swappedCount1}.}
     \label{tab:anonymousCount1}
 \end{table}
 
@@ -125,7 +125,7 @@ Given that the responses consist of unconstrained free text, the evaluation was 
 
 An additional motivation for limiting the analysis to a qualitative level is epistemological in nature: it cannot be determined with certainty whether the reported reasoning reflects the actual internal decision process of the model, or whether the solver selection is produced first and subsequently rationalized in a post hoc manner~\cite{LLMapprehension}. Consequently, the following discussion focuses on consistency between the articulated arguments and the observed empirical performance, rather than on claims regarding the authenticity of the reasoning trace.
 
-The following paragraphs present selected responses from the LLM (in the text-box), followed by a critical comparison with benchmark outcomes from the MiniZinc Challenge~\cite{MznResults25}.
+The following paragraphs present selected responses from the LLM (in the text box), followed by a critical comparison with benchmark outcomes from the MiniZinc Challenge~\cite{MznResults25}.
 
 \paragraph{mondoku/10-10-6}
 \begin{floatingdefinition}{GPT-5.2 Answer:}
@@ -204,19 +204,19 @@ This analysis is not supported by the benchmark outcomes. All solvers suggested 
 
     Pure CP solvers (e.g., Choco, JaCoP, CP Optimizer) would not gain significant advantage from specialized global constraints here, since the model is dominated by linear structure rather than combinatorial global patterns. SAT-oriented solvers (e.g., \texttt{pumpkin-free}) are less natural given the large integer domains and linear objective. Highs and CBC are solid open-source MILP solvers but typically less competitive than CPLEX, Gurobi, or SCIP on structured mixed-integer models of this type.
 
-    Therefore, the three most suitable solvers for this instance are \texttt{cplex-free}, \texttt{gurobi-free}, and \texttt{scip-free}.        
+    Therefore, the three most suitable solvers for this instance are \texttt{cplex-free}, \texttt{gurobi-free}, and \texttt{scip-free}. 
 \end{floatingdefinition}
 
-Empirical results contradict this assessment. The best-performing solvers for this instance are \texttt{choco-solver\_\_cp-sat\_-free} and \texttt{choco-solver\_\_cp-\_-free}, which achieve identical objective values and correspond to CP and hybrid CP/SAT paradigms. These solver types are characterized in the model's reasoning as less suitable for the given problem. 
+Empirical results contradict this assessment. The best-performing solvers for this instance are \texttt{choco-solver\_\_cp-sat\_-free} and \texttt{choco-solver\_\_cp\_-free}, which achieve identical objective values and correspond to CP and hybrid CP/SAT paradigms. These solver types are characterized in the model's reasoning as less suitable for the given problem. 
 
 Conversely, \texttt{cplex-free} and \texttt{gurobi-free} are among the weakest performers on this instance, and \texttt{scip-free} fails to return a solution.
 
 \subsection{Overall Analysis}
 As can be inferred from the preceding examples and their analysis, even when employing a state-of-the-art LLM such as \texttt{GPT-5.2}~\cite{gpt52}, the generated reasoning is consistently articulated in a technically coherent and internally consistent manner. However, in several cases, most notably \texttt{fbd1} and \texttt{is}, the conclusions drawn by the model diverge substantially from the empirical evidence.
 
-Despite these inaccuracies, the responses demonstrate a structured understanding of solver paradigms. The model systematically distinguishes among major solver categories (e.g., CP, MILP, hybrid CP/SAT) and correctly associates individual solvers with their respective classes. Furthermore, the structural analysis of the benchmark problems are often well formulated, highlighting relevant features such as global constraints, reification, linear structure, and search strategies. This further suggests that the textual representations produced by \texttt{fzn2nl} (\Cref{sec:fzn2nlArch}) are interpretable and informative for high-level problem characterization.
+Despite these inaccuracies, the responses demonstrate a structured understanding of solver paradigms. The model systematically distinguishes among major solver categories (e.g., CP, MILP, hybrid CP/SAT) and correctly associates individual solvers with their respective classes. Furthermore, the structural analyses of the benchmark problems are often well-formulated, highlighting relevant features such as global constraints, reification, linear structure, and search strategies. This further suggests that the textual representations produced by \texttt{fzn2nl} (\Cref{sec:fzn2nlArch}) are interpretable and informative for high-level problem characterization.
 
-The primary limitation appears to lie not in the recognition of solver categories or problem features per se, but in the mapping between these elements and actual solver performance. In particular, the model exhibits limited sensitivity to the nuanced distinctions that differentiate solvers within the same paradigm. As a consequence, selections frequently reflect a preference for widely recognized or institutionally prominent solvers rather than those empirically best suited to the instance under consideration. More specifically, \texttt{cp\_optimizer-free} is systematically favored when a CP solver is deemed appropriate, and \texttt{cplex-free} is similarly prioritized within the MILP category, both solvers are developed by IBM, a widely recognized institution in computer science.
+The primary limitation appears to lie not in the recognition of solver categories or problem features per se, but in the mapping between these elements and actual solver performance. In particular, the model exhibits limited sensitivity to the nuanced distinctions that differentiate solvers within the same paradigm. As a consequence, selections frequently reflect a preference for widely recognized or institutionally prominent solvers rather than those empirically best suited to the instance under consideration. More specifically, \texttt{cp\_optimizer-free} is systematically favored when a CP solver is deemed appropriate, and \texttt{cplex-free} is similarly prioritized within the MILP category; both solvers are developed by IBM, a widely recognized institution in computer science.
 
 This tendency persists even though, within the restricted solver set, as explained in \Cref{sec:selectedSolvers}, these solvers are not consistently the top-performing options. The observed bias may plausibly be attributed to the prominence of certain commercial solvers in publicly available documentation and training data, leading the model to associate them with higher general competence. In contrast, alternative solvers with stronger empirical performance in specific instances, such as \texttt{gurobi-free}, are selected less consistently.
 

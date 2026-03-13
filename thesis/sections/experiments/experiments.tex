@@ -38,15 +38,15 @@ The first experiments were conducted using the original problem instances withou
             \texttt{groq/compound} & 5.197 & 8.246 & -5.963 \\ \hline
         \end{tabular}
     }
-    \caption{Initial tests using raw scripts as input to all tested LLMs. In this table: column ``Model'' contains the names of each tested LLM, ``Single Score'' was calculated by summing the performance of what was suggested to be the best solver (as explained in \Cref{sec:scoreMetric}) on each of the instances by the given LLMs, ``Parallel Score'' represents the sum of the score reached in every instance in parallel-solver setup, so taking the 3 best solvers given by the LLM, computing the score of each and selecting the maximum, and finally ``Closed Gap'' displays the closed gap score calculated over ``Single Score'' by using the formula explained in \Cref{sec:closedGap}.}
+    \caption{Initial tests using raw scripts as input to all tested LLMs. The column ``Model'' lists the name of each tested LLM; ``Single Score'' is the sum of the performance of the best solver suggested by the LLM for each instance (as explained in \Cref{sec:scoreMetric}); ``Parallel Score'' is the sum of scores across all instances in the parallel-solver setup, computed by taking the three best solvers suggested by the LLM, evaluating each, and retaining the maximum; and ``Closed Gap'' is the closed-gap score calculated from ``Single Score'' using the formula in \Cref{sec:closedGap}.}
     \label{tab:combinedAllLLM}
 \end{table}
 
-As reported in \Cref{tab:combinedAllLLM}, (and more in depth in \Cref{tab:allLLM1}, \Cref{tab:allLLM3} and \Cref{tab:allLLMcg}) for both single-solver evaluation and parallel-solver evaluation, all scores remain below 70, indicating lower performance than three of the single solvers in the free category, and 4 of the single solvers from open category, and resulting in negative closed-gap values for all tested LLMs. 
+As reported in \Cref{tab:combinedAllLLM}, (and more in depth in \Cref{tab:allLLM1}, \Cref{tab:allLLM3} and \Cref{tab:allLLMcg}) for both single-solver evaluation and parallel-solver evaluation, all scores remain below 70, indicating lower performance than three of the single solvers in the free category, and four of the single solvers from the open category, and resulting in negative closed-gap values for all tested LLMs. 
 
-While part of this outcome can be attributed to the deliberately simple formulation of the requests, a major limiting factor is the presence of strict rate limits, which prevent many instances from being processed by some, if not all, of the LLMs, due to the script length alone exceeding TPM (showed in \Cref{tab:rate_limits_gemini} and \Cref{tab:rate_limits_groq}). This issue is particularly pronounced for problems with large instance data, such as: \texttt{ihtc-2024-marte} or \texttt{gt-sort}
+While part of this outcome can be attributed to the deliberately simple formulation of the requests, a major limiting factor is the presence of strict rate limits, which prevent many instances from being processed by some, if not all, of the LLMs, due to the script length alone exceeding TPM (shown in \Cref{tab:rate_limits_gemini} and \Cref{tab:rate_limits_groq}). This issue is particularly pronounced for problems with large instance data, such as \texttt{ihtc-2024-marte} or \texttt{gt-sort}
 
-These constraints motivated both the adoption of script manipulation techniques, as described in \Cref{sec:expSetup}, and the considerable execution time required for the experiments, which could reach up to 48 hours, the decision to restrict subsequent experiments to the five best-performing LLMs identified in this preliminary phase, namely: \texttt{gpt-oss-120b}, \texttt{gemini-2,5-flash}, \texttt{gemini-2,5-flash-lite}, \texttt{kimi-k2-instruct-0905} and \texttt{kimi-k2-instruct}.
+These constraints motivated both the adoption of script manipulation techniques, as described in \Cref{sec:expSetup}, and the decision to restrict subsequent experiments to the five best-performing LLMs identified in this preliminary phase, namely: \texttt{gpt-oss-120b}, \texttt{gemini-2.5-flash}, \texttt{gemini-2.5-flash-lite}, \texttt{kimi-k2-instruct-0905} and \texttt{kimi-k2-instruct}. The considerable execution time required for the experiments could reach up to 48 hours.
 
 \section{Single Request Experiments}
 After establishing a stable experimental pipeline, we repeated the evaluation on the full set of 100 instances. All experiments in this phase adopt a single-request setup, where each prompt is processed independently: the LLM receives the input and generates a response without access to any prior interaction history or retained context.
@@ -71,7 +71,7 @@ As a baseline, the LLMs were first evaluated under the same conditions as the pr
     \label{tab:combinedBase}
 \end{table}
 
-As reported in \Cref{tab:combinedBase} and \Cref{tab:base3}, performance under parallel-solver evaluation remains consistently high. All tested LLMs outperform every individual solver except \texttt{or-tools\_cp-sat-par}, which constitutes the single best solver (SBS) in the open category and remains clearly dominant, maintaining a substantial margin over both the LLM-based selection approaches and the remaining standalone solvers.
+As reported in \Cref{tab:combinedBase} and \Cref{tab:base3}, performance under parallel-solver evaluation remains consistently high. All tested LLMs outperform every individual solver except \\\texttt{or-tools\_cp-sat-par}, which constitutes the single best solver (SBS) in the open category and remains clearly dominant, maintaining a substantial margin over both the LLM-based selection approaches and the remaining standalone solvers.
 
 More pronounced variability is observed in the single-solver evaluation (\Cref{tab:base1}). In this setting, only \texttt{gpt-oss-120b} consistently surpasses all individual solvers other than the SBS in the free category (\texttt{or-tools\_cp-sat-free}), as further detailed in \Cref{tab:comparisanVarSin} and \Cref{fig:comparisanVarSin}. The remaining LLMs still achieve competitive results relative to most standalone solvers; however, a non-negligible performance gap persists, as reflected in the closed-gap scores and analyzed in greater detail in \Cref{tab:basecg}.
 
@@ -80,8 +80,8 @@ The results of the baseline experiments indicate that further improvements are n
 
 As a first step, we augmented the prompt with a concise textual problem description (PD): a short textual summary of the MiniZinc model's semantics. These descriptions were automatically generated using another LLM (\texttt{GPT-5.1}) and subsequently refined manually to correct minor inaccuracies. e.g.:
 \begin{itemize}
-    \item \texttt{atsp}: ``Scheduling and resource allocation problem involving moulds, colors, and production jobs. The goal is to minimize makespan, tardiness, and waste while respecting compatibility and demand constraints.``
-    \item \texttt{black-hole}: ``A constraint model for solving the Black Hole Patience solitaire game. Cards must be arranged so that the sequence follows game rules using global constraints.``
+    \item \texttt{atsp}: ``Scheduling and resource allocation problem involving moulds, colors, and production jobs. The goal is to minimize makespan, tardiness, and waste while respecting compatibility and demand constraints.''
+    \item \texttt{black-hole}: ``A constraint model for solving the Black Hole Patience solitaire game. Cards must be arranged so that the sequence follows game rules using global constraints.''
 \end{itemize}
 
 The PD was incorporated into the prompt structure as follows:
@@ -103,7 +103,7 @@ The PD was incorporated into the prompt structure as follows:
         - $s_2$,\\
         - \ldots\\
         - $s_n$
-    where $s_1 \ldots s_n \in SolverList$.  
+    where $s_1 \ldots s_n \in SolverList$.
 
     Answer only with the name of the 3 best solvers inside square brackets separated by comma and nothing else.
 
@@ -143,7 +143,7 @@ An additional advantage of the multi-turn setup is that it enables the handling 
 
 \subsection{Solvers Description} 
 \label{sec:sDesc}
-The increased efficiency of the multi-turn setup also makes it possible to enrich the contextual information with new textual data: solver descriptions, examples are reported in: \Cref{tab:sDescEx}. For each solver under consideration, a short textual description was generated and provided to the LLM within the \texttt{system} prompt, with the aim of improving the model's awareness of the available solver options and their respective characteristics.
+The increased efficiency of the multi-turn setup also makes it possible to enrich the contextual information with new textual data: solver descriptions; examples are reported in \Cref{tab:sDescEx}. For each solver under consideration, a short textual description was generated and provided to the LLM within the \texttt{system} prompt, with the aim of improving the model's awareness of the available solver options and their respective characteristics.
 
 To better understand the importance of this information, we experimented with two different configurations: one in which solver descriptions were combined with all previously provided contextual elements, and another in which the solver descriptions constituted the only additional textual information alongside the MiniZinc model and the instance data. This design allows us to assess the contribution of solver-specific knowledge to the overall performance of LLMs.
 
@@ -164,7 +164,7 @@ To better understand the importance of this information, we experimented with tw
     \label{tab:combinedSdesc}
 \end{table}
 
-In the parallel-solver evaluation (\Cref{tab:sDesc3}), providing only solver descriptions does not lead to systematic improvements. The sole exception is \texttt{gemini-2.5-flash} although its score is still under that of the single best solver (SBS) in the open category.
+In the parallel-solver evaluation (\Cref{tab:sDesc3}), providing only solver descriptions does not lead to systematic improvements. The sole exception is \texttt{gemini-2.5-flash}, although its score remains below that of the single best solver (SBS) in the open category.
 
 On the other hand, the effects are more pronounced in the single-solver evaluation, displayed in \Cref{tab:combinedSdesc} and \Cref{tab:sDesc1}. Two models, \texttt{moonshotai/kimi-k2-instruct-0905} and \\\texttt{moonshotai/kimi-k2-instruct}, exhibit a substantial improvement, reaching the SBS score and thus achieving a closed-gap value of zero for the first time. A closer inspection of their outputs, however, reveals that this result is achieved by consistently selecting the same solver, namely \texttt{or-tools\_cp-sat-free}, which corresponds to the SBS. This behavior effectively bypasses the decision-making role of the LLM, thereby undermining the intended purpose of employing an LLM in the first place.
 
@@ -189,14 +189,14 @@ Following this observation, we evaluated the configuration combining both forms 
     \label{tab:combinedsDescpDesc}
 \end{table}
 
-In the parallel-solver evaluation, this configuration yields the highest scores observed so far, again driven primarily by \texttt{gemini-2.5-flash}. However, the scores of the other LLMs are slightly lower than in the previous setups, and all of the reached scores are still under the open-category SBS.
+In the parallel-solver evaluation, this configuration yields the highest scores observed so far, again driven primarily by \texttt{gemini-2.5-flash}. However, the scores of the other LLMs are slightly lower than in the previous setups, and all scores remain below the open-category SBS.
 
 In the single-solver evaluation, \texttt{moonshotai/kimi-k2-instruct-0905} continues to default to selecting the SBS exclusively. Nevertheless, improvements emerge for two other models, namely \texttt{gemini-2.5-flash} and \texttt{gpt-oss-120b}. In particular, \texttt{gpt-oss-120b} achieves the first strictly positive closed-gap score, surpassing \texttt{or-tools\_cp-sat-free}.
 
 \subsection{Basic Tests Evaluation}
 In this initial testing phase, a positive closed gap has been achieved, showing an algorithm selection process with better performance than always choosing the single best solver. Moreover, when compared with the remaining solvers, these primitive configurations still hold fairly competitive results.
 
-To better display single LLMs performances, all variant scores are compared, using histograms for better visualization in \Cref{fig:histoVarPar} for parallel-solver evaluation, \Cref{fig:histoVarSin} for single-solver evaluation and \Cref{fig:histoVarCg} for closed gap evaluation.
+To better display the performance of individual LLMs, all variant scores are compared, using histograms for better visualization in \Cref{fig:histoVarPar} for parallel-solver evaluation, \Cref{fig:histoVarSin} for single-solver evaluation and \Cref{fig:histoVarCg} for closed gap evaluation.
 
 \begin{figure}[ht]
     \centering
@@ -207,16 +207,16 @@ To better display single LLMs performances, all variant scores are compared, usi
 
 
 To provide an alternative perspective on the results, the performance of each configuration is displayed against the single solvers of the corresponding category.
-In \Cref{tab:comparisanVarPar} and \Cref{fig:comparisanVarPar} are shown the performance of all the configurations, scored with parallel-solvers evaluation, when put agains single solvers from the open category.
-On the other hand, looking at \Cref{tab:comparisanVarSin} and \Cref{fig:comparisanVarSin}, the resulting score of single-solver evaluation of all the variants is put against all the single solvers from free category.
+In \Cref{tab:comparisanVarPar} and \Cref{fig:comparisanVarPar}, the performance of all configurations under parallel-solver evaluation is compared against the single solvers from the open category.
+In \Cref{tab:comparisanVarSin} and \Cref{fig:comparisanVarSin}, the single-solver evaluation scores of all variants are compared against all solvers from the free category.
 
 \section{Feature Extraction}
 \label{sec:features}
-In the last sections, we exposed the importance of textual information, and giving a richer context to the LLM instead of relying on its understanding of a \texttt{.mzn} script. Even though a positive closed gap was already reached in previous experiments, relying on context information such as the problem description is a strong limitation for the solver, given those data need to be supervised, if not entirely rewritten by hand, due to the high variability, especially when extracted on new problems. This limitation highlights the need for a method to extract information automatically, in a controlled and predictable way.
+The preceding sections demonstrated the importance of textual information and of providing a richer context to the LLM rather than relying solely on its understanding of a \texttt{.mzn} script. Even though a positive closed gap was already reached in previous experiments, relying on context information such as the problem description is a significant limitation of the approach, given that such data must be supervised, if not entirely rewritten by hand, due to the high variability, especially when extracted on new problems. This limitation highlights the need for a method to extract information automatically, in a controlled and predictable way.
 
-Another problem is the one concerning script dimensions: programs with longer scripts need some techniques like sanitization, as previously stated in \Cref{sec:scriptMan}, this type of technique, makes it possible to process longer scripts and context data. But is still penalizing towards longer problems, increasing the risk of hallucinations~\cite{LLMhallucination} and context rot~\cite{ContextRot}, due to the forced removal of elements in data, leaving incomplete arrays as input.
+A further issue concerns script length: programs with longer scripts require techniques such as sanitization, as discussed in \Cref{sec:scriptMan}. While such techniques make it possible to process longer scripts and context data, they remain detrimental for longer problems, increasing the risk of hallucinations~\cite{LLMhallucination} and context rot~\cite{ContextRot} due to the forced removal of data elements, which leaves incomplete arrays as input.
 
-For these tasks we decided to employ a feature-extractor~\cite{mzn2feat}, which allows to extract an extensive set of 95 features from a Constraint (Satisfaction/Optimization) Problem defined in possibly different modelling languages: MiniZinc, FlatZinc or XCSP. Designed to be independent of the particular machine on which it is run as well as of the specific global constraint redefinitions of a given solver. The employed version was already used in other projects~\cite{splitAndBounds, SUNNY-CP, multicoreCS}.
+For these tasks, we employed a feature extractor~\cite{mzn2feat} capable of extracting an extensive set of 95 features from a Constraint Satisfaction/Optimization Problem defined in various modelling languages: MiniZinc, FlatZinc, or XCSP. The tool is designed to be independent of the particular machine on which it is run and of the specific global constraint redefinitions of any given solver. The version employed here had previously been used in other work~\cite{splitAndBounds, SUNNY-CP, multicoreCS}.
 
 \subsection{Tool Description}
 The tool mzn2feat is designed to extract a set of 155 features from a MiniZinc model. Of these, 144 are static features derived through syntactic analysis of the source problem instance, while 11 are dynamic features obtained via a short execution of the Gecode solver. Due to the complexity of the MiniZinc language, particularly the presence of control-flow constructs, direct extraction of syntactic features from MiniZinc models is nontrivial. To address this, models are first compiled into FlatZinc, a lower-level language whose syntax is largely a subset of MiniZinc. This translation is performed using the \texttt{mzn2fzn} tool provided within the MiniZinc toolchain.
@@ -227,7 +227,7 @@ Static feature extraction from the resulting FlatZinc model is performed using \
 
 In summary, given a MiniZinc model $M$, the mzn2feat workflow consists of three stages. First, $M$ is translated into a FlatZinc model $F_M$ using Gecode global constraint redefinitions. Second, static features are extracted from $F_M$ via \texttt{fzn2feat}. Third, dynamic features are extracted from $F_M$ through a bounded run of the Gecode interpreter. The static feature extraction stage is applicable to any FlatZinc model, although solver-specific redefinitions that are not recognized may be ignored. The static and dynamic feature extraction procedures are independent, allowing them to be executed in parallel or in arbitrary order. For example, static feature computation may be omitted if the instance is solved during the dynamic feature collection phase~\cite{mzn2feat}.
 
-For a better understanding of all of the features, refer to \Cref{tab:FeatDescriptions} for the description by category, and to Listing \ref{lst:mzn2feat-features} as an example output.
+For a better understanding of all of the features, refer to \Cref{tab:FeatDescriptions} for the description by category, and to Listing~\ref{lst:mzn2feat-features} for an example output.
 
 \subsection{Testing and Results}
 To evaluate the effectiveness of feature-based representations, the pretty-printed \texttt{mzn2feat} output (e.g., \ref{lst:mzn2feat-features}) was incorporated into the prompt under several configurations:
@@ -258,7 +258,7 @@ Each configuration was further extended by incrementally adding the \texttt{.mzn
             Features + .mzn + Instance Data + Solver Description + Problem Description & 54.188182 & 59.410873 & -1.892398 \\ \hline
         \end{tabular}
     }
-    \caption{Test with all the possible combinations involving features extracted using \texttt{mzn2feat}~\cite{mzn2feat}, all experiments were conducted using \texttt{gpt-oss-120b} as it's the only model that produced a positive closed gap until this point. Columns are calculated as in \Cref{tab:combinedAllLLM}.}
+    \caption{Test with all the possible combinations involving features extracted using \texttt{mzn2feat}~\cite{mzn2feat}, all experiments were conducted using \texttt{gpt-oss-120b} as it is the only model that produced a positive closed gap up to this point. Columns are calculated as in \Cref{tab:combinedAllLLM}.}
     \label{tab:combinedFeatVars}
 \end{table}
 
@@ -268,7 +268,7 @@ The highest-performing configurations in this group are those combining features
 
 \section{Sampling Temperature Tuning}
 \label{sec:sampTemp}
-The testing of this initial phase involved the use of sampling temperature tuning. Sampling temperature is a hyperparameter of an LLM used in a temperature-based sampling process. It controls the randomness of the model's output at inference time~\cite{TempDef}.
+The testing of this initial phase involved sampling-temperature tuning to study an exploration--exploitation trade-off in solver selection: lower temperatures bias the model toward more conservative, high-probability solver choices, whereas higher temperatures encourage exploration of less likely alternatives. Sampling temperature is a hyperparameter of an LLM used in a temperature-based sampling process. It controls the randomness of the model's output at inference time~\cite{TempDef}.
 
 At each step of the decoding process, the LLM uses the previous tokens to choose the next output token. The final layer of the LLM uses a softmax function to convert raw scores (logits) into probabilities.
 
@@ -303,12 +303,12 @@ An ablation study on temperature was conducted only for \texttt{gpt-oss-120b}, t
         Creative copywriting & 0.8 & Vivid language, fresh ideas \\ 
         \hline
     \end{tabular}
-    \caption{Temperature setting suggestions from Groq documentation~\cite{GroqAPIdoc}. In the leftmost column is presented the basic scenario in wich the following settings are more indicated, followed by the sampling temperature value, and finally a short comment on the expected behaviour from the LLM with the given setting.}
+    \caption{Temperature setting suggestions from Groq documentation~\cite{GroqAPIdoc}. The leftmost column presents the scenario for which the corresponding settings are most appropriate, followed by the sampling temperature value, and a short comment on the expected behaviour of the LLM under the given setting.}
     \label{tab:tempSets}
 \end{table}
 
 \subsection{Testing and Results}
-As anticipated, all tests were conducted using \texttt{gpt-oss-120b} for LLM. Due to rate-limit constraints, temperature tuning experiments was restricted to the five best-performing configuration variants identified earlier, which we will refer to using the following numbering:
+As anticipated, all tests were conducted using \texttt{gpt-oss-120b} as the LLM. Due to rate-limit constraints, temperature tuning experiments were restricted to the five best-performing configuration variants identified earlier, which we will refer to using the following numbering:
 \begin{enumerate}
     \item \texttt{.mzn} scripts, instance data and text description for both solvers and problems.
     \item Features extracted through \texttt{mzn2feat} and text description for both solvers and problems.
@@ -323,31 +323,31 @@ As anticipated, all tests were conducted using \texttt{gpt-oss-120b} for LLM. Du
         \begin{tabular}{lllll}
         \hline
             Variant & Temperature & Single Score & Parallel Score & Closed Gap \\ \hline
-            \textbf{Features + Solvers Descripton} & \textbf{0.3} & \textbf{78.032} & 82.873 & \textbf{0.089} \\ 
-            \textbf{Features + Solvers Descripton} & \textbf{0.7} & \textbf{77.896} & 83.767 & \textbf{0.077} \\ 
-            Scripts + Solvers Descripton + Problem Description & 0.0 & 76.971 & 82.042 & 0.001 \\ 
-            Features + Solvers Descripton + Problem Description & 0.3 & 76.529 & 82.959 & -0.036 \\ 
-            Features + Solvers Descripton & 0.2 & 76.326 & 84.044 & -0.053 \\ 
+            \textbf{Features + Solvers Description} & \textbf{0.3} & \textbf{78.032} & 82.873 & \textbf{0.089} \\ 
+            \textbf{Features + Solvers Description} & \textbf{0.7} & \textbf{77.896} & 83.767 & \textbf{0.077} \\ 
+            Scripts + Solvers Description + Problem Description & 0.0 & 76.971 & 82.042 & 0.001 \\ 
+            Features + Solvers Description + Problem Description & 0.3 & 76.529 & 82.959 & -0.036 \\ 
+            Features + Solvers Description & 0.2 & 76.326 & 84.044 & -0.053 \\ 
             Features + Problem Description & 0.2 & 76.298 & 83.363 & -0.055 \\ 
-            Features + Solvers Descripton + Problem Description & 0.2 & 76.156 & 83.763 & -0.067 \\ 
-            Features + Solvers Descripton + Problem Description & 0.0 & 75.860 & 83.146 & -0.092 \\ 
+            Features + Solvers Description + Problem Description & 0.2 & 76.156 & 83.763 & -0.067 \\ 
+            Features + Solvers Description + Problem Description & 0.0 & 75.860 & 83.146 & -0.092 \\ 
             Features + Problem Description & 0.8 & 75.676 & 83.009 & -0.107 \\ 
-            Features + Solvers Descripton & 0.0 & 75.477 & 83.444 & -0.124 \\ 
-            Features + Solvers Descripton + Problem Description & 0.8 & 74.909 & 82.419 & -0.171 \\ 
-            Scripts + Solvers Descripton + Problem Description & 0.3 & 74.907 & 80.042 & -0.171 \\ 
-            Features + Solvers Descripton & 0.8 & 74.464 & 84.421 & -0.208 \\ 
+            Features + Solvers Description & 0.0 & 75.477 & 83.444 & -0.124 \\ 
+            Features + Solvers Description + Problem Description & 0.8 & 74.909 & 82.419 & -0.171 \\ 
+            Scripts + Solvers Description + Problem Description & 0.3 & 74.907 & 80.042 & -0.171 \\ 
+            Features + Solvers Description & 0.8 & 74.464 & 84.421 & -0.208 \\ 
             Scripts & 0.8 & 74.460 & 83.222 & -0.208 \\ 
             Scripts & 0.2 & 74.456 & 83.119 & -0.208 \\ 
             Scripts & 0.7 & 73.459 & 82.540 & -0.291 \\ 
             Scripts & 0.3 & 73.456 & 84.261 & -0.291 \\ 
             Scripts & 0.0 & 73.269 & 83.602 & -0.307 \\ 
-            Features + Solvers Descripton + Problem Description & 0.7 & 73.224 & 80.845 & -0.311 \\ 
+            Features + Solvers Description + Problem Description & 0.7 & 73.224 & 80.845 & -0.311 \\ 
             Features + Problem Description & 0.0 & 73.114 & 81.456 & -0.320 \\ 
-            Scripts + Solvers Descripton + Problem Description & 0.8 & 72.894 & 80.875 & -0.338 \\ 
+            Scripts + Solvers Description + Problem Description & 0.8 & 72.894 & 80.875 & -0.338 \\ 
             Features + Problem Description & 0.3 & 72.678 & 82.393 & -0.356 \\ 
-            Scripts + Solvers Descripton + Problem Description & 0.2 & 71.717 & 82.042 & -0.436 \\ 
+            Scripts + Solvers Description + Problem Description & 0.2 & 71.717 & 82.042 & -0.436 \\ 
             Features + Problem Description & 0.7 & 71.235 & 81.896 & -0.476 \\ 
-            Scripts + Solvers Descripton + Problem Description & 0.7 & 69.890 & 79.042 & -0.588 \\ \hline
+            Scripts + Solvers Description + Problem Description & 0.7 & 69.890 & 79.042 & -0.588 \\ \hline
         \end{tabular}
     }
     \caption{Sampling-temperature sweep on the best-performing variants using \texttt{gpt-oss-120b}. ``Scripts'' in ``Variant'' column refers to \texttt{.mzn} script and instance data script. Score columns are calculated as in \Cref{tab:combinedAllLLM}.}
@@ -363,63 +363,7 @@ As anticipated, all tests were conducted using \texttt{gpt-oss-120b} for LLM. Du
 
 As displayed in \Cref{tab:combinedFeatVarsTemp} and in \Cref{fig:hmTempPar}, in parallel-solver evaluation, temperature variation produces only moderate changes. Although some configurations yield higher parallel scores than their counterparts with no temperature configuration, all remain below the performance of \texttt{or-tools\_cp-sat-par} (displayed in \Cref{tab:comparisanVarPar}).
 
-In the single-solver evaluation (\Cref{fig:hmTempSin}), temperature has a more pronounced effect. Configurations based on raw scripts show limited sensitivity to temperature, with only marginal improvements with configuration 5, and a decrease in scores for configuration 1. In contrast, feature-based configurations exhibit clearer trends: temperatures in the range 0.2-0.3 are associated with improved single-solver scores. Notably, configuration 3 achieves positive closed-gap values at $\tau$=0.3 and $\tau$=0.7, displayed in \Cref{fig:hmTempCg}, indicating performance above the SBS baseline under those settings, displaying highest scores yet.
-
-% \section{Limited Solver Set}
-% \label{sec:selectedSolvers}
-% Throughout the course of previous experiments, we managed to surpass the SBS by 1.07, reaching a closed gap of 0.08, as displayed in \Cref{tab:combinedFeatVarsTemp}.
-% Still, the improvement is marginal, that's because the SBS, namely \texttt{or-tools\_cp-sat-free} is widely dominant, to the point that always suggesting it wouldn't be a limiting strategy in terms of performance, as shown in \Cref{tab:combinedSdesc}. 
-
-% For that reason, we decided to try testing the best variants over a set of solvers with no outstandingly better models, with the aim to make the decision process for LLM as nuanced as possible, trying to understand if it actually understands the differences in problems or if it just gives as an answer what are known to be the best solvers, with a mostly arbitrary decision process.
-
-% To understand which solvers would be the best for suited for that process, we calculated the number of optimal solutions found by each of the solvers (results displayed in \Cref{tab:solverOptCount})
-
-% Given the results, we decided to only keep the solvers with a count of optimal solutions in between 40 and 10, removing both dominant solvers that would make the solver selection too easy, and solvers with significantly bad performance that would just distract the LLM, this selection leaves us with the solvers displayed in \Cref{tab:selectedSolvers}.
-
-% \begin{table}[ht]
-%     \centering
-%     \resizebox{.75\textwidth}{!}{
-%         \begin{tabular}{lll}
-%         \hline
-%             Solver & Score & Optimal Count \\ \hline 
-%             gurobi-free & 55.384518 & 38 \\ 
-%             pumpkin-free & 58.543229 & 33 \\ 
-%             choco-solver\_\_cp-sat\_-free & 60.808176 & 32 \\ 
-%             cplex-free & 48.514529 & 30 \\ 
-%             choco-solver\_\_cp\_-free & 58.404323 & 29 \\ 
-%             cp\_optimizer-free & 50.992682 & 26 \\ 
-%             izplus-free & 58.672093 & 25 \\ 
-%             jacop-free & 44.549443 & 25 \\ 
-%             sicstus\_prolog-free & 44.592608 & 24 \\ 
-%             scip-free & 36.902766 & 20 \\ 
-%             highs-free & 34.418506 & 18 \\ 
-%             cbc-free & 22.615259 & 11 \\ 
-%         \end{tabular}
-%     }
-%     \caption{Table displaying all the remaining solvers from free category, after the selection process, ordered by the number of optimal solutions they reach, intended as the number of instances where the given solver scores 1, following the scoring in \Cref{sec:metrics}.}
-%     \label{tab:selectedSolvers}
-% \end{table}
-
-% Finally, we tested the 3 best performing instances, the ones with a positive closed gap, over this portfolio of solvers. As displayed in \Cref{tab:CombinedSelSolversTop}, results on ``Single Score'' evaluation, as also shown for closed gap, are significantly lower than the SBS of this new solver set, namely \texttt{choco-solver\_\_cp-sat\_-free}, with a score of 60.808.
-
-% \begin{table}[ht]
-%     \centering
-%     \resizebox{\textwidth}{!}{
-%         \begin{tabular}{lllll}
-%         \hline
-%             Variant & Single Score & Parallel Score & Closed Gap & Temperature \\ \hline
-%             Features + Solvers Description & 55.843 & 73.042 & -0.190 & 0.7 \\ 
-%             Features + Solvers Description & 54.339 & 72.662 & -0.254 & 0.3 \\ 
-%             Scripts + Problem Description + Solvers Description & 49.776 & 74.736 & -0.449 & nan \\ \hline
-%         \end{tabular}
-%     }
-%     \caption{Test with the best performing variants, using \texttt{gpt-oss-120b}, over the selected solvers from \Cref{tab:selectedSolvers}. Columns are calculated as in \Cref{tab:combinedAllLLM}.}
-%     \label{tab:CombinedSelSolversTop}
-% \end{table}
-
-% Interestingly, a largely limiting factor on LLM score is due to the tendency to suggest \texttt{cp\_optimizer-free} as best solver for most of the instances, while it is proven to not even be one of the 5 best performing solvers in this set.
-
-% Concerning parallel score, it wouldn't make sense to confront the result with \texttt{or-tools\_cp-sat-par}, as its score (88.11) surpasses the one of the VBS in the current solver set, which is 83.85; hence, even with perfect algorithm selection, it wouldn't be reachable. Nonetheless, if we confront the LLM variants parallel score, with the solvers having a reachable score,  all three variants, are still behind the performance of the second best performing solver in open category, namely \texttt{chuffed-free}, with a score of 74.81.
+In the single-solver evaluation (\Cref{fig:hmTempSin}), temperature has a more pronounced effect. Configurations based on raw scripts show limited sensitivity to temperature, with only marginal improvements with configuration 5, and a decrease in scores for configuration 1. In contrast, feature-based configurations exhibit clearer trends: temperatures in the range 0.2-0.3 are associated with improved single-solver scores. Notably, configuration 3 achieves positive closed-gap values at $\tau = 0.3$ and $\tau = 0.7$, displayed in \Cref{fig:hmTempCg}, indicating performance above the SBS baseline under those settings, and representing the highest scores obtained thus far.
 
 \section{Restricted Solver Portfolio}
 \label{sec:selectedSolvers}
